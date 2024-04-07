@@ -1,0 +1,15 @@
+$brakePoints: (
+    sp: 400px,
+    tb: 960px,
+    pc: 1200px,
+);
+@mixin max($brakePoint) {
+    @media (max-width: #{map-get($brakePoints, $brakePoint)}) {
+        @content;
+    }
+}
+
+@mixin wrapper() {
+    width: min(1200px, 96vw);
+    margin: 0 auto;
+}
