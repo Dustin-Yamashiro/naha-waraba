@@ -1,0 +1,41 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+.l-header {
+    padding-top: 4px;
+    &__contents {
+        @include wrapper();
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        width: min(200px, 36vw);
+        height: min(80px, 14vw);
+    }
+    &__menu {
+        width: min(688px, 64vw);
+        font-size: clamp(0.938rem, 0.688rem + 0.42vw, 1rem) ;
+        display: flex;
+        justify-content: space-around;
+        li:hover {
+            transition: all 0.2s 0s ease-in-out;
+            cursor: pointer;
+            color: $baseColor;
+        }
+        @include max(tb) {
+            display: none;
+        }
+    }
+    &__icons {
+        display: none;
+        @include max(tb) {
+            display: flex;
+            width: min(120px, 26vw);
+            justify-content: space-between;
+            &--search, &--burger {
+                height: min(48px, 12vw);
+            }
+        }
+    }
+}
