@@ -2,7 +2,7 @@
 @use "../foundation/mixin" as *;
 
 .l-header {
-    padding-top: 4px;
+    padding-top: 2px;
     &__contents {
         @include wrapper();
         display: flex;
@@ -37,5 +37,11 @@
                 height: min(48px, 12vw);
             }
         }
+    }
+    &__topImgArea {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 2000px;
+        height: clamp(180px, 5.819rem + 24.14vw, 600px);
     }
 }
