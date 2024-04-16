@@ -1,5 +1,16 @@
 @use "foundation/reset";
 @use "foundation/base";
 
+
+// サイト全体関連
+@use "utility/u-margin";
+
+// ヘッダー関連
 @use "layout/l-header";
 @use "component/c-siteMainImg";
+
+// 投稿一覧関連
+@use "project/p-postList";
+@use "project/p-postCard";
+@use "component/post-card/c-postImg";
+@use "component/post-card/c-postDesc";

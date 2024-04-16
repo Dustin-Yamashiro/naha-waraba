@@ -1,0 +1,13 @@
+@use "../foundation/mixin" as *;
+
+.p-postList {
+    @include wrapper();
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    @include max(tb) {
+        & .p-postCard:last-child {
+            display: none;
+        }
+    }
+}
