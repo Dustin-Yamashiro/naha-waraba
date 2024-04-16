@@ -19,9 +19,7 @@
         display: flex;
         justify-content: space-around;
         li:hover {
-            transition: all 0.2s 0s ease-in-out;
-            cursor: pointer;
-            color: $baseColor;
+            @include hoverAction();
         }
         @include max(tb) {
             display: none;
