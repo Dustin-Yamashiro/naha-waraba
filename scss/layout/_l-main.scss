@@ -1,0 +1,12 @@
+@use "../foundation/mixin" as *;
+
+.l-main {
+    width: 68%;
+    @include max(tb) {
+        width: 100%;
+    }
+    &--title {
+        font-size: clamp(1.5rem, 1.211rem + 1.05vw, 2rem);
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,10 @@
+@use "../foundation/mixin" as *;
+
+.p-postMenuList {
+    display: flex;
+    justify-content: space-between;
+    @include max(sp) {
+        flex-wrap : wrap;
+        row-gap: 8px;
+    }
+}
