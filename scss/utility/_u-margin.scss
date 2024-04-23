@@ -1,5 +1,11 @@
 .u-mt {
+    &-S {
+        margin-top: min(32px, 4vw);
+    }
     &-M {
-        margin-top: min(40px, 4vw);
+        margin-top: min(40px, 4.5vw);
+    }
+    &-L {
+        margin-top: min(48px, 5vw);
     }
 }
