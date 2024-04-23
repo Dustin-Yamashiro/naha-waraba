@@ -1,0 +1,5 @@
+@use "../foundation/mixin" as *;
+
+.l-contents {
+    @include wrapper();
+}

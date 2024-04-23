@@ -1,0 +1,23 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+.c-postMenuItem {
+    width: 24%;
+    height: 3rem;
+    @include max(sp) {
+        width: 49%;
+        height: 2.75rem;
+    }
+    font-size: clamp(1rem, 0.855rem + 0.53vw, 1.25rem);
+    background-color: rgba($accentColor, 0.1);
+    border-radius: 2%;
+    color: $fontColorBlack;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        @include hoverAction();
+        background-color: $baseColor;
+        color: $fontColorWhite;
+    }
+}

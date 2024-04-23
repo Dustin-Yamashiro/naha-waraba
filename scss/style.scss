@@ -14,3 +14,9 @@
 @use "project/p-postCard";
 @use "component/post-card/c-postImg";
 @use "component/post-card/c-postDesc";
+
+// メインコンテンツ関連
+@use "layout/l-contents";
+@use "layout/l-main";
+@use "project/p-postMenuList";
+@use "component/c-postMenuItem";
