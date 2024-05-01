@@ -1,15 +1,32 @@
+@use "../../foundation/base" as *;
 @use "../../foundation/mixin" as *;
 
 .c-postDesc {
     &__ttl {
-        font-weight: 700;
+        color: $fontColorBlack;
+        font-weight: 600;
         @include max(sp) {
-            font-weight: 600;
+            font-weight: 500;
         }
-        &--font {
-            &-M {
-                font-size: clamp(0.65rem, 0.447rem + 0.74vw, 1rem);
-                line-height: 1.3em;
+        &--slider {
+            font-size: clamp(0.65rem, 0.447rem + 0.74vw, 1rem);
+            line-height: 1.3em;
+        }
+        &--main {
+            font-size: clamp(0.8rem, 1.33vw, 1rem);
+            line-height: 1.5em;
+            @include max(tb) {
+                font-size: 0.9rem;
+            }
+        }
+    }
+    &__date {
+        font-weight: 400;
+        color: rgba($fontColorBlack, 0.4);
+        &--main {
+            font-size: 0.9rem;
+            @include max(tb) {
+                font-size: 0.85rem;
             }
         }
     }

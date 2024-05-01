@@ -1,0 +1,14 @@
+@use "../foundation/base" as *;
+
+.c-tag {
+    display: inline-block;
+    &__article {
+        border-radius: 4%;
+        font-size: 1rem;
+        padding: 0.6em 1.2em;
+    }
+    &--accentColor {
+        background-color: rgba($accentColor, 0.9);
+        color: $fontColorWhite;
+    }
+}
