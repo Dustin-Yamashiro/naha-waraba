@@ -5,7 +5,7 @@
     &__ttl {
         color: $fontColorBlack;
         font-weight: 600;
-        @include max(sp) {
+        @include setBrakePoint(sp) {
             font-weight: 500;
         }
         &--slider {
@@ -15,7 +15,7 @@
         &--main {
             font-size: clamp(0.8rem, 1.33vw, 1rem);
             line-height: 1.5em;
-            @include max(tb) {
+            @include setBrakePoint(tb) {
                 font-size: 0.9rem;
             }
         }
@@ -25,7 +25,7 @@
         color: rgba($fontColorBlack, 0.4);
         &--main {
             font-size: 0.9rem;
-            @include max(tb) {
+            @include setBrakePoint(tb) {
                 font-size: 0.85rem;
             }
         }

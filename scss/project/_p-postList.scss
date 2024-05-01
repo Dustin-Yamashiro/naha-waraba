@@ -5,7 +5,7 @@
     &--slider {
         justify-content: space-between;
         @include wrapper();
-        @include max(tb) {
+        @include setBrakePoint(tb) {
             & .p-postCard:last-child {
                 display: none;
             }
