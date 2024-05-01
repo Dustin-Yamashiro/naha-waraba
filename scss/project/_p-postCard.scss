@@ -1,4 +1,5 @@
 @use "../foundation/mixin" as *;
+@use "../foundation/base" as *;
 
 .p-postCard {
     &:hover {
@@ -7,28 +8,72 @@
     &--slider {
         width: min(288px, 23vw);
         @include max(tb) {
-            width: min(300px, 30.75vw);
+            width: 31vw;
         }
     }
+    &--main {
+        border: solid .0625rem rgba($accentColor, 0.15);
+        border-radius: 1%;
+        position: relative;
+        &:hover {
+            box-shadow: 0px 5px 15px 0px rgba($accentColor, 0.2);
+        }
+        width: min(368px, 31vw);
+        height: min(380px, 33vw);
+        @include max(tb) {
+            width: 44vw;
+            height: max(356px, 44vw);
+        }
+        @include max(sp) {
+            width: 92vw;
+            height: max(352px, 88vw);
+        }
+    }
+
     &__contents {
         display: flex;
         &--slider {
             flex-direction: column;
-            gap: clamp(0.6rem, 0.426rem + 0.63vw, 0.9rem);
+            gap: min(14px, 2vw);
+        }
+        &--main {
+            flex-direction: column;
+            gap: min(20px, 4vw);
         }
     }
     &__thumb {
         box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.18);
-        border-radius: 2%;
         overflow: hidden;
+        aspect-ratio: 1 / 0.625;
+        object-fit: cover;
         &--slider {
-            width: 100%;
-            aspect-ratio: 1 / 0.625;
+            border-radius: 1%;
+        }
+        &--main {
+            border-radius: 1% 1% 0 0;
+            position: relative;
+        }
+    }
+    &__tag {
+        &--main {
+            position: absolute;
+            top: 6px;
+            right: 6px;
         }
     }
     &__desc {
         &--slider {
             padding: 0 2px;
+        }
+        &--main {
+            padding: 0 16px;
+        }
+    }
+    &__date {
+        position: absolute;
+        &--main {
+            bottom: 16px;
+            right: 16px;
         }
     }
 }
