@@ -12,11 +12,11 @@
         }
     }
     &--main {
-        border: solid .0625rem rgba($accentColor, 0.15);
+        border: solid .0625rem rgba($fontColorBlack, 0.15);
         border-radius: 1%;
         position: relative;
         &:hover {
-            box-shadow: 0px 5px 15px 0px rgba($accentColor, 0.2);
+            box-shadow: 0px 5px 15px 0px rgba($fontColorBlack, 0.2);
         }
         width: min(368px, 31vw);
         height: min(380px, 33vw);
