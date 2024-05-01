@@ -22,13 +22,13 @@
             @include hoverAction();
             color: $baseColor;
         }
-        @include max(tb) {
+        @include setBrakePoint(tb) {
             display: none;
         }
     }
     &__icons {
         display: none;
-        @include max(tb) {
+        @include setBrakePoint(tb) {
             display: flex;
             width: min(120px, 26vw);
             justify-content: space-between;

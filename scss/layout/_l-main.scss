@@ -2,7 +2,7 @@
 
 .l-main {
     width: 68%;
-    @include max(tb) {
+    @include setBrakePoint(tb) {
         width: 100%;
     }
     &--title {

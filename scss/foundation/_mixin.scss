@@ -5,8 +5,8 @@ $brakePoints: (
     tb: 960px,
     pc: 1200px,
 );
-@mixin max($brakePoint) {
-    @media (max-width: #{map-get($brakePoints, $brakePoint)}) {
+@mixin setBrakePoint($type) {
+    @media (max-width: #{map-get($brakePoints, $type)}) {
         @content;
     }
 }
