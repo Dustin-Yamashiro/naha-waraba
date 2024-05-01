@@ -20,6 +20,7 @@
         justify-content: space-around;
         li:hover {
             @include hoverAction();
+            color: $baseColor;
         }
         @include max(tb) {
             display: none;
