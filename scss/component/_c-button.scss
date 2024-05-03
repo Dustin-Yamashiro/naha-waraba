@@ -1,0 +1,17 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+.c-button {
+    border-radius: 2%;
+    &:hover {
+        @include hoverAction();
+    }
+    &--baseColor {
+        color: $fontColorWhite;
+        background-color: $baseColor;
+    }
+    &--accentColor {
+        color: $fontColorWhite;
+        background-color: $accentColor;
+    }
+}
