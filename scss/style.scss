@@ -9,7 +9,6 @@
 // 投稿一覧関連
 @use "project/p-postList";
 @use "project/p-postCard";
-@use "component/c-postDesc";
 
 // メインコンテンツ関連
 @use "layout/l-contents";
@@ -23,3 +22,4 @@
 @use "component/c-img";
 @use "component/c-tag";
 @use "component/c-button";
+@use "component/c-contentsDesc";
