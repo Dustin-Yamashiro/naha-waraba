@@ -11,14 +11,22 @@
 @use "project/p-postCard";
 
 // メインコンテンツ関連
-@use "layout/l-contents";
 @use "layout/l-main";
 @use "project/p-postMenuList";
 @use "component/c-postMenuItem";
 
-// その他
+// サイドバーコンテンツ関連
+@use "layout/l-sidebar";
+@use "project/p-profile";
+
+// レイアウト関連
+@use "layout/l-contents";
 @use "utility/u-margin";
+
+// その他
 @use "project/p-pagination";
+@use "project/p-snsIconList";
+@use "component/c-snsIcon";
 @use "component/c-img";
 @use "component/c-tag";
 @use "component/c-button";

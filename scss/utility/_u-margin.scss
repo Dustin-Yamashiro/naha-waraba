@@ -19,4 +19,16 @@
     &--pagination {
         margin-top: min(44px, 10vw);
     }
+    &--sidebar {
+        margin-top: 6px;
+        @include setBrakePoint(tb) {
+            margin-top: 72px;
+        }
+    }
+    &--sidebarItem {
+        margin-top: 32px;
+        @include setBrakePoint(tb) {
+            margin-top: 28px;
+        }
+    }
 }
