@@ -5,6 +5,7 @@
     &:hover {
         @include hoverAction();
     }
+
     &--slider {
         width: min(288px, 23vw);
         @include setBrakePoint(tb) {
@@ -64,9 +65,16 @@
     &__desc {
         &--slider {
             padding: 0 2px;
+            font-size: clamp(0.65rem, 0.447rem + 0.74vw, 1rem);
+            line-height: 1.3em;
         }
         &--main {
             padding: 0 16px;
+            font-size: clamp(0.8rem, 1.33vw, 1rem);
+            line-height: 1.5em;
+            @include setBrakePoint(tb) {
+                font-size: 0.9rem;
+            }
         }
     }
     &__date {
@@ -74,6 +82,10 @@
         &--main {
             bottom: 16px;
             right: 16px;
+            font-size: 0.9rem;
+            @include setBrakePoint(tb) {
+                font-size: 0.85rem;
+            }
         }
     }
 }
