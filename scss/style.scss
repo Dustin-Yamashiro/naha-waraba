@@ -1,25 +1,21 @@
 @use "foundation/reset";
 @use "foundation/base";
 
-
-// ヘッダー関連
-@use "layout/l-header";
-
 // 記事一覧関連
 @use "project/p-postList";
-@use "project/p-postCard";
-
-// メインコンテンツ関連
-@use "layout/l-main";
+@use "project/p-postCardSlider";
+@use "project/p-postCardMain";
 @use "project/p-postMenuList";
 @use "component/c-postMenuItem";
 
-// サイドバーコンテンツ関連
-@use "layout/l-sidebar";
+// サイドバー関連
 @use "project/p-profile";
 
 // レイアウト関連
+@use "layout/l-header";
 @use "layout/l-contents";
+@use "layout/l-main";
+@use "layout/l-sidebar";
 @use "utility/u-margin";
 
 // その他
@@ -30,3 +26,4 @@
 @use "component/c-desc";
 @use "component/c-tag";
 @use "component/c-button";
+@use "component/c-thumbnail";
