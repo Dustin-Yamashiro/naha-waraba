@@ -1,0 +1,54 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/base" as *;
+
+.p-postCardMain {
+    border: solid .0625rem rgba($fontColorBlack, 0.15);
+    border-radius: 1%;
+    position: relative;
+    width: min(368px, 31vw);
+    height: min(380px, 33vw);
+    @include setBrakePoint(tb) {
+        width: 44vw;
+        height: max(356px, 44vw);
+    }
+    @include setBrakePoint(sp) {
+        width: 92vw;
+        height: max(352px, 88vw);
+    }
+    &:hover {
+        @include hoverAction();
+        box-shadow: 0px 5px 15px 0px rgba($fontColorBlack, 0.2);
+    }
+
+    &__contents {
+        display: flex;
+        flex-direction: column;
+        gap: min(20px, 4vw);
+    }
+    &__thumb {
+        position: relative;
+        border-radius: 1% 1% 0 0;
+    }
+    &__tag {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+    }
+    &__desc {
+        padding: 0 16px;
+        font-size: clamp(0.8rem, 1.33vw, 1rem);
+        line-height: 1.5em;
+        @include setBrakePoint(tb) {
+            font-size: 0.9rem;
+        }
+    }
+    &__date {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        font-size: 0.9rem;
+        @include setBrakePoint(tb) {
+            font-size: 0.85rem;
+        }
+    }
+}

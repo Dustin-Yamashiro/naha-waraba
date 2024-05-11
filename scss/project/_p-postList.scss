@@ -6,7 +6,7 @@
         justify-content: space-between;
         @include wrapper();
         @include setBrakePoint(tb) {
-            & .p-postCard:last-child {
+            & li:last-child {
                 display: none;
             }
         }
