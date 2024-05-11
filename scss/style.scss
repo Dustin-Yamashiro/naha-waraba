@@ -4,9 +4,8 @@
 
 // ヘッダー関連
 @use "layout/l-header";
-@use "component/c-siteMainImg";
 
-// 投稿一覧関連
+// 記事一覧関連
 @use "project/p-postList";
 @use "project/p-postCard";
 
