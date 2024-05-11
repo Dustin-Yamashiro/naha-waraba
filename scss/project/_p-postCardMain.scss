@@ -33,6 +33,14 @@
         position: absolute;
         top: 6px;
         right: 6px;
+        font-size: 1rem;
+        padding: 0.6em 1.2em;
+        @include setBrakePoint(tb) {
+            font-size: clamp(0.8rem, 0.631rem + 0.62vw, 1rem);
+        }
+        @include setBrakePoint(sp) {
+            font-size: clamp(0.8rem, 0.537rem + 1.68vw, 1rem);
+        }
     }
     &__desc {
         padding: 0 16px;
