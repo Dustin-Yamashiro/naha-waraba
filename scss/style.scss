@@ -6,7 +6,6 @@
 @use "project/p-postCardSlider";
 @use "project/p-postCardMain";
 @use "project/p-postMenuListMain";
-@use "component/c-postMenuItem";
 
 // サイドバー関連
 @use "project/p-profile";
@@ -27,3 +26,4 @@
 @use "component/c-tag";
 @use "component/c-button";
 @use "component/c-thumbnail";
+@use "component/c-menuItem";
