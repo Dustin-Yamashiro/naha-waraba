@@ -1,6 +1,9 @@
 @use "../foundation/mixin" as *;
 
 .c-icon {
+    &--search, &--burger {
+        width: min(40px, 10vw);
+    }
     &--sns {
         width: 32px;
         height: 32px;

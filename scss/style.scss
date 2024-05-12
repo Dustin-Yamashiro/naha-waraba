@@ -1,10 +1,16 @@
 @use "foundation/reset";
 @use "foundation/base";
 
+// サイト関連
+@use "project/p-header";
+@use "project/p-menuListSite";
+@use "component/c-menuItemSite";
+
 // 記事一覧関連
 @use "project/p-postList";
 @use "project/p-postCardSlider";
 @use "project/p-postCardMain";
+@use "project/p-pagination";
 @use "project/p-menuListPost";
 @use "component/c-menuItemPost";
 
@@ -19,7 +25,6 @@
 @use "utility/u-margin";
 
 // その他
-@use "project/p-pagination";
 @use "project/p-snsIconList";
 @use "component/c-icon";
 @use "component/c-img";
