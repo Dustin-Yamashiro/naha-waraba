@@ -5,7 +5,8 @@
 @use "project/p-postList";
 @use "project/p-postCardSlider";
 @use "project/p-postCardMain";
-@use "project/p-postMenuListMain";
+@use "project/p-menuListPost";
+@use "component/c-menuItemPost";
 
 // サイドバー関連
 @use "project/p-profile";
@@ -26,4 +27,3 @@
 @use "component/c-tag";
 @use "component/c-button";
 @use "component/c-thumbnail";
-@use "component/c-menuItem";
