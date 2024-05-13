@@ -1,6 +1,6 @@
 @use "../foundation/mixin" as *;
 
-.p-menuListPost {
+.p-postMenuList {
     display: flex;
     justify-content: space-between;
     font-size: clamp(1rem, 0.855rem + 0.53vw, 1.25rem);

@@ -3,16 +3,16 @@
 
 // サイト関連
 @use "project/p-header";
-@use "project/p-menuListSite";
-@use "component/c-menuItemSite";
+@use "project/p-siteMenuList";
+@use "component/c-siteMenuItem";
 
 // 記事一覧関連
 @use "project/p-postList";
 @use "project/p-postCardSlider";
 @use "project/p-postCardMain";
 @use "project/p-pagination";
-@use "project/p-menuListPost";
-@use "component/c-menuItemPost";
+@use "project/p-postMenuList";
+@use "component/c-postMenuItem";
 
 // サイドバー関連
 @use "project/p-profile";
