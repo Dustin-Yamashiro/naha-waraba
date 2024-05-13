@@ -1,15 +1,14 @@
 @use "../foundation/mixin" as *;
-@use "../foundation/base" as *;
 
-.p-postMenuListMain {
+.p-postMenuList {
     display: flex;
     justify-content: space-between;
+    font-size: clamp(1rem, 0.855rem + 0.53vw, 1.25rem);
     @include setBrakePoint(sp) {
         flex-wrap: wrap;
         row-gap: 8px;
     }
     &__item {
-        font-size: clamp(1rem, 0.855rem + 0.53vw, 1.25rem);
         width: 24%;
         height: 2.5em;
         @include setBrakePoint(sp) {

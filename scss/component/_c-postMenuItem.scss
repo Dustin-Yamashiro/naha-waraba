@@ -2,9 +2,9 @@
 @use "../foundation/mixin" as *;
 
 .c-postMenuItem {
+    color: $fontColorBlack;
     background-color: rgba($accentColor, 0.1);
     border-radius: 2%;
-    color: $fontColorBlack;
     display: flex;
     align-items: center;
     justify-content: center;

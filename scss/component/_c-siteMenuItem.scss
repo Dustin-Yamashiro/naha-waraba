@@ -1,0 +1,10 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+.c-siteMenuItem {
+    color: $fontColorBlack;
+    &:hover {
+        @include hoverAction();
+        color: $baseColor;
+    }
+}
