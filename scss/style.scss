@@ -1,17 +1,13 @@
 @use "foundation/reset";
 @use "foundation/base";
 
-// サイト関連
+// サイト全体関連
 @use "project/p-header";
-@use "project/p-siteMenuList";
-@use "component/c-siteMenuItem";
 
 // 記事一覧関連
 @use "project/p-postList";
 @use "project/p-postCard";
 @use "project/p-pagination";
-@use "project/p-postMenuList";
-@use "component/c-postMenuItem";
 
 // サイドバー関連
 @use "project/p-profile";
@@ -24,7 +20,9 @@
 @use "utility/u-margin";
 
 // その他
+@use "project/p-menuList";
 @use "project/p-snsIconList";
+@use "component/c-menuItem";
 @use "component/c-icon";
 @use "component/c-img";
 @use "component/c-desc";
