@@ -1,0 +1,89 @@
+
+@use "../foundation/mixin" as *;
+@use "../foundation/base" as *;
+
+.p-postCard {
+    // 投稿スライダー
+    &--slider {
+        width: min(288px, 23vw);
+        @include setBrakePoint(tb) {
+            width: 31vw;
+        }
+        &:hover {
+            @include hoverAction();
+        }
+    }
+    &--slider &__contents {
+        display: flex;
+        flex-direction: column;
+        gap: min(14px, 2vw);
+    }
+    &--slider &__thumbnail {
+        border-radius: 1%;
+    }
+    &--slider &__desc {
+        padding: 0 2px;
+        font-size: clamp(0.65rem, 0.447rem + 0.74vw, 1rem);
+        line-height: 1.3em;
+    }
+
+    // 投稿メイン
+    &--main {
+        border: solid .0625rem rgba($fontColorBlack, 0.15);
+        border-radius: 1%;
+        position: relative;
+        width: min(368px, 31vw);
+        height: min(380px, 33vw);
+        @include setBrakePoint(tb) {
+            width: 44vw;
+            height: max(356px, 44vw);
+        }
+        @include setBrakePoint(sp) {
+            width: 92vw;
+            height: max(352px, 88vw);
+        }
+        &:hover {
+            @include hoverAction();
+            box-shadow: 0px 5px 15px 0px rgba($fontColorBlack, 0.2);
+        }
+    }
+    &--main &__contents {
+        display: flex;
+        flex-direction: column;
+        gap: min(20px, 4vw);
+    }
+    &--main &__thumbnail {
+        position: relative;
+        border-radius: 1% 1% 0 0;
+    }
+    &--main &__tag {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        font-size: 1rem;
+        padding: 0.6em 1.2em;
+        @include setBrakePoint(tb) {
+            font-size: clamp(0.8rem, 0.631rem + 0.62vw, 1rem);
+        }
+        @include setBrakePoint(sp) {
+            font-size: clamp(0.8rem, 0.537rem + 1.68vw, 1rem);
+        }
+    }
+    &--main &__desc {
+        padding: 0 16px;
+        font-size: clamp(0.8rem, 1.33vw, 1rem);
+        line-height: 1.5em;
+        @include setBrakePoint(tb) {
+            font-size: 0.9rem;
+        }
+    }
+    &--main &__date {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        font-size: 0.9rem;
+        @include setBrakePoint(tb) {
+            font-size: 0.85rem;
+        }
+    }
+}
