@@ -2,7 +2,7 @@
 @use "../foundation/mixin" as *;
 
 .l-header {
-    padding-top: 6px;
+    padding-top: 12px;
     &__contents {
         @include wrapper();
     }
