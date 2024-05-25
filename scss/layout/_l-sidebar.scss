@@ -10,7 +10,8 @@
         width: 100%;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 24px;
+        justify-content: space-between;
+        gap: initial;
     }
     @include setBrakePoint(sp) {
         flex-direction: column;
@@ -20,6 +21,17 @@
         width: 100%;
         @include setBrakePoint(tb) {
             width: 48.5%;
+            &:nth-child(2) {
+                order: 3;
+                width: 100%;
+                margin-top: 48px;
+                @include setBrakePoint(sp) {
+                    margin-top: initial;
+                }
+            }
+            &:nth-child(3) {
+                order: 2;
+            }
         }
         @include setBrakePoint(sp) {
             width: 100%;
@@ -37,6 +49,20 @@
             display: block;
             margin-left: 12px;
             background-color: $baseColor;
+        }
+    }
+    &__more {
+        display: block;
+        text-align: right;
+        font-size: clamp(0.8rem, 0.4rem + 0.67vw, 0.9rem);
+        margin-top: 8px;
+        &:hover {
+            @include hoverAction();
+            color: $baseColor;
+        }
+        @include setBrakePoint(tb) {
+            text-align: center;
+            font-size: clamp(0.8rem, 0.631rem + 0.62vw, 1rem);
         }
     }
 }
