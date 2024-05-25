@@ -62,7 +62,7 @@
         }
         @include setBrakePoint(tb) {
             text-align: center;
-            font-size: clamp(0.6rem, 0.4rem + 1vw, 1rem);
+            font-size: clamp(0.8rem, 0.631rem + 0.62vw, 1rem);
         }
     }
 }

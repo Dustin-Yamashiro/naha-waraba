@@ -91,8 +91,8 @@
     &--sidebar {
         width: 96%;
         padding-top: 20px;
-        @include setBrakePoint(tb) {
-            padding-top: 16px;
+        @include setBrakePoint(sp) {
+            padding-top: 18px;
         }
         position: relative;
         &::before {
