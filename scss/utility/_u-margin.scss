@@ -27,8 +27,5 @@
     }
     &--sidebarItem {
         margin-top: 32px;
-        @include setBrakePoint(tb) {
-            margin-top: 28px;
-        }
     }
 }
