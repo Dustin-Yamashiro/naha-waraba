@@ -159,7 +159,7 @@
             color: $baseColor;
         }
         @include setBrakePoint(tb) {
-            font-size: clamp(0.6rem, 0.45rem + 0.75vw, 0.9rem);
+            font-size: clamp(0.7rem, 0.531rem + 0.62vw, 0.9rem);
         }
     }
 }
