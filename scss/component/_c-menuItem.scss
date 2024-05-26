@@ -2,11 +2,19 @@
 @use "../foundation/mixin" as *;
 
 .c-menuItem {
-    // サイトメニュー
     color: $fontColorBlack;
-    &:hover {
-        @include hoverAction();
-        color: $baseColor;
+
+    // サイトメニュー
+    &--site {
+        &:hover {
+            @include hoverAction();
+            color: $baseColor;
+        }
+    }
+    &--site a {
+        display: flex;
+        align-items: center;
+        height: 100%;
     }
 
     // 投稿一覧メニュー
@@ -17,6 +25,7 @@
         align-items: center;
         justify-content: center;
         &:hover {
+            @include hoverAction();
             opacity: 1;
             background-color: $baseColor;
             color: $fontColorWhite;

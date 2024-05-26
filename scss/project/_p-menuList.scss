@@ -1,14 +1,21 @@
 @use "../foundation/mixin" as *;
 
 .p-menuList {
-    // サイトメニュー
     display: flex;
-    justify-content: space-around;
+
+    // サイトメニュー
+    &--site {
+        justify-content: space-around;
+        height: 100%;
+    }
+    &--site &__item {
+        height: 100%;
+    }
 
     // 投稿一覧メニュー
     &--post {
         justify-content: space-between;
-        font-size: clamp(1rem, 0.855rem + 0.53vw, 1.25rem);
+        font-size: clamp(0.9rem, 0.697rem + 0.74vw, 1.25rem);
         @include setBrakePoint(sp) {
             flex-wrap: wrap;
             row-gap: 8px;

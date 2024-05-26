@@ -15,6 +15,7 @@
     }
     &__menu {
         width: min(600px, 56vw);
+        height: min(88px, 17vw);
         font-size: clamp(0.938rem, 0.688rem + 0.42vw, 1rem);
         @include setBrakePoint(tb) {
             display: none;

@@ -6,10 +6,4 @@
     &__contents {
         @include wrapper();
     }
-    &__topImgArea {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 1800px;
-        aspect-ratio: 1 / 0.3;
-    }
 }
