@@ -1,0 +1,33 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+.c-sidebarItem {
+    color: $fontColorBlack;
+    &__title {
+        font-size: clamp(1.15rem, 1.092rem + 0.21vw, 1.25rem);
+        display: flex;
+        align-items: center;
+        &::after {
+            content: "";
+            flex-grow: 1;
+            height: 2px;
+            display: block;
+            margin-left: 12px;
+            background-color: $baseColor;
+        }
+    }
+    &__more {
+        display: block;
+        text-align: right;
+        font-size: clamp(0.8rem, 0.4rem + 0.67vw, 0.9rem);
+        margin-top: 8px;
+        &:hover {
+            @include hoverAction();
+            color: $baseColor;
+        }
+        @include setBrakePoint(tb) {
+            text-align: center;
+            font-size: clamp(0.8rem, 0.631rem + 0.62vw, 1rem);
+        }
+    }
+}
