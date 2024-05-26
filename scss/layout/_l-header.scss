@@ -2,7 +2,7 @@
 @use "../foundation/mixin" as *;
 
 .l-header {
-    padding-top: 12px;
+    box-shadow: 0 1px 4px rgba($fontColorBlack, 0.2);
     &__contents {
         @include wrapper();
     }
