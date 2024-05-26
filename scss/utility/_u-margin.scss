@@ -11,10 +11,7 @@
         margin-top: min(32px, 4.75vw);
     }
     &--postList {
-        margin-top: 36px;
-        @include setBrakePoint(tb) {
-            margin-top: min(32px, 6vw);
-        }
+        margin-top: min(32px, 4.75vw);
     }
     &--pagination {
         margin-top: min(44px, 10vw);
