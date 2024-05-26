@@ -1,9 +1,18 @@
 @use "../foundation/mixin" as *;
 
 .p-menuList {
-    // サイトメニュー
     display: flex;
-    justify-content: space-around;
+
+    // サイトメニュー
+    &--site {
+        justify-content: space-around;
+        height: 100%;
+    }
+    &--site &__item {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
 
     // 投稿一覧メニュー
     &--post {
