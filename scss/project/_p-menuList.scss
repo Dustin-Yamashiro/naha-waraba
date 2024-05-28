@@ -3,13 +3,14 @@
 .p-menuList {
     display: flex;
 
-    // サイトメニュー
-    &--site {
+    // ヘッダー
+    &--header {
         justify-content: space-around;
         height: 100%;
     }
-    &--site &__item {
+    &--header &__item {
         height: 100%;
+        font-size: 1rem;
     }
 
     // 投稿一覧メニュー

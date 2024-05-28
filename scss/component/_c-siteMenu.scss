@@ -1,0 +1,15 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+.c-siteMenu {
+    color: $fontColorBlack;
+    &:hover {
+        @include hoverAction();
+        color: $baseColor;
+    }
+    & a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+}
