@@ -25,4 +25,7 @@
     &--sidebarItem {
         margin-top: 32px;
     }
+    &--footer {
+        margin-top: min(200px, 20vw);
+    }
 }

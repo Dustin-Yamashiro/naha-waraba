@@ -1,15 +1,41 @@
+@use "../foundation/base" as *;
 @use "../foundation/mixin" as *;
 
 .p-menuList {
     display: flex;
 
-    // サイトメニュー
-    &--site {
+    // ヘッダー
+    &--header {
         justify-content: space-around;
         height: 100%;
     }
-    &--site &__item {
+    &--header &__item {
         height: 100%;
+    }
+    &--header &__item a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    // フッター
+    &--footer {
+        justify-content: space-between;
+        @include setBrakePoint(sp) {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+    &--footer &__item {
+        flex-grow: 1;
+        text-align: center;
+        border-left: solid 1px $fontColorBlack;
+        &:first-child {
+            border-left: initial;
+        }
+        @include setBrakePoint(sp) {
+            border: initial;
+        }
     }
 
     // 投稿一覧メニュー

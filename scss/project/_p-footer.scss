@@ -1,0 +1,23 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+.p-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    @include setBrakePoint(sp) {
+        gap: 40px;
+    }
+    &__menu {
+        width: min(540px, 92vw);
+        font-size: clamp(0.75rem, 0.663rem + 0.32vw, 0.9rem);
+        @include setBrakePoint(sp) {
+            font-size: clamp(0.7rem, 0.433rem + 1.33vw, 0.8rem);
+        }
+    }
+    &__copyright {
+        font-size: clamp(0.7rem, 0.642rem + 0.21vw, 0.8rem);
+        color: rgba($fontColorBlack, 0.4);
+    }
+}
