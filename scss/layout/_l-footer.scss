@@ -1,0 +1,9 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+.l-footer {
+    padding-bottom: 32px;
+    &__contents {
+        @include wrapper();
+    }
+}

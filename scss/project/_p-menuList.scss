@@ -1,3 +1,4 @@
+@use "../foundation/base" as *;
 @use "../foundation/mixin" as *;
 
 .p-menuList {
@@ -10,7 +11,31 @@
     }
     &--header &__item {
         height: 100%;
-        font-size: 1rem;
+    }
+    &--header &__item a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    // フッター
+    &--footer {
+        justify-content: space-between;
+        @include setBrakePoint(sp) {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+    &--footer &__item {
+        flex-grow: 1;
+        text-align: center;
+        border-left: solid 1px $fontColorBlack;
+        &:first-child {
+            border-left: initial;
+        }
+        @include setBrakePoint(sp) {
+            border: initial;
+        }
     }
 
     // 投稿一覧メニュー

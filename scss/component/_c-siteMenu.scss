@@ -7,9 +7,4 @@
         @include hoverAction();
         color: $baseColor;
     }
-    & a {
-        display: flex;
-        align-items: center;
-        height: 100%;
-    }
 }
