@@ -20,6 +20,9 @@ $brakePoints: (
     transition: all 0.2s 0s ease-in-out;
     opacity: 0.875;
     cursor: pointer;
+}
+
+@mixin hoverActionImg {
     img {
         transform: scale(1.05);
         transition: all 0.2s 0s ease-in-out;

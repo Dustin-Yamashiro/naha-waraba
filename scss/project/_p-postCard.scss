@@ -11,6 +11,7 @@
         }
         &:hover {
             @include hoverAction();
+            @include hoverActionImg();
         }
     }
     &--slider &__contents {
@@ -46,6 +47,7 @@
         }
         &:hover {
             @include hoverAction();
+            @include hoverActionImg();
             box-shadow: 0px 5px 15px 0px rgba($fontColorBlack, 0.2);
         }
     }
@@ -114,6 +116,7 @@
         }
         &:hover {
             @include hoverAction();
+            @include hoverActionImg();
         }
     }
     &--sidebar &__contents {
