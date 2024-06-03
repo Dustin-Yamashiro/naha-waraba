@@ -36,11 +36,13 @@
         height: min(380px, 33vw);
         @include setBrakePoint(tb) {
             width: 44vw;
-            height: max(356px, 44vw);
+            height: 44vw;
+            min-height: 352px;
         }
         @include setBrakePoint(sp) {
             width: 92vw;
-            height: max(352px, 88vw);
+            height: 90vw;
+            min-height: 344px;
         }
         &:hover {
             @include hoverAction();
