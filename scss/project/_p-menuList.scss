@@ -17,20 +17,23 @@
     &--footer {
         justify-content: space-between;
         @include setBrakePoint(sp) {
-            flex-direction: column;
-            gap: 20px;
+            flex-wrap: wrap;
+            row-gap: 12px;
         }
     }
     &--footer &__item {
         flex-grow: 1;
         text-align: center;
         border-left: solid 1px $fontColorBlack;
-        &:first-child {
+        &:nth-child(1) {
             border-left: initial;
         }
         @include setBrakePoint(sp) {
-            border: initial;
+            &:nth-child(3) {
+                border-left: initial;
+            }
         }
+
     }
 
     // 投稿一覧メニュー

@@ -7,13 +7,14 @@
     align-items: center;
     gap: 32px;
     @include setBrakePoint(sp) {
-        gap: 40px;
+        gap: 24px;
     }
     &__menu {
-        width: min(540px, 92vw);
+        width: min(540px, 96vw);
         font-size: clamp(0.75rem, 0.663rem + 0.32vw, 0.9rem);
         @include setBrakePoint(sp) {
-            font-size: clamp(0.7rem, 0.433rem + 1.33vw, 0.8rem);
+            width: min(240px, 64vw);
+            font-size: clamp(0.65rem, 0.383rem + 1.33vw, 0.75rem);
         }
     }
     &__copyright {
