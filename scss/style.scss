@@ -1,33 +1,29 @@
+// リセットCSS
 @use "foundation/reset";
-@use "foundation/base";
 
-// サイト全体関連
-@use "project/p-header";
-@use "project/p-footer";
-
-// 記事一覧関連
-@use "project/p-postList";
-@use "project/p-postCard";
-@use "project/p-pagination";
-
-// サイドバー関連
-@use "project/p-profile";
-
-// レイアウト関連
+// レイアウト
 @use "layout/l-header";
 @use "layout/l-footer";
+@use "layout/l-slider";
 @use "layout/l-contents";
 @use "layout/l-main";
 @use "layout/l-sidebar";
-@use "utility/u-margin";
 
-// その他
+// プロジェクト
+@use "project/p-header";
+@use "project/p-footer";
+@use "project/p-postList";
+@use "project/p-postCard";
+@use "project/p-pagination";
+@use "project/p-profile";
 @use "project/p-menuList";
 @use "project/p-snsIconList";
 @use "project/p-tagList";
+
+// コンポーネント
 @use "component/c-siteMenu";
 @use "component/c-postMenu";
-@use "component/c-sidebarItem";
+@use "component/c-sidebarTitle";
 @use "component/c-icon";
 @use "component/c-img";
 @use "component/c-desc";
@@ -35,3 +31,6 @@
 @use "component/c-button";
 @use "component/c-thumbnail";
 @use "component/c-badge";
+
+// ユーティリティ
+@use "utility/u-margin";

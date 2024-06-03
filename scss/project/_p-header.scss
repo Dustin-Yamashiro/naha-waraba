@@ -11,6 +11,7 @@
         padding-top: 12px;
         &:hover {
             @include hoverAction();
+            @include hoverActionImg();
         }
     }
     &__menu {
@@ -26,6 +27,7 @@
         @include setBrakePoint(tb) {
             display: flex;
             justify-content: space-between;
+            margin: 0 8px;
         }
     }
 }

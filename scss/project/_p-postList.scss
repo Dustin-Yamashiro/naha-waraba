@@ -4,7 +4,6 @@
     display: flex;
     &--slider {
         justify-content: space-between;
-        @include wrapper();
         @include setBrakePoint(tb) {
             & li:last-child {
                 display: none;

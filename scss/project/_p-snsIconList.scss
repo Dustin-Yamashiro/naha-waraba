@@ -5,6 +5,7 @@
     justify-content: space-around;
     width: 55%;
     @include setBrakePoint(tb) {
-        width: max(160px, 50%);
+        width: 45%;
+        min-width: 160px;
     }
 }
