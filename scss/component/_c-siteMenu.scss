@@ -3,8 +3,34 @@
 
 .c-siteMenu {
     color: $fontColorBlack;
-    &:hover {
-        @include hoverAction();
-        color: $baseColor;
+    &--hoverUnderLine {
+        & a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            position: relative;
+        }
+        & a::after {
+            position: absolute;
+            content: '';
+            background: $baseColor;
+            left: 0;
+            bottom: -1px;
+            width: 100%;
+            height: 2px;
+            transform: scale(0, 1);
+            transform-origin: right top;
+            transition: transform 0.3s;
+        }
+        & a:hover::after {
+            transform: scale(1, 1);
+            transform-origin: left top;
+        }
+    }
+    &--hoverChangeColor {
+        &:hover {
+            @include hoverAction();
+            color: $baseColor;
+        }
     }
 }
