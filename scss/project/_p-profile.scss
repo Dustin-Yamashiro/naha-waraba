@@ -31,7 +31,7 @@
         flex-direction: column;
         gap: 20px;
         font-size: clamp(0.68rem, -0.048rem + 1.21vw, 0.9rem);
-        line-height: 1.4em;
+        line-height: 1.5em;
         @include setBrakePoint(tb) {
             font-size: clamp(0.75rem, 0.665rem + 0.31vw, 0.85rem);
         }
