@@ -31,4 +31,11 @@
             color: $baseColor;
         }
     }
+    &--hoverBkColGray {
+        &:hover {
+            @include hoverAction();
+            opacity: 1;
+            background-color: #e8e8e8;
+        }
+    }
 }
