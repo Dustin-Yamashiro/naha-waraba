@@ -4,13 +4,11 @@
 .c-siteMenu {
     color: $fontColorBlack;
     &--hoverUnderLine {
-        & a {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            position: relative;
-        }
-        & a::after {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        &::after{
             position: absolute;
             content: '';
             background: $baseColor;
@@ -22,12 +20,12 @@
             transform-origin: right top;
             transition: transform 0.3s;
         }
-        & a:hover::after {
+        &:hover::after {
             transform: scale(1, 1);
             transform-origin: left top;
         }
     }
-    &--hoverChangeColor {
+    &--hoverColBase {
         &:hover {
             @include hoverAction();
             color: $baseColor;
