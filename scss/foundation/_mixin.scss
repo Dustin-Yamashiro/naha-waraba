@@ -19,7 +19,6 @@ $brakePoints: (
 @mixin hoverAction() {
     transition: all 0.2s 0s ease-in-out;
     opacity: 0.875;
-    cursor: pointer;
 }
 
 @mixin hoverActionImg {
