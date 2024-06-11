@@ -2,16 +2,16 @@
 
 .u-mt {
     &--slider {
-        margin-top: min(40px, 4.25vw);
+        margin-top: min(28px, 3.75vw);
     }
     &--contents {
-        margin-top: min(40px, 4.25vw);
+        margin-top: min(28px, 3.75vw);
     }
     &--postMenu {
-        margin-top: min(32px, 4.75vw);
+        margin-top: min(28px, 4.75vw);
     }
     &--postList {
-        margin-top: min(32px, 4.75vw);
+        margin-top: min(28px, 4.25vw);
     }
     &--pagination {
         margin-top: min(44px, 10vw);
@@ -23,7 +23,15 @@
         }
     }
     &--sidebarItem {
-        margin-top: 32px;
+        &-S {
+            margin-top: 24px;
+        }
+        &-M {
+            margin-top: 28px;
+        }
+        &-L {
+            margin-top: 32px;
+        }
     }
     &--footer {
         margin-top: min(200px, 16vw);
