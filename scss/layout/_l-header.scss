@@ -3,6 +3,10 @@
 
 .l-header {
     box-shadow: 0 1px 4px rgba($fontColorBlack, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: $mainColor;
     &__contents {
         @include wrapper();
     }

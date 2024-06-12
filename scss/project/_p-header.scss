@@ -6,8 +6,8 @@
     justify-content: space-between;
     align-items: center;
     &__logo {
-        width: min(190px, 36vw);
-        height: min(90px, 18vw);
+        width: min(160px, 33vw);
+        height: min(80px, 17vw);
         padding-top: 12px;
         &:hover {
             @include hoverAction();
@@ -16,7 +16,7 @@
     }
     &__menu {
         width: min(600px, 56vw);
-        height: min(90px, 17vw);
+        height: min(80px, 17vw);
         font-size: clamp(0.938rem, 0.688rem + 0.42vw, 1rem);
         @include setBrakePoint(tb) {
             display: none;
