@@ -7,12 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>パラログ | 沖縄のパーラー巡り専門ブログ</title>
 </head>
 <body>
     <header class="l-header">
         <div class="l-header__contents p-header">
-            <img src="./img/search-icon.png" alt="検索" class="p-header__icon c-icon c-icon--search">
+            <button class="p-header__icon c-icon c-icon--search"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #333333;"></i></button>
             <a href="./" class="p-header__logo"><img src="./img/site-logo.png" alt="パラログ ロゴ" class="c-img"></a>
             <nav class="p-header__menu">
                 <ul class="p-menuList p-menuList--header">
@@ -61,10 +62,14 @@
                     </li>
                     <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#">人気記事ランキング</a></li>
                     <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#">パーラー名鑑</a></li>
-                    <li class="p-menuList__item"><a href="#"><img src="./img/search-icon.png" alt="検索" class="c-icon c-icon--search"></a></li>
+                    <li class="p-menuList__item">
+                        <button class="c-icon c-icon--search">
+                            <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #333333;"></i>
+                        </button>
+                    </li>
                 </ul>
             </nav>
-            <img src="./img/burger-icon.png" alt="ハンバーガメニュー" class="p-header__icon c-icon c-icon--burger">
+            <button class="p-header__icon c-icon c-icon--burger"><i class="fa-solid fa-bars fa-xl" style="color: #333333;"></i></button>
         </div>
     </header>
     <article class="l-slider u-mt--slider">
@@ -470,5 +475,6 @@
             <span class="p-footer__copyright">© 2024 パラログ</span>
         </div>
     </footer>
+    <script src="./js/index.js"></script>
 </body>
 </html>
