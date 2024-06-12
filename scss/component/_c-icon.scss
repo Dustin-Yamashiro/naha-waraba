@@ -3,6 +3,10 @@
 .c-icon {
     &--search, &--burger {
         width: min(26px, 6vw);
+        &:hover {
+            @include hoverAction();
+            opacity: 0.7;
+        }
     }
     &--sns {
         width: 32px;
