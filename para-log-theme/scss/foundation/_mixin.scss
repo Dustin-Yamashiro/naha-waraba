@@ -1,0 +1,29 @@
+@use "./base" as *;
+
+$brakePoints: (
+    sp: 440px,
+    tb: 960px,
+    pc: 1200px,
+);
+@mixin setBrakePoint($type) {
+    @media (max-width: #{map-get($brakePoints, $type)}) {
+        @content;
+    }
+}
+
+@mixin wrapper() {
+    width: min(1200px, 96vw);
+    margin: 0 auto;
+}
+
+@mixin hoverAction() {
+    transition: all 0.2s 0s ease-in-out;
+    opacity: 0.875;
+}
+
+@mixin hoverActionImg {
+    img {
+        transform: scale(1.05);
+        transition: all 0.2s 0s ease-in-out;
+    }
+}

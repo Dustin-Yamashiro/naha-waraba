@@ -1,0 +1,11 @@
+@use "../foundation/mixin" as *;
+
+.l-contents {
+    @include wrapper();
+    display: flex;
+    justify-content: space-between;
+    @include setBrakePoint(tb) {
+        flex-direction: column;
+        justify-content: normal;
+    }
+}
