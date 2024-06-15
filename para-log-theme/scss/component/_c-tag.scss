@@ -10,7 +10,7 @@
         border-radius: 4px;
         border: 1px solid $accentColor;
         &::before {
-            background-image: url(../../img/tag.png);
+            background-image: url("./img/tag.png");
             background-size: contain;
             content: "";
             width: 16px;
