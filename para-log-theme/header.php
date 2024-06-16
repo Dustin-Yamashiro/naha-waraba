@@ -21,7 +21,7 @@
             <nav class="p-header__menu">
                 <ul class="p-menuList p-menuList--header">
                     <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#">パーラーとは？</a></li>
-                    <li class="p-menuList__item p-menuList__subMenu c-siteMenu c-siteMenu--hoverUnderLine">
+                    <li class="p-menuList__item p-menuList__item--withSubMenu c-siteMenu c-siteMenu--hoverUnderLine">
                         エリア別検索
                         <ul class="p-menuList p-menuList--subMenu">
                             <?php
@@ -35,7 +35,7 @@
                                 );
                             ?>
                             <?php foreach ( $parent_categories as $parent_category ) : ?>
-                                <li class="p-menuList__item p-menuList__secondSubMenu c-siteMenu c-siteMenu--hoverBkColGray">
+                                <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray">
                                     <a href="<?= get_category_link( $parent_category->term_id ); ?>"><?= $parent_category->name; ?></a>
                                     <ul class="p-menuList p-menuList--subMenu">
                                         <?php
