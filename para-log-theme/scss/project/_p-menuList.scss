@@ -45,6 +45,8 @@
         width: 100%;
         text-align: center;
         border-top: solid 1px rgba($fontColorBlack, 0.1);
+        display: flex;
+        justify-content: center;
     }
     &--subMenu &__secondSubMenu {
         position: relative;
