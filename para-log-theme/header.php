@@ -21,46 +21,40 @@
             <nav class="p-header__menu">
                 <ul class="p-menuList p-menuList--header">
                     <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#">パーラーとは？</a></li>
-                    <li class="p-menuList__item p-menuList__subMenu c-siteMenu c-siteMenu--hoverUnderLine"><a href="#">エリア別検索</a>
+                    <li class="p-menuList__item p-menuList__subMenu c-siteMenu c-siteMenu--hoverUnderLine">
+                        エリア別検索
                         <ul class="p-menuList p-menuList--subMenu">
-                            <li class="p-menuList__item p-menuList__secondSubMenu c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">本島北部</a>
-                                <ul class="p-menuList p-menuList--subMenu">
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">名護市</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">本部町</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">金武町</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">恩納村</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">宜野座村</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">今帰仁村</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">大宜味村</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">東村</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">国頭村</a></li>
-                                </ul>
-                            </li>
-                            <li class="p-menuList__item p-menuList__secondSubMenu c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">本島中部</a>
-                                <ul class="p-menuList p-menuList--subMenu">
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">宜野湾市</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">沖縄市</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">うるま市</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">北谷町</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">嘉手納町</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">読谷村</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">中城村</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">北中城村</a></li>
-                                </ul>
-                            </li>
-                            <li class="p-menuList__item p-menuList__secondSubMenu c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">本島南部</a>
-                                <ul class="p-menuList p-menuList--subMenu">
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">那覇市</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">浦添市</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">豊見城市</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">糸満市</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">南城市</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">南風原町</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">与那原町</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">西原町</a></li>
-                                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray"><a href="#">八重瀬町</a></li>
-                                </ul>
-                            </li>
+                            <?php
+                                $area_category_id = get_categories( array( 'search' => 'area' ) )[0]->term_id;
+                                $parent_categories = get_categories(
+                                    array(
+                                        'hide_empty' => '0',
+                                        'parent' => $area_category_id,
+                                        'orderby' => 'id'
+                                    )
+                                );
+                            ?>
+                            <?php foreach ( $parent_categories as $parent_category ) : ?>
+                                <li class="p-menuList__item p-menuList__secondSubMenu c-siteMenu c-siteMenu--hoverBkColGray">
+                                    <a href="<?php echo get_category_link( $parent_category->term_id ); ?>"><?php echo $parent_category->name; ?></a>
+                                    <ul class="p-menuList p-menuList--subMenu">
+                                        <?php
+                                            $child_categories = get_categories(
+                                                array(
+                                                    'hide_empty' => '0',
+                                                    'child_of' => $parent_category->term_id,
+                                                    'orderby' => 'id'
+                                                )
+                                            );
+                                        ?>
+                                        <?php foreach ($child_categories as $child_category) : ?>
+                                            <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray">
+                                                <a href="<?php echo get_category_link( $child_category->term_id ); ?>"><?php echo $child_category->name; ?></a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                     </li>
                     <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#">人気記事ランキング</a></li>
