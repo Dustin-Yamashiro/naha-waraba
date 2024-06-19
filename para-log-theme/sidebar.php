@@ -37,137 +37,74 @@
     <article class="l-sidebar__item">
         <h2 class="c-sidebarTitle">人気記事ランキング</h2>
         <ul class="p-postList p-postList--sidebar u-mt--sidebarItem-L">
-            <li class="p-postCard p-postCard--sidebar">
-                <article>
-                    <a href="#" class="p-postCard__contents">
-                        <figure class="p-postCard__thumbnail c-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/post-card-main/post1.png" alt="投稿１" class="c-img">
-                            <span class="p-postCard__badge c-badge c-badge--firstPlace">1</span>
-                        </figure>
-                        <section class="p-postCard__desc c-desc">
-                            <h2 class="c-desc--bold">あの有名人も学生時代に通っていた！？ 大人気老舗パーラーに行ってみた！【パーラー どんちゃん】</h2>
-                        </section>
-                    </a>
-                </article>
-            </li>
-            <li class="p-postCard p-postCard--sidebar">
-                <article>
-                    <a href="#" class="p-postCard__contents">
-                        <figure class="p-postCard__thumbnail c-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/post-card-main/post1.png" alt="投稿１" class="c-img">
-                            <span class="p-postCard__badge c-badge c-badge--secondPlace">2</span>
-                        </figure>
-                        <section class="p-postCard__desc c-desc">
-                            <h2 class="c-desc--bold">あの有名人も学生時代に通っていた！！？ 大人気老舗パーラーに行ってみた！！【パーラー どんちゃん】</h2>
-                        </section>
-                    </a>
-                </article>
-            </li>
-            <li class="p-postCard p-postCard--sidebar">
-                <article>
-                    <a href="#" class="p-postCard__contents">
-                        <figure class="p-postCard__thumbnail c-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/post-card-main/post1.png" alt="投稿１" class="c-img">
-                            <span class="p-postCard__badge c-badge c-badge--thirdPlace">3</span>
-                        </figure>
-                        <section class="p-postCard__desc c-desc">
-                            <h2 class="c-desc--bold">あの有名人も学生時代に通っていた！！？ 大人気老舗パーラーに行ってみた！！【パーラー どんちゃん】</h2>
-                        </section>
-                    </a>
-                </article>
-            </li>
-            <li class="p-postCard p-postCard--sidebar">
-                <article>
-                    <a href="#" class="p-postCard__contents">
-                        <figure class="p-postCard__thumbnail c-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/post-card-main/post1.png" alt="投稿１" class="c-img">
-                            <span class="p-postCard__badge c-badge c-badge--otherPlace">4</span>
-                        </figure>
-                        <section class="p-postCard__desc c-desc">
-                            <h2 class="c-desc--bold">あの有名人も学生時代に通っていた！！？ 大人気老舗パーラーに行ってみた！！【パーラー どんちゃん】</h2>
-                        </section>
-                    </a>
-                </article>
-            </li>
-            <li class="p-postCard p-postCard--sidebar">
-                <article>
-                    <a href="#" class="p-postCard__contents">
-                        <figure class="p-postCard__thumbnail c-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/post-card-main/post1.png" alt="投稿１" class="c-img">
-                            <span class="p-postCard__badge c-badge c-badge--otherPlace">5</span>
-                        </figure>
-                        <section class="p-postCard__desc c-desc">
-                            <h2 class="c-desc--bold">あの有名人も学生時代に通っていた！！？ 大人気老舗パーラーに行ってみた！！【パーラー どんちゃん】</h2>
-                        </section>
-                    </a>
-                </article>
-            </li>
+            <?php
+                $sidebar_posts = new WP_Query(
+                    array(
+                        'meta_key' => 'post_view_count',
+                        'orderby' => 'meta_value_num',
+                        'order' => 'DESC',
+                        'posts_per_page' => 5
+                    )
+                );
+            ?>
+            <?php if ( $sidebar_posts->have_posts() ) : ?>
+                <?php while ( $sidebar_posts->have_posts() ) : ?>
+                    <?php $sidebar_posts->the_post(); ?>
+                    <li class="p-postCard p-postCard--sidebar">
+                        <article>
+                            <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
+                                <figure class="p-postCard__thumbnail c-thumbnail">
+                                    <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
+                                    <?php
+                                        $rankNumber++;
+                                        switch ( $rankNumber ) {
+                                            case 1 :
+                                                $badgeClass = 'firstPlace';
+                                                break;
+                                            case 2 :
+                                                $badgeClass = 'secondPlace';
+                                                break;
+                                            case 3 :
+                                                $badgeClass = 'thirdPlace';
+                                                break;
+                                            case 4 :
+                                            case 5 :
+                                                $badgeClass = 'otherPlace';
+                                                break;
+                                        }
+                                    ?>
+                                    <span class="p-postCard__badge c-badge <?= "c-badge--$badgeClass" ?>"><?= $rankNumber ?></span>
+                                </figure>
+                                <section class="p-postCard__desc c-desc">
+                                    <h3><?php the_title(); ?></h3>
+                                </section>
+                            </a>
+                        </article>
+                    </li>
+                <?php endwhile; ?>
+                <?php wp_reset_query(); ?>
+            <?php endif; ?>
         </ul>
     </article>
     <article class="l-sidebar__item">
         <h2 class="c-sidebarTitle">タグ一覧</h2>
         <div class="u-mt--sidebarItem-M">
             <ul class="p-tagList">
-                <li class="c-tag">
-                    <a href="#" class="c-tag--contents">
-                        <span class="c-tag--text">駐車場有り</span>
-                    </a>
-                </li>
-                <li class="c-tag">
-                    <a href="#" class="c-tag--contents">
-                        <span class="c-tag--text">お酒有り</span>
-                    </a>
-                </li>
-                <li class="c-tag">
-                    <a href="#" class="c-tag--contents">
-                        <span class="c-tag--text">定食屋</span>
-                    </a>
-                </li>
-                <li class="c-tag">
-                    <a href="#" class="c-tag--contents">
-                        <span class="c-tag--text">800円以下</span>
-                    </a>
-                </li>
-                <li class="c-tag">
-                    <a href="#" class="c-tag--contents">
-                        <span class="c-tag--text">お持ち帰り可能</span>
-                    </a>
-                </li>
-                <li class="c-tag">
-                    <a href="#" class="c-tag--contents">
-                        <span class="c-tag--text">夜営業有り</span>
-                    </a>
-                </li>
-                <li class="c-tag">
-                    <a href="#" class="c-tag--contents">
-                        <span class="c-tag--text">予約可能</span>
-                    </a>
-                </li>
-                <li class="c-tag">
-                    <a href="#" class="c-tag--contents">
-                        <span class="c-tag--text">団体可能</span>
-                    </a>
-                </li>
-                <li class="c-tag">
-                    <a href="#" class="c-tag--contents">
-                        <span class="c-tag--text">そば以外メニュー有り</span>
-                    </a>
-                </li>
-                <li class="c-tag">
-                    <a href="#" class="c-tag--contents">
-                        <span class="c-tag--text">年中無休</span>
-                    </a>
-                </li>
-                <li class="c-tag">
-                    <a href="#" class="c-tag--contents">
-                        <span class="c-tag--text">子供メニュー有り</span>
-                    </a>
-                </li>
-                <li class="c-tag">
-                    <a href="#" class="c-tag--contents">
-                        <span class="c-tag--text">子供席有り</span>
-                    </a>
-                </li>
+                <?php
+                $allTags = get_tags(
+                    array(
+                        'hide_empty' => 0,
+                        'orderby' => 'id'
+                    )
+                );
+                ?>
+                <?php foreach ( $allTags as $tag ) : ?>
+                    <li class="c-tag">
+                        <a href="<?= get_tag_link( $tag->term_id ); ?>" class="c-tag--contents">
+                            <span class="c-tag--text"><?= $tag->name; ?></span>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </article>
