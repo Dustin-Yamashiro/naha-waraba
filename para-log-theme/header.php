@@ -25,31 +25,31 @@
                         <span class="c-siteMenu__text">エリア別検索</span>
                         <ul class="p-menuList p-menuList--subMenu">
                             <?php
-                                $area_category_id = get_categories( array( 'search' => 'area' ) )[0]->term_id;
-                                $parent_categories = get_categories(
+                                $top_category_id = get_categories( array( 'search' => 'area' ) )[0]->term_id;
+                                $area_categories = get_categories(
                                     array(
                                         'hide_empty' => '0',
-                                        'parent' => $area_category_id,
+                                        'parent' => $top_category_id,
                                         'orderby' => 'id'
                                     )
                                 );
                             ?>
-                            <?php foreach ( $parent_categories as $parent_category ) : ?>
+                            <?php foreach ( $area_categories as $area_category ) : ?>
                                 <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray">
-                                    <a href="<?= get_category_link( $parent_category->term_id ); ?>" class="c-siteMenu__text"><?= $parent_category->name; ?></a>
+                                    <a href="<?= get_category_link( $area_category->term_id ); ?>" class="c-siteMenu__text"><?= $area_category->name; ?></a>
                                     <ul class="p-menuList p-menuList--subMenu">
                                         <?php
-                                            $child_categories = get_categories(
+                                            $municipality_categories = get_categories(
                                                 array(
                                                     'hide_empty' => '0',
-                                                    'child_of' => $parent_category->term_id,
+                                                    'child_of' => $area_category->term_id,
                                                     'orderby' => 'id'
                                                 )
                                             );
                                         ?>
-                                        <?php foreach ($child_categories as $child_category) : ?>
+                                        <?php foreach ( $municipality_categories as $municipality_category ) : ?>
                                             <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray">
-                                                <a href="<?= get_category_link( $child_category->term_id ); ?>" class="c-siteMenu__text"><?= $child_category->name; ?></a>
+                                                <a href="<?= get_category_link( $municipality_category->term_id ); ?>" class="c-siteMenu__text"><?= $municipality_category->name; ?></a>
                                             </li>
                                         <?php endforeach; ?>
                                     </ul>
