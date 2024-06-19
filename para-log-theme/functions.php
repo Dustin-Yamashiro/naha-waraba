@@ -1,4 +1,36 @@
 <?php
+
+/* 定数 */
+const AREA_CATEGORY_SLUG_LIST = [
+    'northern',
+    'central',
+    'southern'
+];
+
+
+/* 自作関数 */
+
+// 投稿の市町村のカテゴリー名を取得
+function get_post_municipality_name( $post_categories )
+{
+    // 地域カテゴリーのID群を取得
+    $area_category_ids = [];
+    foreach ( AREA_CATEGORY_SLUG_LIST as $slug ) {
+        $area_category_ids[$slug] = get_category_by_slug( $slug )->term_id;
+    }
+
+    // 地域カテゴリーを親にもつ市町村カテゴリーを特定、返還
+    foreach ( $post_categories as $category ) {
+        $parent_category_id = $category->parent;
+        if (in_array( $parent_category_id, $area_category_ids )) {
+            return $category->name;
+        }
+    }
+
+    return 'none';
+}
+
+
 /* フック関数 */
 
 // サムネイル
