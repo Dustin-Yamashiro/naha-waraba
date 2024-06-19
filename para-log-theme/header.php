@@ -20,9 +20,9 @@
             <a href="<?= home_url(); ?>" class="p-header__logo"><img src="<?= get_template_directory_uri(); ?>/img/site-logo.png" alt="パラログ ロゴ" class="c-img"></a>
             <nav class="p-header__menu">
                 <ul class="p-menuList p-menuList--header">
-                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#">パーラーとは？</a></li>
+                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#" class="c-siteMenu__text">パーラーとは？</a></li>
                     <li class="p-menuList__item p-menuList__item--withSubMenu c-siteMenu c-siteMenu--hoverUnderLine">
-                        エリア別検索
+                        <span class="c-siteMenu__text">エリア別検索</span>
                         <ul class="p-menuList p-menuList--subMenu">
                             <?php
                                 $area_category_id = get_categories( array( 'search' => 'area' ) )[0]->term_id;
@@ -36,7 +36,7 @@
                             ?>
                             <?php foreach ( $parent_categories as $parent_category ) : ?>
                                 <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray">
-                                    <a href="<?= get_category_link( $parent_category->term_id ); ?>"><?= $parent_category->name; ?></a>
+                                    <a href="<?= get_category_link( $parent_category->term_id ); ?>" class="c-siteMenu__text"><?= $parent_category->name; ?></a>
                                     <ul class="p-menuList p-menuList--subMenu">
                                         <?php
                                             $child_categories = get_categories(
@@ -49,7 +49,7 @@
                                         ?>
                                         <?php foreach ($child_categories as $child_category) : ?>
                                             <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray">
-                                                <a href="<?= get_category_link( $child_category->term_id ); ?>"><?= $child_category->name; ?></a>
+                                                <a href="<?= get_category_link( $child_category->term_id ); ?>" class="c-siteMenu__text"><?= $child_category->name; ?></a>
                                             </li>
                                         <?php endforeach; ?>
                                     </ul>
@@ -57,10 +57,10 @@
                             <?php endforeach; ?>
                         </ul>
                     </li>
-                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#">人気記事ランキング</a></li>
-                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#">パーラー名鑑</a></li>
-                    <li class="p-menuList__item">
-                        <button class="c-icon c-icon--search">
+                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#" class="c-siteMenu__text">人気記事ランキング</a></li>
+                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#" class="c-siteMenu__text">パーラー名鑑</a></li>
+                    <li class="p-menuList__item c-siteMenu">
+                        <button class="c-siteMenu__text c-icon c-icon--search">
                             <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #333333;"></i>
                         </button>
                     </li>
