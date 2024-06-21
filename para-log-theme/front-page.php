@@ -65,9 +65,12 @@
                 </ul>
             </article>
             <section class="p-pagination u-mt--pagination">
-                <a class="p-pagination__button c-button c-button--accentColor">前へ</a>
-                <span class="p-pagination__text">1 / 10</span>
-                <a class="p-pagination__button c-button c-button--baseColor">次へ</a>
+                <?php previous_posts_link( '前へ' ); ?>
+                <span class="p-pagination__text">
+                    <?php $page_number = get_query_var( 'paged' ); ?>
+                    <?= empty( $page_number ) ? '1' : $page_number; ?> / <?= $wp_query->max_num_pages; ?>
+                </span>
+                <?php next_posts_link( '次へ' ); ?>
             </section>
         </main>
         <?php get_sidebar(); ?>

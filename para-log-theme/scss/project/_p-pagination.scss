@@ -1,13 +1,23 @@
 @use "../foundation/base" as *;
 
 .p-pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: clamp(1rem, 0.855rem + 0.53vw, 1.25rem);
-    gap: 40px;
+    width: 272px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
     &__button {
         padding: 0.45em 1.15em;
+        &--previous {
+            position: absolute;
+            left: 0;
+            top: -9px;
+        }
+        &--next {
+            position: absolute;
+            right: 0;
+            top: -9px;
+        }
     }
     &__text {
         color: rgba($fontColorBlack, 0.4);
