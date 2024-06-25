@@ -1,0 +1,11 @@
+@use "../foundation/mixin" as *;
+
+.p-snsIconList {
+    display: flex;
+    justify-content: space-around;
+    width: 55%;
+    @include setBrakePoint(tb) {
+        width: 45%;
+        min-width: 160px;
+    }
+}

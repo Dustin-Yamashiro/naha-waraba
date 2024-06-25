@@ -1,0 +1,29 @@
+version: "3.6"
+
+services:
+  wp:
+    image: wordpress:latest
+    volumes:
+      - ./para-log-theme:/var/www/html/wp-content/themes/para-log-theme
+    environment:
+      - WORDPRESS_DB_NAME=wp-db
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_USER=user
+      - WORDPRESS_DB_PASSWORD=pass
+    depends_on:
+      - db
+    restart: always
+    ports:
+      - 8080:80
+
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass
+      - MYSQL_DATABASE=wp-db
+    restart: always
+
+volumes:
+  db:
