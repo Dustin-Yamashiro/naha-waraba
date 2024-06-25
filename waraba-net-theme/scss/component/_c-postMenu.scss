@@ -11,7 +11,7 @@
     &:hover {
         @include hoverAction();
         opacity: 1;
-        background-color: $baseColor;
+        background-color: $mainColor;
         color: $fontColorWhite;
     }
 }
