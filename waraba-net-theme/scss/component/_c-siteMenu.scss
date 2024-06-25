@@ -16,7 +16,7 @@
         &::after{
             position: absolute;
             content: '';
-            background: $baseColor;
+            background: $mainColor;
             left: 0;
             bottom: -1px;
             width: 100%;
@@ -33,7 +33,7 @@
     &--hoverColBase {
         &:hover {
             @include hoverAction();
-            color: $baseColor;
+            color: $mainColor;
         }
     }
     &--hoverBkColGray {

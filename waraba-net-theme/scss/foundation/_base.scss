@@ -1,11 +1,11 @@
-$mainColor: #FFFFFD;
-$baseColor: #FFC700;
-$accentColor: #704C2B;
+$baseColor: #FFFDFD;
+$mainColor: #EF3939;
+$accentColor: #03703B;
 $fontColorBlack: #333333;
 $fontColorWhite: #ffffff;
 
 body {
-    background-color: $mainColor;
+    background-color: $baseColor;
     color: $fontColorBlack;
     font-weight: normal;
     font-family: "Zen Maru Gothic", serif;

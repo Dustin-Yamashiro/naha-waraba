@@ -25,7 +25,7 @@
         }
         &:hover {
             @include hoverAction();
-            color: $baseColor;
+            color: $mainColor;
         }
     }
 }
