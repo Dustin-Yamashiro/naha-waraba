@@ -18,10 +18,8 @@
         }
     }
     &__menu {
-        width: min(700px, 62vw);
+        width: min(580px, 58vw);
         height: 90px;
-        font-size: 0.95rem;
-        letter-spacing: 1.25px;
         @include setBrakePoint(tb) {
             display: none;
         }
