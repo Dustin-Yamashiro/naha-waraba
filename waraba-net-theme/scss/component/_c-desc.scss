@@ -8,7 +8,7 @@
         font-weight: bold;
     }
     &--colorLight {
-        color: rgba($fontColorBlack, 0.4);
+        color: rgba($fontColorBlack, 0.6);
     }
     &--newLine {
         @include setBrakePoint(tb) {

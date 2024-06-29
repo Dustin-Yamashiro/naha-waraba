@@ -1,37 +1,44 @@
 <?php get_header(); ?>
-<article class="l-slider u-mt--slider">
-    <ul class="p-postList p-postList--slider">
-        <?php
-            $slider_posts = new WP_Query(
-                array(
-                    'posts_per_page' => 4,
-                    'orderby' => 'rand'
-                )
-            );
-        ?>
-        <?php if ( $slider_posts->have_posts() ) : ?>
-            <?php while ( $slider_posts->have_posts() ) : ?>
-                <?php $slider_posts->the_post(); ?>
-                <li class="p-postCard p-postCard--slider">
-                    <article>
-                        <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
-                            <figure class="p-postCard__thumbnail c-thumbnail">
-                                <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
-                            </figure>
-                            <section class="p-postCard__desc c-desc">
-                                <h2><?php the_title(); ?></h2>
-                            </section>
-                        </a>
-                    </article>
-                </li>
-            <?php endwhile; ?>
-            <?php wp_reset_query(); ?>
-        <?php endif; ?>
-    </ul>
-</article>
-<div class="u-mt--contents">
-    <div class="l-contents">
-        <main class="l-main">
+<div class="l-contents u-mt--contents">
+    <main class="l-main">
+        <article>
+
+            <ul>
+                <?php
+                    $slider_posts = new WP_Query(
+                        array(
+                            'posts_per_page' => 1,
+                            'orderby' => 'rand'
+                        )
+                    );
+                ?>
+                <?php if ( $slider_posts->have_posts() ) : ?>
+                    <?php while ( $slider_posts->have_posts() ) : ?>
+                        <?php $slider_posts->the_post(); ?>
+                        <li class="p-postCard p-postCard--slider">
+                            <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
+                                <figure class="p-postCard__thumbnail c-thumbnail">
+                                    <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
+                                </figure>
+                                <div class="p-postCard__desc">
+                                    <div class="p-postCard__descLeft">
+                                        <div class="p-postCard__subItem">
+                                            <span class="p-postCard__date c-desc c-desc--bold c-desc--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
+                                        </div>
+                                        <h2 class="p-postCard__title c-desc c-desc--bold"><?php the_title(); ?></h2>
+                                    </div>
+                                    <div class="p-postCard__descRight">
+                                        <span class="p-postCard__more c-desc--colorLight">MORE</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    <?php endwhile; ?>
+                    <?php wp_reset_query(); ?>
+                <?php endif; ?>
+            </ul>
+        </article>
+        <article class="u-mt--postList">
             <h1 class="l-main--title">記事一覧</h1>
             <nav class="u-mt--postMenu">
                 <ul class="p-menuList p-menuList--post">
@@ -72,8 +79,8 @@
                 </span>
                 <?php next_posts_link( '次へ' ); ?>
             </section>
-        </main>
-        <?php get_sidebar(); ?>
-    </div>
+        </article>
+    </main>
+    <?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>
