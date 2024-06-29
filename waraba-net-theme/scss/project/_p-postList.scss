@@ -2,14 +2,6 @@
 
 .p-postList {
     display: flex;
-    &--slider {
-        justify-content: space-between;
-        @include setBrakePoint(tb) {
-            & li:last-child {
-                display: none;
-            }
-        }
-    }
     &--main {
         justify-content: center;
         flex-wrap: wrap;
