@@ -1,6 +1,7 @@
 @use "./base" as *;
 
 $brakePoints: (
+    sp-s: 320px,
     sp: 440px,
     tb: 960px,
     pc: 1200px,
@@ -12,18 +13,18 @@ $brakePoints: (
 }
 
 @mixin wrapper() {
-    width: min(1200px, 96vw);
+    width: min(1200px, 94vw);
     margin: 0 auto;
 }
 
 @mixin hoverAction() {
-    transition: all 0.2s 0s ease-in-out;
-    opacity: 0.875;
+    transition: all 0.3s 0s ease-in-out;
 }
 
 @mixin hoverActionImg {
     img {
+        opacity: 0.85;
         transform: scale(1.05);
-        transition: all 0.2s 0s ease-in-out;
+        transition: all 0.3s 0s ease-in-out;
     }
 }
