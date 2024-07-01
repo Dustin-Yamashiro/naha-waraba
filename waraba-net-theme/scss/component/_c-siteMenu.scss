@@ -2,45 +2,37 @@
 @use "../foundation/mixin" as *;
 
 .c-siteMenu {
+    cursor: pointer;
     color: $fontColorBlack;
-    &__text {
-        width: 100%;
-        height: 100%;
+    &:hover {
+        color: $mainColor;
+        transition: all 0.2s;
+        img {
+            transform: translateY(-5px);
+            transition: all 0.4s;
+        }
+    }
+    &__contents {
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
-    }
-    &--hoverUnderLine {
-        position: relative;
-        &::after{
-            position: absolute;
-            content: '';
-            background: $mainColor;
-            left: 0;
-            bottom: -1px;
+        width: 100%;
+        height: 100%;
+        &--withImg {
+            flex-direction: column;
+            gap: 16px;
+        }
+        a {
             width: 100%;
-            height: 2px;
-            transform: scale(0, 1);
-            transform-origin: right top;
-            transition: transform 0.3s;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        &:hover::after {
-            transform: scale(1, 1);
-            transform-origin: left top;
-        }
+
     }
-    &--hoverColBase {
-        &:hover {
-            @include hoverAction();
-            color: $mainColor;
-        }
-    }
-    &--hoverBkColGray {
-        &:hover {
-            @include hoverAction();
-            opacity: 1;
-            background-color: #e8e8e8;
-        }
+    &__img {
+        width: 50%;
+        height: 70%;
     }
 }

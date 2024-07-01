@@ -14,15 +14,21 @@
 </head>
 
 <body>
-    <header class="l-header">
+    <header class="l-header u-mt--header">
         <div class="l-header__contents p-header">
             <button class="p-header__icon c-icon c-icon--search"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #333333;"></i></button>
-            <a href="<?= home_url(); ?>" class="p-header__logo"><img src="<?= get_template_directory_uri(); ?>/img/site-logo.png" alt="パラログ ロゴ" class="c-img"></a>
+            <a href="<?= home_url(); ?>" class="p-header__logo">
+                <img src="<?= get_template_directory_uri(); ?>/img/site-logo.png" alt="わらばーNET ロゴ" class="c-img">
+            </a>
             <nav class="p-header__menu">
                 <ul class="p-menuList p-menuList--header">
-                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#" class="c-siteMenu__text">パーラーとは？</a></li>
-                    <li class="p-menuList__item p-menuList__item--withSubMenu c-siteMenu c-siteMenu--hoverUnderLine">
-                        <span class="c-siteMenu__text">エリア別検索</span>
+                    <li class="p-menuList__item p-menuList__item--withSubMenu c-siteMenu">
+                        <span class="c-siteMenu__contents c-siteMenu__contents--withImg">
+                            <span class="c-siteMenu__img">
+                                <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/area.png" alt="エリア画像" class="c-img">
+                            </span>
+                            エリア別検索
+                        </span>
                         <ul class="p-menuList p-menuList--subMenu">
                             <?php
                                 $top_category_id = get_categories( array( 'search' => 'area' ) )[0]->term_id;
@@ -35,8 +41,10 @@
                                 );
                             ?>
                             <?php foreach ( $area_categories as $area_category ) : ?>
-                                <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray">
-                                    <a href="<?= get_category_link( $area_category->term_id ); ?>" class="c-siteMenu__text"><?= $area_category->name; ?></a>
+                                <li class="p-menuList__item c-siteMenu">
+                                    <span class="c-siteMenu__contents">
+                                        <a href="<?= get_category_link( $area_category->term_id ); ?>"><?= $area_category->name; ?></a>
+                                    </span>
                                     <ul class="p-menuList p-menuList--subMenu">
                                         <?php
                                             $municipality_categories = get_categories(
@@ -48,8 +56,10 @@
                                             );
                                         ?>
                                         <?php foreach ( $municipality_categories as $municipality_category ) : ?>
-                                            <li class="p-menuList__item c-siteMenu c-siteMenu--hoverBkColGray">
-                                                <a href="<?= get_category_link( $municipality_category->term_id ); ?>" class="c-siteMenu__text"><?= $municipality_category->name; ?></a>
+                                            <li class="p-menuList__item c-siteMenu">
+                                                <span class="c-siteMenu__contents">
+                                                    <a href="<?= get_category_link( $municipality_category->term_id ); ?>"><?= $municipality_category->name; ?></a>
+                                                </span>
                                             </li>
                                         <?php endforeach; ?>
                                     </ul>
@@ -57,12 +67,29 @@
                             <?php endforeach; ?>
                         </ul>
                     </li>
-                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#" class="c-siteMenu__text">人気記事ランキング</a></li>
-                    <li class="p-menuList__item c-siteMenu c-siteMenu--hoverUnderLine"><a href="#" class="c-siteMenu__text">パーラー名鑑</a></li>
                     <li class="p-menuList__item c-siteMenu">
-                        <button class="c-siteMenu__text c-icon c-icon--search">
-                            <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #333333;"></i>
-                        </button>
+                        <span class="c-siteMenu__contents c-siteMenu__contents--withImg">
+                            <span class="c-siteMenu__img">
+                                <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/genre.png" alt="ジャンル画像" class="c-img">
+                            </span>
+                            ジャンル別検索
+                        </span>
+                    </li>
+                    <li class="p-menuList__item c-siteMenu">
+                        <a href="#" class="c-siteMenu__contents c-siteMenu__contents--withImg">
+                            <span class="c-siteMenu__img">
+                                <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/ranking.png" alt="ランキング画像" class="c-img">
+                            </span>
+                            人気記事ランキング
+                        </a>
+                    </li>
+                    <li class="p-menuList__item c-siteMenu">
+                        <a href="#" class="c-siteMenu__contents c-siteMenu__contents--withImg">
+                            <span class="c-siteMenu__img">
+                                <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/site-detail.png" alt="サイト詳細画像" class="c-img">
+                            </span>
+                            わらばーNETとは
+                        </a>
                     </li>
                 </ul>
             </nav>
