@@ -8,7 +8,7 @@
         color: $mainColor;
         transition: all 0.2s;
         img {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             transition: all 0.4s;
         }
     }
@@ -20,7 +20,7 @@
         height: 100%;
         &--withImg {
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
         }
         a {
             width: 100%;
@@ -29,10 +29,9 @@
             align-items: center;
             justify-content: center;
         }
-
     }
     &__img {
         width: 50%;
-        height: 70%;
+        height: 64%;
     }
 }

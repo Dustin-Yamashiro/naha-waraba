@@ -27,12 +27,12 @@
                             <span class="c-siteMenu__img">
                                 <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/area.png" alt="エリア画像" class="c-img">
                             </span>
-                            エリア別検索
+                            エリア検索
                         </span>
                         <ul class="p-menuList p-menuList--subMenu">
                             <?php
                                 $top_category_id = get_categories( array( 'search' => 'area' ) )[0]->term_id;
-                                $area_categories = get_categories(
+                                $parent_categories = get_categories(
                                     array(
                                         'hide_empty' => '0',
                                         'parent' => $top_category_id,
@@ -40,25 +40,25 @@
                                     )
                                 );
                             ?>
-                            <?php foreach ( $area_categories as $area_category ) : ?>
+                            <?php foreach ( $parent_categories as $parent_category ) : ?>
                                 <li class="p-menuList__item c-siteMenu">
                                     <span class="c-siteMenu__contents">
-                                        <a href="<?= get_category_link( $area_category->term_id ); ?>"><?= $area_category->name; ?></a>
+                                        <a href="<?= get_category_link( $parent_category->term_id ); ?>"><?= $parent_category->name; ?></a>
                                     </span>
                                     <ul class="p-menuList p-menuList--subMenu">
                                         <?php
-                                            $municipality_categories = get_categories(
+                                            $child_categories = get_categories(
                                                 array(
                                                     'hide_empty' => '0',
-                                                    'child_of' => $area_category->term_id,
+                                                    'parent' => $parent_category->term_id,
                                                     'orderby' => 'id'
                                                 )
                                             );
                                         ?>
-                                        <?php foreach ( $municipality_categories as $municipality_category ) : ?>
+                                        <?php foreach ( $child_categories as $child_category ) : ?>
                                             <li class="p-menuList__item c-siteMenu">
                                                 <span class="c-siteMenu__contents">
-                                                    <a href="<?= get_category_link( $municipality_category->term_id ); ?>"><?= $municipality_category->name; ?></a>
+                                                    <a href="<?= get_category_link( $child_category->term_id ); ?>"><?= $child_category->name; ?></a>
                                                 </span>
                                             </li>
                                         <?php endforeach; ?>
@@ -67,20 +67,75 @@
                             <?php endforeach; ?>
                         </ul>
                     </li>
-                    <li class="p-menuList__item c-siteMenu">
+                    <li class="p-menuList__item p-menuList__item--withSubMenu c-siteMenu">
                         <span class="c-siteMenu__contents c-siteMenu__contents--withImg">
                             <span class="c-siteMenu__img">
                                 <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/genre.png" alt="ジャンル画像" class="c-img">
                             </span>
-                            ジャンル別検索
+                            ジャンル検索
                         </span>
+                        <ul class="p-menuList p-menuList--subMenu">
+                            <?php
+                                $top_category_id = get_categories( array( 'search' => 'genre' ) )[0]->term_id;
+                                $parent_categories = get_categories(
+                                    array(
+                                        'hide_empty' => '0',
+                                        'parent' => $top_category_id,
+                                        'orderby' => 'id'
+                                    )
+                                );
+                            ?>
+                            <?php foreach ( $parent_categories as $parent_category ) : ?>
+                                <li class="p-menuList__item c-siteMenu">
+                                    <span class="c-siteMenu__contents">
+                                        <a href="<?= get_category_link( $parent_category->term_id ); ?>"><?= $parent_category->name; ?></a>
+                                    </span>
+                                    <ul class="p-menuList p-menuList--subMenu">
+                                        <?php
+                                            $child_categories = get_categories(
+                                                array(
+                                                    'hide_empty' => '0',
+                                                    'parent' => $parent_category->term_id,
+                                                    'orderby' => 'id'
+                                                )
+                                            );
+                                        ?>
+                                        <?php foreach ( $child_categories as $child_category ) : ?>
+                                            <li class="p-menuList__item c-siteMenu">
+                                                <span class="c-siteMenu__contents">
+                                                    <a href="<?= get_category_link( $child_category->term_id ); ?>"><?= $child_category->name; ?></a>
+                                                </span>
+                                                <ul class="p-menuList p-menuList--subMenu">
+                                                    <?php
+                                                        $grandChild_categories = get_categories(
+                                                            array(
+                                                                'hide_empty' => '0',
+                                                                'parent' => $child_category->term_id,
+                                                                'orderby' => 'id'
+                                                            )
+                                                        );
+                                                    ?>
+                                                    <?php foreach ( $grandChild_categories as $grandChild_category ) : ?>
+                                                        <li class="p-menuList__item c-siteMenu">
+                                                        <span class="c-siteMenu__contents">
+                                                            <a href="<?= get_category_link( $grandChild_category->term_id ); ?>"><?= $grandChild_category->name; ?></a>
+                                                        </span>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </li>
                     </li>
                     <li class="p-menuList__item c-siteMenu">
                         <a href="#" class="c-siteMenu__contents c-siteMenu__contents--withImg">
                             <span class="c-siteMenu__img">
                                 <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/ranking.png" alt="ランキング画像" class="c-img">
                             </span>
-                            人気記事ランキング
+                            人気ランキング
                         </a>
                     </li>
                     <li class="p-menuList__item c-siteMenu">
