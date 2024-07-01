@@ -2,7 +2,6 @@
 <div class="l-contents u-mt--contents">
     <main class="l-main">
         <article>
-
             <ul>
                 <?php
                     $slider_posts = new WP_Query(
@@ -48,29 +47,29 @@
                     <li class="p-menuList__item c-postMenu">本島南部</li>
                 </ul>
             </nav>
-            <article class="u-mt--postList">
+            <section class="u-mt--postList">
                 <ul class="p-postList p-postList--main">
                     <?php if ( have_posts() ) : ?>
                         <?php while ( have_posts() ) : ?>
                             <?php the_post(); ?>
-                            <li class="p-postCard p-postCard--main">
-                                <article>
+                            <section>
+                                <li class="p-postCard p-postCard--main">
                                     <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
                                         <figure class="p-postCard__thumbnail c-thumbnail">
                                             <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
                                             <span class="p-postCard__badge c-badge c-badge--area"><?= get_post_municipality_name( get_the_category() ); ?></span>
                                         </figure>
-                                        <section class="p-postCard__desc c-desc">
+                                        <div class="p-postCard__desc c-desc">
                                             <h2><?php the_title(); ?></h2>
                                             <span class="p-postCard__date c-desc--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
-                                        </section>
+                                        </div>
                                     </a>
-                                </article>
-                            </li>
+                                </li>
+                            </section>
                         <?php endwhile; ?>
                     <?php endif; ?>
                 </ul>
-            </article>
+            </section>
             <section class="p-pagination u-mt--pagination">
                 <?php previous_posts_link( '前へ' ); ?>
                 <span class="p-pagination__text">
