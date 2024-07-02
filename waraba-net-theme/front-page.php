@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 <div class="l-contents u-mt--contents">
     <main class="l-main">
-        <article>
-            <ul>
+        <article class="swiper">
+            <ul class="swiper-wrapper">
                 <?php
                     $slider_posts = new WP_Query(
                         array(
-                            'posts_per_page' => 1,
+                            'posts_per_page' => 5,
                             'orderby' => 'rand'
                         )
                     );
@@ -14,7 +14,7 @@
                 <?php if ( $slider_posts->have_posts() ) : ?>
                     <?php while ( $slider_posts->have_posts() ) : ?>
                         <?php $slider_posts->the_post(); ?>
-                        <li class="p-postCard p-postCard--slider">
+                        <li class="p-postCard p-postCard--slider swiper-slide">
                             <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
                                 <figure class="p-postCard__thumbnail c-thumbnail">
                                     <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
@@ -36,6 +36,9 @@
                     <?php wp_reset_query(); ?>
                 <?php endif; ?>
             </ul>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
         </article>
         <article class="u-mt--postList">
             <h1 class="l-main--title">記事一覧</h1>
