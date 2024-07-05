@@ -6,16 +6,15 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/img/profile-img.png" alt="投稿１" class="c-img">
             </figure>
             <section class="p-profile__desc c-desc">
-                <h2 class="p-profile__name c-desc--bold">ティンのすけ</h2>
+                <h2 class="p-profile__name c-desc--bold">てぃじむなー</h2>
                 <div class="p-profile__introduction">
                     <div>
-                        <p><span class="c-desc--newLine">沖縄生まれ沖縄育ちの</span><span class="c-desc--newLine">英語喋れない系ハーフ</span></p>
-                        <span>+</span>
-                        <p><span class="c-desc--newLine">県内でITエンジニア</span><span class="c-desc--newLine">として奮闘中の新米パパ</span></p>
+                        <p>那覇生まれ那覇育ちの新米パパ</p>
+                        <p>２歳のイヤイヤ期娘に日々奮闘中</p>
                     </div>
                     <div>
-                        <p>沖縄独自の文化である「パーラー」の魅力を発信したいと思いサイトを開設！</p>
-                        <p>各種SNSでも最新情報を発信していますので是非フォローお願いいたします！！</p>
+                        <p>地元那覇市の子連れに向けた情報を発信したいと思いサイトを開設！</p>
+                        <p>各種SNSでも最新情報を発信していますので是非フォローお願いいたします！</p>
                     </div>
                 </div>
             </section>
@@ -36,21 +35,21 @@
     </article>
     <article class="l-sidebar__item">
         <h2 class="c-sidebarTitle">人気記事ランキング</h2>
-        <ul class="p-postList p-postList--sidebar u-mt--sidebarItem-L">
-            <?php
-                $sidebar_posts = new WP_Query(
-                    array(
-                        'meta_key' => 'post_view_count',
-                        'orderby' => 'meta_value_num',
-                        'order' => 'DESC',
-                        'posts_per_page' => 5
-                    )
-                );
-            ?>
-            <?php if ( $sidebar_posts->have_posts() ) : ?>
-                <?php while ( $sidebar_posts->have_posts() ) : ?>
-                    <?php $sidebar_posts->the_post(); ?>
-                    <section>
+        <section class="u-mt--sidebarItem-L">
+            <ul class="p-postList p-postList--sidebar">
+                <?php
+                    $sidebar_posts = new WP_Query(
+                        array(
+                            'meta_key' => 'post_view_count',
+                            'orderby' => 'meta_value_num',
+                            'order' => 'DESC',
+                            'posts_per_page' => 5
+                        )
+                    );
+                ?>
+                <?php if ( $sidebar_posts->have_posts() ) : ?>
+                    <?php while ( $sidebar_posts->have_posts() ) : ?>
+                        <?php $sidebar_posts->the_post(); ?>
                         <li class="p-postCard p-postCard--sidebar">
                             <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
                                 <figure class="p-postCard__thumbnail c-thumbnail">
@@ -80,11 +79,11 @@
                                 </div>
                             </a>
                         </li>
-                    </section>
-                <?php endwhile; ?>
-                <?php wp_reset_query(); ?>
-            <?php endif; ?>
-        </ul>
+                    <?php endwhile; ?>
+                    <?php wp_reset_query(); ?>
+                <?php endif; ?>
+            </ul>
+        </section>
     </article>
     <article class="l-sidebar__item">
         <h2 class="c-sidebarTitle">タグ一覧</h2>
@@ -101,7 +100,7 @@
                 <?php foreach ( $allTags as $tag ) : ?>
                     <li class="c-tag">
                         <a href="<?= get_tag_link( $tag->term_id ); ?>" class="c-tag--contents">
-                            <span class="c-tag--text"><?= $tag->name; ?></span>
+                            <span class="c-tag--text"><span>&#035;</span><?= $tag->name; ?></span>
                         </a>
                     </li>
                 <?php endforeach; ?>

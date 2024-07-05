@@ -8,24 +8,23 @@
         gap: 4px;
         padding: 4px 8px;
         border-radius: 4px;
-        border: 1px solid $accentColor;
-        &::before {
-            background-image: url("./img/tag.png");
-            background-size: contain;
-            content: "";
-            width: 16px;
-            height: 16px;
+        border: 1px solid $mainColor;
+        &:hover {
+            @include hoverAction();
+            background-color: $mainColor;
+            span {
+                @include hoverAction();
+                color: $fontColorWhite;
+            }
         }
     }
     &--text {
-        color: $accentColor;
+        display: flex;
+        gap: 2px;
+        color: $mainColor;
         font-size: 0.9rem;
         @include setBrakePoint(sp) {
             font-size: 0.8rem;
-        }
-        &:hover {
-            @include hoverAction();
-            color: $mainColor;
         }
     }
 }
