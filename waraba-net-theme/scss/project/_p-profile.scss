@@ -12,11 +12,8 @@
         text-align: center;
         flex-direction: column;
         gap: 20px;
-        width: 75%;
-        margin: 20px auto;
-        @include setBrakePoint(tb) {
-            margin: 24px auto 0;
-        }
+        width: 76%;
+        margin: 24px auto;
     }
     &__name {
         font-size: 1.4rem;
@@ -31,8 +28,8 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
-        font-size: clamp(0.68rem, -0.048rem + 1.21vw, 0.9rem);
-        line-height: 1.5em;
+        font-size: clamp(0.775rem, 0.375rem + 0.67vw, 0.875rem);
+        line-height: 1.6em;
         @include setBrakePoint(tb) {
             font-size: clamp(0.75rem, 0.665rem + 0.31vw, 0.85rem);
         }
@@ -41,11 +38,8 @@
         }
     }
     &__snsIconList {
-        margin: 20px auto 0;
+        margin: 24px auto 0;
         width: 44%;
         min-width: 160px;
-        @include setBrakePoint(tb) {
-            margin: 24px auto 0;
-        }
     }
 }
