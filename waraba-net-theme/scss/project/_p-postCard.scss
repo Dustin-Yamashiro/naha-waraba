@@ -100,8 +100,8 @@
         border: solid .0625rem rgba($fontColorBlack, 0.15);
         border-radius: 1%;
         position: relative;
-        width: min(368px, 31vw);
-        height: min(380px, 33vw);
+        width: min(368px, 29.5vw);
+        height: min(380px, 31vw);
         @include setBrakePoint(tb) {
             width: 44vw;
             height: 44vw;
