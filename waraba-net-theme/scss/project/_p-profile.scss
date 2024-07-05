@@ -15,7 +15,7 @@
         width: 75%;
         margin: 20px auto;
         @include setBrakePoint(tb) {
-            margin: 20px auto 0;
+            margin: 24px auto 0;
         }
     }
     &__name {
@@ -45,7 +45,7 @@
         width: 44%;
         min-width: 160px;
         @include setBrakePoint(tb) {
-            margin: 32px auto 0;
+            margin: 24px auto 0;
         }
     }
 }
