@@ -30,7 +30,7 @@
     &__introduction {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 12px;
         font-size: clamp(0.68rem, -0.048rem + 1.21vw, 0.9rem);
         line-height: 1.5em;
         @include setBrakePoint(tb) {
