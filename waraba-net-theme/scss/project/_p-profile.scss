@@ -12,9 +12,10 @@
         text-align: center;
         flex-direction: column;
         gap: 20px;
-        margin: 20px 20px 0;
+        width: 75%;
+        margin: 20px auto;
         @include setBrakePoint(tb) {
-            margin: 20px 28px 0;
+            margin: 20px auto 0;
         }
     }
     &__name {
@@ -29,7 +30,7 @@
     &__introduction {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 12px;
         font-size: clamp(0.68rem, -0.048rem + 1.21vw, 0.9rem);
         line-height: 1.5em;
         @include setBrakePoint(tb) {
@@ -40,7 +41,9 @@
         }
     }
     &__snsIconList {
-        margin: 28px auto 0;
+        margin: 20px auto 0;
+        width: 44%;
+        min-width: 160px;
         @include setBrakePoint(tb) {
             margin: 32px auto 0;
         }
