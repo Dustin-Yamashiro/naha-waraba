@@ -1,6 +1,6 @@
 
 // スィーパー設定
-const swiper = new Swiper('.swiper', {
+const swiperSlider = new Swiper('#swiper-slider', {
     slidesPerView: 1,
     loop: true,
     effect: 'fade',
@@ -19,4 +19,14 @@ const swiper = new Swiper('.swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+});
+
+const swiperMainPost = new Swiper('#swiper-mainPost', {
+    speed: 600,
+    thumbs: {
+        swiper: {
+            el: '#swiper-postMenu',
+            slidesPerView: 4
+        }
+    }
 });

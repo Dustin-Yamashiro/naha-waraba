@@ -18,7 +18,7 @@
         }
     }
     &__menu {
-        width: min(580px, 58vw);
+        width: min(600px, 60vw);
         height: 90px;
         @include setBrakePoint(tb) {
             display: none;

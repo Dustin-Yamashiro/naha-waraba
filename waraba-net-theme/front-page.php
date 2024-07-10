@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="l-contents u-mt--contents">
     <main class="l-main">
-        <article class="swiper">
+        <article id="swiper-slider" class="swiper">
             <ul class="swiper-wrapper">
                 <?php
                     $slider_posts = new WP_Query(
@@ -42,25 +42,38 @@
         </article>
         <article class="u-mt--postList">
             <h1 class="l-main--title">記事一覧</h1>
-            <nav class="u-mt--postMenu">
-                <ul class="p-menuList p-menuList--post">
-                    <li class="p-menuList__item c-postMenu">最新投稿</li>
-                    <li class="p-menuList__item c-postMenu">本島北部</li>
-                    <li class="p-menuList__item c-postMenu">本島中部</li>
-                    <li class="p-menuList__item c-postMenu">本島南部</li>
+            <nav id="swiper-postMenu" class="u-mt--postMenu swiper">
+                <ul class="p-menuList p-menuList--post swiper-wrapper">
+                    <li class="p-menuList__item c-postMenu swiper-slide">最新投稿</li>
+                    <!-- トップカテゴリーを取得 -->
+                    <?php
+                        $top_categories = get_categories(
+                            array(
+                                'parent' => 0,
+                                'exclude' => 1,
+                                'hide_empty' => false,
+                                'orderby' => 'id'
+                            )
+                        );
+                    ?>
+                    <?php foreach ( $top_categories as $top_category ) : ?>
+                        <li class="p-menuList__item c-postMenu swiper-slide"><?= $top_category->name; ?></li>
+                    <?php endforeach; ?>
                 </ul>
             </nav>
-            <section class="u-mt--postList">
-                <ul class="p-postList p-postList--main">
-                    <?php if ( have_posts() ) : ?>
-                        <?php while ( have_posts() ) : ?>
-                            <?php the_post(); ?>
-                            <section>
+            <section id="swiper-mainPost" class="u-mt--postList swiper">
+                <div class="swiper-wrapper">
+                    <!-- 最新投稿一覧を表示 -->
+                    <?php $latest_posts = new WP_Query( array( 'posts_per_page' => 10 ) ); ?>
+                    <ul class="p-postList p-postList--main u-mb--20 swiper-slide">
+                        <?php if ( $latest_posts->have_posts() ) : ?>
+                            <?php while ( $latest_posts->have_posts() ) : ?>
+                                <?php $latest_posts->the_post(); ?>
                                 <li class="p-postCard p-postCard--main">
                                     <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
                                         <figure class="p-postCard__thumbnail c-thumbnail">
                                             <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
-                                            <span class="p-postCard__badge c-badge c-badge--area"><?= get_post_municipality_name( get_the_category() ); ?></span>
+                                            <span class="p-postCard__badge c-badge c-badge--category"><?= get_post_municipality_name( get_the_category() ); ?></span>
                                         </figure>
                                         <div class="p-postCard__desc c-desc">
                                             <h2><?php the_title(); ?></h2>
@@ -68,10 +81,43 @@
                                         </div>
                                     </a>
                                 </li>
-                            </section>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-                </ul>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </ul>
+                    <!-- カテゴリー別投稿一覧を表示 -->
+                    <?php 
+                        $postsBycategory = [];
+                        foreach ( $top_categories as $top_category ) {
+                            $postsBycategory[] = new WP_Query(
+                                array(
+                                    'cat' => $top_category->term_id,
+                                    'posts_per_page' => 10
+                                )
+                            );
+                        }
+                    ?>
+                    <?php foreach ( $postsBycategory as $postBycategory ) : ?>
+                        <ul class="p-postList p-postList--main u-mb--20 swiper-slide">
+                            <?php if ( $postBycategory->have_posts() ) : ?>
+                                <?php while ( $postBycategory->have_posts() ) : ?>
+                                    <?php $postBycategory->the_post(); ?>
+                                    <li class="p-postCard p-postCard--main">
+                                        <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
+                                            <figure class="p-postCard__thumbnail c-thumbnail">
+                                                <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
+                                                <span class="p-postCard__badge c-badge c-badge--category"><?= get_post_municipality_name( get_the_category() ); ?></span>
+                                            </figure>
+                                            <div class="p-postCard__desc c-desc">
+                                                <h2><?php the_title(); ?></h2>
+                                                <span class="p-postCard__date c-desc--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                        </ul>
+                    <?php endforeach; ?>
+                </div>
             </section>
             <section class="p-pagination u-mt--pagination">
                 <?php previous_posts_link( '前へ' ); ?>

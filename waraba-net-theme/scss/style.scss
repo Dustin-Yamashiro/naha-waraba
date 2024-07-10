@@ -38,20 +38,16 @@
 @use "utility/u-margin";
 
 // swiperの調整
-.swiper {
-    position: relative;
-    border-radius: 20px;
-}
-.swiper-pagination {
+#swiper-slider .swiper-pagination {
     width: initial !important;
     left: initial !important;
     top: 2% !important;
     right: 2% !important;
 }
-.swiper-pagination-bullets {
+#swiper-slider .swiper-pagination-bullets {
     bottom: initial !important;
 }
-.swiper-pagination-bullet {
+#swiper-slider .swiper-pagination-bullet {
     background: $fontColorWhite !important;
     opacity: 0.4 !important;
     @include setBrakePoint(sp) {
@@ -60,24 +56,24 @@
         margin: 0 3px !important;
     }
 }
-.swiper-pagination-bullet-active {
+#swiper-slider .swiper-pagination-bullet-active {
     background: $mainColor !important;
     opacity: initial !important;
 }
-.swiper-button-prev {
+#swiper-slider .swiper-button-prev {
     left: 1% !important;
     @include setBrakePoint(tb) {
         left: 1.5% !important;
     }
 }
-.swiper-button-next {
+#swiper-slider .swiper-button-next {
     right: 1% !important;
     @include setBrakePoint(tb) {
         right: 1.5% !important;
     }
 }
-.swiper-button-prev:after,
-.swiper-button-next:after {
+#swiper-slider .swiper-button-prev:after,
+#swiper-slider .swiper-button-next:after {
     font-size: clamp(1.6rem, 0.8rem + 1.33vw, 1.8rem) !important;
     color: rgba($fontColorWhite, 0.7) !important;
     font-weight: bold;
@@ -88,4 +84,27 @@
     @include setBrakePoint(sp) {
         font-size: clamp(1.4rem, 0.867rem + 2.67vw, 1.6rem) !important;
     }
+}
+
+#swiper-postMenu .swiper-slide {
+    display: flex !important;
+    &:hover {
+        @include hoverAction();
+        transform: scale(0.95) !important;
+    }
+    width: 24% !important;
+    height: 2.5em;
+    @include setBrakePoint(sp) {
+        width: 49% !important;
+        height: 2.75em;
+    }
+}
+#swiper-postMenu .swiper-slide-thumb-active {
+    @include hoverAction();
+    background-color: $mainColor;
+    color: $fontColorWhite;
+}
+
+#swiper-mainPost .swiper-slide {
+    display: flex !important;
 }

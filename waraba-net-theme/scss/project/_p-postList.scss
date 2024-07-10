@@ -5,7 +5,18 @@
     &--main {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 24px;
+        gap: 20px;
+        &::after {
+            content: "";
+            width: min(368px, 29.5vw);
+            height: 0;
+            @include setBrakePoint(tb) {
+                width: 44vw;
+            }
+            @include setBrakePoint(sp) {
+                content: none;
+            }
+        }
     }
     &--sidebar {
         flex-direction: column;

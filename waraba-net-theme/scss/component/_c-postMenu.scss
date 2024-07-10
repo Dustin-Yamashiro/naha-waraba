@@ -2,16 +2,11 @@
 @use "../foundation/mixin" as *;
 
 .c-postMenu {
+    cursor: pointer;
     color: $fontColorBlack;
-    background-color: rgba($accentColor, 0.1);
+    background-color: rgba($fontColorBlack, 0.1);
     border-radius: 2%;
     display: flex;
     align-items: center;
     justify-content: center;
-    &:hover {
-        @include hoverAction();
-        opacity: 1;
-        background-color: $mainColor;
-        color: $fontColorWhite;
-    }
 }
