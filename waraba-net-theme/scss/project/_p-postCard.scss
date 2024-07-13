@@ -22,6 +22,9 @@
     }
     &--slider &__thumbnail {
         border-radius: 20px;
+        @include setBrakePoint(tb) {
+            border-radius: 8px;
+        }
     }
     &--slider &__desc {
         position: absolute;
@@ -35,6 +38,9 @@
         padding: 2.5%;
         display: flex;
         justify-content: space-between;
+        @include setBrakePoint(tb) {
+            border-radius: 0 0 8px 8px;
+        }
         @include setBrakePoint(sp) {
             height: 31%;
             padding: 1.25% 3%;
@@ -100,7 +106,7 @@
     &--main {
         border: solid .0625rem rgba($fontColorBlack, 0.15);
         box-shadow: 0px 0px 2px 0px rgba($fontColorBlack, 0.2);
-        border-radius: 1%;
+        border-radius: 8px;
         position: relative;
         width: min(368px, 29.5vw);
         height: min(380px, 31vw);
@@ -113,6 +119,7 @@
             width: 92vw;
             height: 90vw;
             min-height: 344px;
+            border-radius: 4px;
         }
         &:hover {
             @include hoverAction();
@@ -129,7 +136,10 @@
     }
     &--main &__thumbnail {
         position: relative;
-        border-radius: 1% 1% 0 0;
+        border-radius: 8px 8px 0 0;
+        @include setBrakePoint(sp) {
+            border-radius: 4px 4px 0 0;
+        }
     }
     &--main &__badge {
         position: absolute;
@@ -208,7 +218,7 @@
         width: 24%;
         flex-shrink: 0;
         aspect-ratio: 1 / 1;
-        border-radius: 1%;
+        border-radius: 8px;
         img {
             object-fit: cover;
         }
