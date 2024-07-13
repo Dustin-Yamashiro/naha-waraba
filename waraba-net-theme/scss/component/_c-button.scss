@@ -2,17 +2,13 @@
 @use "../foundation/mixin" as *;
 
 .c-button {
-    border-radius: 2%;
-    box-shadow: 0px 2px 4px rgba($fontColorBlack, 0.4);
+    border: 2px solid rgba($fontColorBlack, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover {
         @include hoverAction();
-    }
-    &--baseColor {
-        color: $fontColorWhite;
         background-color: $mainColor;
-    }
-    &--accentColor {
         color: $fontColorWhite;
-        background-color: $accentColor;
     }
 }

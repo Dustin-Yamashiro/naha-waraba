@@ -33,6 +33,9 @@
 @use "component/c-button";
 @use "component/c-thumbnail";
 @use "component/c-badge";
+@use "component/c-postListTitle";
+@use "component/c-moreButton";
+
 
 // ユーティリティ
 @use "utility/u-margin";
@@ -103,8 +106,4 @@
     @include hoverAction();
     background-color: $mainColor;
     color: $fontColorWhite;
-}
-
-#swiper-mainPost .swiper-slide {
-    display: flex !important;
 }
