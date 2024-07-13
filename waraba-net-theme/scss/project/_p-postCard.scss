@@ -30,8 +30,8 @@
         height: 28%;
         border-radius: 0 0 20px 20px;
         background-color: rgba($fontColorWhite, 0.7);
-        -webkit-backdrop-filter: blur(4px);
         backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
         padding: 2.5%;
         display: flex;
         justify-content: space-between;
@@ -80,7 +80,8 @@
     &--slider &__more {
         font-size: clamp(0.8rem, 1.33vw, 1rem);
         &::after {
-            content: ' \f0a4';
+            content: ' \f178';
+            font-weight: bold;
             font-family: "Font Awesome 5 Free";
         }
         @include setBrakePoint(tb) {
