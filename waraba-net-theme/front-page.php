@@ -41,7 +41,7 @@
             <div class="swiper-button-next"></div>
         </article>
         <article class="u-mt--postList">
-            <h1 class="l-main--title">記事一覧</h1>
+            <h1 class="c-postListTitle">記事一覧</h1>
             <nav id="swiper-postMenu" class="u-mt--postMenu swiper">
                 <ul class="p-menuList p-menuList--post swiper-wrapper">
                     <li class="p-menuList__item c-postMenu swiper-slide">最新投稿</li>
