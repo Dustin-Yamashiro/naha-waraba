@@ -82,7 +82,9 @@
                                         <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
                                             <figure class="p-postCard__thumbnail c-thumbnail">
                                                 <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
-                                                <span class="p-postCard__badge c-badge c-badge--category"><?= get_post_municipality_name( get_the_category() ); ?></span>
+                                                <span class="p-postCard__badge c-badge c-badge--category">
+                                                    <?= get_post_child_category_name( $top_categories, get_the_category() ); ?>
+                                                </span>
                                             </figure>
                                             <div class="p-postCard__desc c-desc">
                                                 <h2><?php the_title(); ?></h2>
@@ -126,7 +128,9 @@
                                             <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
                                                 <figure class="p-postCard__thumbnail c-thumbnail">
                                                     <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
-                                                    <span class="p-postCard__badge c-badge c-badge--category"><?= get_post_municipality_name( get_the_category() ); ?></span>
+                                                    <span class="p-postCard__badge c-badge c-badge--category">
+                                                        <?= get_post_child_category_name( $top_categories, get_the_category() ); ?>
+                                                    </span>
                                                 </figure>
                                                 <div class="p-postCard__desc c-desc">
                                                     <h2><?php the_title(); ?></h2>

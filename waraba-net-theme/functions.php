@@ -1,30 +1,20 @@
 <?php
-
-/* 定数 */
-
-const AREA_CATEGORY_SLUG_LIST = [
-    'northern',
-    'central',
-    'southern'
-];
-
-
 /* 自作関数 */
 
-// 投稿の市町村のカテゴリー名を取得
-function get_post_municipality_name( $post_categories )
+// 投稿の子カテゴリー名を取得
+function get_post_child_category_name( $top_categories, $post_categories )
 {
-    // 地域カテゴリーのID群を取得
-    $area_category_ids = [];
-    foreach ( AREA_CATEGORY_SLUG_LIST as $slug ) {
-        $area_category_ids[$slug] = get_category_by_slug( $slug )->term_id;
+    // トップカテゴリーのIDを取得
+    $top_category_ids = [];
+    foreach ( $top_categories as $top_category ) {
+        $top_category_ids[] = $top_category->term_id;
     }
 
-    // 地域カテゴリーを親にもつ市町村カテゴリーを特定、返還
-    foreach ( $post_categories as $category ) {
-        $parent_category_id = $category->parent;
-        if (in_array( $parent_category_id, $area_category_ids )) {
-            return $category->name;
+    // 記事のカテゴリー情報から子カテゴリーを取得
+    foreach ( $post_categories as $post_category ) {
+        $parent_category_id = $post_category->parent;
+        if ( in_array( $parent_category_id, $top_category_ids ) ) {
+            return $post_category->name;
         }
     }
 
