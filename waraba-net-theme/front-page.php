@@ -64,43 +64,20 @@
             <section id="swiper-mainPost" class="u-mt--postList swiper">
                 <div class="swiper-wrapper">
                     <!-- 最新投稿一覧を表示 -->
-                    <?php $latest_posts = new WP_Query( array( 'posts_per_page' => 10 ) ); ?>
-                    <ul class="p-postList p-postList--main u-mb--20 swiper-slide">
-                        <?php if ( $latest_posts->have_posts() ) : ?>
-                            <?php while ( $latest_posts->have_posts() ) : ?>
-                                <?php $latest_posts->the_post(); ?>
-                                <li class="p-postCard p-postCard--main">
-                                    <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
-                                        <figure class="p-postCard__thumbnail c-thumbnail">
-                                            <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
-                                            <span class="p-postCard__badge c-badge c-badge--category"><?= get_post_municipality_name( get_the_category() ); ?></span>
-                                        </figure>
-                                        <div class="p-postCard__desc c-desc">
-                                            <h2><?php the_title(); ?></h2>
-                                            <span class="p-postCard__date c-desc--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
-                                        </div>
-                                    </a>
-                                </li>
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-                    </ul>
-                    <!-- カテゴリー別投稿一覧を表示 -->
                     <?php 
-                        $postsBycategory = [];
-                        foreach ( $top_categories as $top_category ) {
-                            $postsBycategory[] = new WP_Query(
-                                array(
-                                    'cat' => $top_category->term_id,
-                                    'posts_per_page' => 10
-                                )
-                            );
-                        }
+                        $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+                        $latest_posts = new WP_Query(
+                            array(
+                                'post_type' => 'post',
+                                'paged' => $paged
+                            )
+                        );
                     ?>
-                    <?php foreach ( $postsBycategory as $postBycategory ) : ?>
-                        <ul class="p-postList p-postList--main u-mb--20 swiper-slide">
-                            <?php if ( $postBycategory->have_posts() ) : ?>
-                                <?php while ( $postBycategory->have_posts() ) : ?>
-                                    <?php $postBycategory->the_post(); ?>
+                    <div class="swiper-slide">
+                        <ul class="p-postList p-postList--main">
+                            <?php if ( $latest_posts->have_posts() ) : ?>
+                                <?php while ( $latest_posts->have_posts() ) : ?>
+                                    <?php $latest_posts->the_post(); ?>
                                     <li class="p-postCard p-postCard--main">
                                         <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
                                             <figure class="p-postCard__thumbnail c-thumbnail">
@@ -116,16 +93,54 @@
                                 <?php endwhile; ?>
                             <?php endif; ?>
                         </ul>
+                        <section class="u-mt--pagination">
+                            <div class="p-pagination">
+                                <?php previous_posts_link( '' ); ?>
+                                <span class="p-pagination__text">
+                                    <?php $page_number = get_query_var( 'paged' ); ?>
+                                    <?= empty( $page_number ) ? '1' : $page_number; ?> / <?= $wp_query->max_num_pages; ?>
+                                </span>
+                                <?php next_posts_link( '' ); ?>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- カテゴリー別投稿一覧を表示 -->
+                    <?php 
+                        $postsBycategory = [];
+                        foreach ( $top_categories as $top_category ) {
+                            $postsBycategory[ $top_category->term_id ] = new WP_Query(
+                                array(
+                                    'cat' => $top_category->term_id,
+                                    'posts_per_page' => 10
+                                )
+                            );
+                        }
+                    ?>
+                    <?php foreach ( $postsBycategory as $topCategoryId => $postBycategory ) : ?>
+                        <div class="swiper-slide">
+                            <ul class="p-postList p-postList--main">
+                                <?php if ( $postBycategory->have_posts() ) : ?>
+                                    <?php while ( $postBycategory->have_posts() ) : ?>
+                                        <?php $postBycategory->the_post(); ?>
+                                        <li class="p-postCard p-postCard--main">
+                                            <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
+                                                <figure class="p-postCard__thumbnail c-thumbnail">
+                                                    <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
+                                                    <span class="p-postCard__badge c-badge c-badge--category"><?= get_post_municipality_name( get_the_category() ); ?></span>
+                                                </figure>
+                                                <div class="p-postCard__desc c-desc">
+                                                    <h2><?php the_title(); ?></h2>
+                                                    <span class="p-postCard__date c-desc--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+                            </ul>
+                            <button class="c-moreButton c-button u-mt--pagination"><a href="<?= get_category_link( $topCategoryId ); ?>">もっと見る</a></button>
+                        </div>
                     <?php endforeach; ?>
                 </div>
-            </section>
-            <section class="p-pagination u-mt--pagination">
-                <?php previous_posts_link( '前へ' ); ?>
-                <span class="p-pagination__text">
-                    <?php $page_number = get_query_var( 'paged' ); ?>
-                    <?= empty( $page_number ) ? '1' : $page_number; ?> / <?= $wp_query->max_num_pages; ?>
-                </span>
-                <?php next_posts_link( '次へ' ); ?>
             </section>
         </article>
     </main>
