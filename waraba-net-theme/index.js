@@ -30,3 +30,34 @@ const swiperMainPost = new Swiper('#swiper-mainPost', {
         }
     }
 });
+
+
+// 画面スクロールを制御する関数
+const scrollStop = (status) => {
+    const body = document.getElementsByTagName('body')[0];
+    body.style.overflow = status ? 'hidden' : '';
+}
+
+// サイドメニューの表示を管理する関数
+const diplaySlideMenu = () => {
+    const sideMenuClassList = document.getElementById('slideMenu').classList;
+    const slideMenuButton = document.getElementById('slideMenuButton').classList;
+    const blackFullScreen = document.getElementById('blackFullScreen').classList;
+
+    if (!sideMenuClassList.contains('p-slideMenu--action')) {
+        sideMenuClassList.add('p-slideMenu--action');
+        slideMenuButton.remove('c-icon--burger');
+        slideMenuButton.add('c-icon--cancel');
+        blackFullScreen.add('c-blackFullScreen--active');
+        scrollStop(true);
+        return;
+    }
+
+    sideMenuClassList.remove('p-slideMenu--action');
+    slideMenuButton.remove('c-icon--cancel');
+    slideMenuButton.add('c-icon--burger');
+    blackFullScreen.remove('c-blackFullScreen--active');
+    scrollStop(false);
+}
+document.getElementById('slideMenuButton').addEventListener('click', diplaySlideMenu);
+document.getElementById('blackFullScreen').addEventListener('click', diplaySlideMenu);

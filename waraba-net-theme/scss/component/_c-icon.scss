@@ -1,10 +1,28 @@
 @use "../foundation/mixin" as *;
 
 .c-icon {
-    &--search, &--burger {
-        &:hover {
-            @include hoverAction();
-            opacity: 0.7;
+    &--burger {
+        &::after {
+            font-size: 1.8rem;
+            content: '\f0c9';
+            font-weight: bold;
+            font-family: "Font Awesome 5 Free";
+        }
+    }
+    &--cancel {
+        &::after {
+            font-size: 2rem;
+            content: '\f00d';
+            font-weight: bold;
+            font-family: "Font Awesome 5 Free";
+        }
+    }
+    &--dropDown {
+        &::after {
+            font-size: 1.1rem;
+            content: '\f107';
+            font-weight: bold;
+            font-family: "Font Awesome 5 Free";
         }
     }
     &--sns {
@@ -13,6 +31,10 @@
         @include setBrakePoint(tb) {
             width: 36px;
             height: 36px;
+        }
+        &:hover {
+            @include hoverAction();
+            opacity: 0.7;
         }
     }
 }

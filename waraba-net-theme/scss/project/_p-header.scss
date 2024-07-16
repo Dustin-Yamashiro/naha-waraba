@@ -29,6 +29,8 @@
         @include setBrakePoint(tb) {
             display: inline;
             margin: 0 8px;
+            position: relative;
+            z-index: 999;
         }
     }
 }

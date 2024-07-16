@@ -1,0 +1,28 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+.p-slideMenu {
+    display: none;
+    @include setBrakePoint(tb) {
+        display: block;
+        width: 40vw;
+        height: 100vh;
+        background-color: $baseColor;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 998;
+        transform: translateX(100%);
+        transition: 0.5s;
+        &--action {
+            transform: translateX(0);
+        }
+    }
+    @include setBrakePoint(sp) {
+        width: 60vw;
+    }
+    &__contents {
+        width: 88%;
+        margin: min(90px, 14vw) auto;
+    }
+}

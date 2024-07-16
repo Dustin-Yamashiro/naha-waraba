@@ -176,7 +176,35 @@
                     </li>
                 </ul>
             </nav>
-            <button class="p-header__icon c-icon c-icon--burger"><i class="fa-solid fa-bars fa-xl" style="color: #333333;"></i></button>
+            <button id="slideMenuButton" class="p-header__icon c-icon c-icon--burger"></button>
+            <nav id="slideMenu" class="p-slideMenu">
+                <div class="p-slideMenu__contents">
+                    <ul class="p-menuList p-menuList--slide">
+                        <li class="p-menuList__item c-siteMenu">
+                            <a href="<?= home_url(); ?>" class="c-siteMenu__contents c-siteMenu__contents--left">ホーム</a>
+                        </li>
+                        <li class="p-menuList__item c-siteMenu">
+                            <a href="#" class="c-siteMenu__contents c-siteMenu__contents--left">おでかけ</a>
+                            <input type="checkbox" class="c-icon c-icon--dropDown">
+                        </li>
+                        <li class="p-menuList__item c-siteMenu">
+                            <a href="#" class="c-siteMenu__contents c-siteMenu__contents--left c-siteMenu__contents--dropDown">食事</a>
+                            <input type="checkbox" class="c-icon c-icon--dropDown">
+                        </li>
+                        <li class="p-menuList__item c-siteMenu">
+                            <a href="#" class="c-siteMenu__contents c-siteMenu__contents--left c-siteMenu__contents--dropDown">生活</a>
+                            <input type="checkbox" class="c-icon c-icon--dropDown">
+                        </li>
+                        <li class="p-menuList__item c-siteMenu">
+                            <a href="#" class="c-siteMenu__contents c-siteMenu__contents--left c-siteMenu__contents--dropDown">人気記事ランキング</a>
+                        </li>
+                        <li class="p-menuList__item c-siteMenu">
+                            <a href="#" class="c-siteMenu__contents c-siteMenu__contents--left c-siteMenu__contents--dropDown">サイト紹介</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="blackFullScreen" class="c-blackFullScreen"></div>
         </div>
 
         <?php wp_head(); ?>
