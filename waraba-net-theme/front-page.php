@@ -46,16 +46,7 @@
                 <ul class="p-menuList p-menuList--post swiper-wrapper">
                     <li class="p-menuList__item c-postMenu swiper-slide">最新投稿</li>
                     <!-- トップカテゴリーを取得 -->
-                    <?php
-                        $top_categories = get_categories(
-                            array(
-                                'parent' => 0,
-                                'exclude' => 1,
-                                'hide_empty' => false,
-                                'orderby' => 'id'
-                            )
-                        );
-                    ?>
+                    <?php $top_categories = get_top_categories_info(); ?>
                     <?php foreach ( $top_categories as $top_category ) : ?>
                         <li class="p-menuList__item c-postMenu swiper-slide"><?= $top_category->name; ?></li>
                     <?php endforeach; ?>
