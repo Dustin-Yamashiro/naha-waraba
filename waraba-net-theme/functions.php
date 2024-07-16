@@ -21,6 +21,19 @@ function get_post_child_category_name( $top_categories, $post_categories )
     return 'none';
 }
 
+// トップカテゴリー情報を取得
+function get_top_categories_info()
+{
+    return get_categories(
+        array(
+            'parent' => 0,
+            'exclude' => 1,
+            'hide_empty' => false,
+            'orderby' => 'id'
+        )
+    );
+}
+
 
 /* フック関数 */
 
