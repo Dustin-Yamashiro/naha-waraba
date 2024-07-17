@@ -3,41 +3,14 @@
 
 .c-siteMenu {
     cursor: pointer;
-    color: $fontColorBlack;
-    &__contents {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        &:hover {
-            color: $mainColor;
-            transition: all 0.2s;
-            img {
-                transform: translateY(-6px);
-                transition: all 0.4s;
-            }
-        }
-        @include setBrakePoint(tb) {
-            &:hover {
-                color: $fontColorBlack;
-                background-color: rgba($fontColorBlack, 0.1);
-            }
-        }
-        a {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        &--withImg {
-            flex-direction: column;
-            gap: 14px;
-        }
-        &--left {
-            justify-content: left;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    &--withImg {
+        flex-direction: column;
+        gap: 14px;
     }
     &__img {
         width: 50%;

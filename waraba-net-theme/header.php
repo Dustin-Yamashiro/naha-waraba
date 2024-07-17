@@ -44,8 +44,8 @@
                                     break;
                             }
                         ?>
-                        <li class="p-menuList__item p-menuList__item--withSubMenu c-siteMenu">
-                            <a href="<?= get_category_link( $top_category->term_id ); ?>" class="c-siteMenu__contents c-siteMenu__contents--withImg">
+                        <li class="p-menuList__item p-menuList__item--withSubMenu">
+                            <a href="<?= get_category_link( $top_category->term_id ); ?>" class="c-siteMenu c-siteMenu--withImg">
                                 <span class="c-siteMenu__img">
                                     <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/<?= $img_file_name; ?>" alt="<?= $img_alt; ?>" class="c-img">
                                 </span>
@@ -62,43 +62,25 @@
                                     );
                                 ?>
                                 <?php foreach ( $parent_categories as $parent_category ) : ?>
-                                    <li class="p-menuList__item c-siteMenu">
-                                        <span class="c-siteMenu__contents">
-                                            <a href="<?= get_category_link( $parent_category->term_id ); ?>"><?= $parent_category->name; ?></a>
-                                        </span>
-                                        <ul class="p-menuList p-menuList--headerSub">
-                                            <?php
-                                                $child_categories = get_categories(
-                                                    array(
-                                                        'hide_empty' => '0',
-                                                        'parent' => $parent_category->term_id,
-                                                        'orderby' => 'id'
-                                                    )
-                                                );
-                                            ?>
-                                            <?php foreach ( $child_categories as $child_category ) : ?>
-                                                <li class="p-menuList__item c-siteMenu">
-                                                    <span class="c-siteMenu__contents">
-                                                        <a href="<?= get_category_link( $child_category->term_id ); ?>"><?= $child_category->name; ?></a>
-                                                    </span>
-                                                </li>
-                                            <?php endforeach; ?>
-                                        </ul>
+                                    <li class="p-menuList__item">
+                                        <a class="c-siteMenu" href="<?= get_category_link( $parent_category->term_id ); ?>">
+                                            <?= $parent_category->name; ?>
+                                        </a>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
                         </li>
                     <? endforeach; ?>
-                    <li class="p-menuList__item c-siteMenu">
-                        <a href="#" class="c-siteMenu__contents c-siteMenu__contents--withImg">
+                    <li class="p-menuList__item">
+                        <a href="#" class="c-siteMenu c-siteMenu--withImg">
                             <span class="c-siteMenu__img">
                                 <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/ranking.png" alt="ランキング画像" class="c-img">
                             </span>
                             ランキング
                         </a>
                     </li>
-                    <li class="p-menuList__item c-siteMenu">
-                        <a href="#" class="c-siteMenu__contents c-siteMenu__contents--withImg">
+                    <li class="p-menuList__item">
+                        <a href="#" class="c-siteMenu c-siteMenu--withImg">
                             <span class="c-siteMenu__img">
                                 <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/site-detail.png" alt="サイト詳細画像" class="c-img">
                             </span>
