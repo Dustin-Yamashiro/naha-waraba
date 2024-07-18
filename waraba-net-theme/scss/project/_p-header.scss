@@ -24,6 +24,16 @@
             display: none;
         }
     }
+    &__search {
+        display: none;
+        @include setBrakePoint(tb) {
+            display: block;
+            margin-left: 8px;
+            width: 6%;
+            max-width: 28px;
+            min-width: 24px;
+        }
+    }
     &__burger {
         display: none;
         @include setBrakePoint(tb) {
