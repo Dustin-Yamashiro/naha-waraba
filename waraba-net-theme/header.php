@@ -89,7 +89,9 @@
                     </li>
                 </ul>
             </nav>
-            <button id="slideMenuButton" class="p-header__icon c-icon c-icon--burger"></button>
+            <button id="burgerButton" class="p-header__burger">
+                <span></span>
+            </button>
             <nav id="slideMenu" class="p-slideMenu">
                 <div class="p-slideMenu__contents">
                     <ul class="p-menuList p-menuList--slide">

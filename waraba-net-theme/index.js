@@ -41,23 +41,21 @@ const scrollStop = (status) => {
 // サイドメニューの表示を管理する関数
 const diplaySlideMenu = () => {
     const sideMenuClassList = document.getElementById('slideMenu').classList;
-    const slideMenuButton = document.getElementById('slideMenuButton').classList;
+    const burgerButton = document.getElementById('burgerButton').classList;
     const blackFullScreen = document.getElementById('blackFullScreen').classList;
 
     if (!sideMenuClassList.contains('p-slideMenu--action')) {
         sideMenuClassList.add('p-slideMenu--action');
-        slideMenuButton.remove('c-icon--burger');
-        slideMenuButton.add('c-icon--cancel');
+        burgerButton.add('p-header__burger--active');
         blackFullScreen.add('c-blackFullScreen--active');
         scrollStop(true);
         return;
     }
 
     sideMenuClassList.remove('p-slideMenu--action');
-    slideMenuButton.remove('c-icon--cancel');
-    slideMenuButton.add('c-icon--burger');
+    burgerButton.remove('p-header__burger--active');
     blackFullScreen.remove('c-blackFullScreen--active');
     scrollStop(false);
 }
-document.getElementById('slideMenuButton').addEventListener('click', diplaySlideMenu);
+document.getElementById('burgerButton').addEventListener('click', diplaySlideMenu);
 document.getElementById('blackFullScreen').addEventListener('click', diplaySlideMenu);
