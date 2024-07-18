@@ -25,65 +25,48 @@
                 <ul class="p-menuList p-menuList--header">
                     <?php $top_categories = get_top_categories_info(); ?>
                     <?php foreach ( $top_categories as $top_category ) : ?>
-                        <?php
-                            switch ( $top_category->name ) {
-                                case 'おでかけ':
-                                    $img_file_name = 'outing.png';
-                                    $img_alt = 'おでかけイメージ画像';
-                                    $menu_text = 'おでかけ';
-                                    break;
-                                case '食事':
-                                    $img_file_name = 'meal.png';
-                                    $img_alt = '食事イメージ画像';
-                                    $menu_text = '食事';
-                                    break;
-                                case '生活':
-                                    $img_file_name = 'life.png';
-                                    $img_alt = '生活イメージ画像';
-                                    $menu_text = '生活';
-                                    break;
-                            }
-                        ?>
-                        <li class="p-menuList__item p-menuList__item--withSubMenu">
-                            <a href="<?= get_category_link( $top_category->term_id ); ?>" class="c-siteMenu c-siteMenu--withImg">
-                                <span class="c-siteMenu__img">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/<?= $img_file_name; ?>" alt="<?= $img_alt; ?>" class="c-img">
-                                </span>
-                                <?= $menu_text; ?>
-                            </a>
-                            <ul class="p-menuList p-menuList--headerSub">
-                                <?php
-                                    $parent_categories = get_categories(
-                                        array(
-                                            'hide_empty' => '0',
-                                            'parent' => $top_category->term_id,
-                                            'orderby' => 'id'
-                                        )
-                                    );
-                                ?>
-                                <?php foreach ( $parent_categories as $parent_category ) : ?>
-                                    <li class="p-menuList__item">
-                                        <a class="c-siteMenu" href="<?= get_category_link( $parent_category->term_id ); ?>">
-                                            <?= $parent_category->name; ?>
-                                        </a>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </li>
+                    <?php
+                        switch ( $top_category->name ) {
+                            case 'おでかけ':
+                                $img_file_name = 'outing.png';
+                                $img_alt = 'おでかけイメージ画像';
+                                break;
+                            case '食事':
+                                $img_file_name = 'meal.png';
+                                $img_alt = '食事イメージ画像';
+                                break;
+                            case '生活':
+                                $img_file_name = 'life.png';
+                                $img_alt = '生活イメージ画像';
+                                break;
+                        }
+                    ?>
+                    <li class="p-menuList__item p-menuList__item--withSubMenu">
+                        <a href="<?= get_category_link( $top_category->term_id ); ?>" class="c-siteMenu c-siteMenu--withImg">
+                            <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/<?= $img_file_name; ?>" alt="<?= $img_alt; ?>">
+                            <?= $top_category->name ?>
+                        </a>
+                        <ul class="p-menuList p-menuList--headerSub">
+                            <?php $sub_categories = get_sub_categories_info( $top_category->term_id ); ?>
+                            <?php foreach ( $sub_categories as $sub_category ) : ?>
+                                <li class="p-menuList__item">
+                                    <a class="c-siteMenu" href="<?= get_category_link( $sub_category->term_id ); ?>">
+                                        <?= $sub_category->name; ?>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </li>
                     <? endforeach; ?>
                     <li class="p-menuList__item">
                         <a href="#" class="c-siteMenu c-siteMenu--withImg">
-                            <span class="c-siteMenu__img">
-                                <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/ranking.png" alt="ランキング画像" class="c-img">
-                            </span>
+                            <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/ranking.png" alt="ランキング画像">
                             ランキング
                         </a>
                     </li>
                     <li class="p-menuList__item">
                         <a href="#" class="c-siteMenu c-siteMenu--withImg">
-                            <span class="c-siteMenu__img">
-                                <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/site-detail.png" alt="サイト詳細画像" class="c-img">
-                            </span>
+                            <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/site-detail.png" alt="サイト詳細画像">
                             サイト紹介
                         </a>
                     </li>
