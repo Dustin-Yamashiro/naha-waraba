@@ -21,6 +21,7 @@
 @use "project/p-menuList";
 @use "project/p-snsIconList";
 @use "project/p-tagList";
+@use "project/p-slideMenu";
 
 // コンポーネント
 @use "component/c-siteMenu";
@@ -35,6 +36,7 @@
 @use "component/c-badge";
 @use "component/c-postListTitle";
 @use "component/c-moreButton";
+@use "component/c-blackFullScreen";
 
 
 // ユーティリティ

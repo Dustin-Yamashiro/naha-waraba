@@ -34,6 +34,18 @@ function get_top_categories_info()
     );
 }
 
+// サブカテゴリー情報を取得
+function get_sub_categories_info( $top_category_id )
+{
+    return get_categories(
+        array(
+            'hide_empty' => '0',
+            'parent' => $top_category_id,
+            'orderby' => 'id'
+        )
+    );
+}
+
 
 /* フック関数 */
 

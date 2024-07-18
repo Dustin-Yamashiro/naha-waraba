@@ -24,11 +24,70 @@
             display: none;
         }
     }
-    &__icon {
+    &__search {
         display: none;
         @include setBrakePoint(tb) {
-            display: inline;
-            margin: 0 8px;
+            display: block;
+            margin-left: 8px;
+            width: 6%;
+            max-width: 28px;
+            min-width: 24px;
+        }
+    }
+    &__burger {
+        display: none;
+        @include setBrakePoint(tb) {
+            display: block;
+            margin-right: 8px;
+            width: 6%;
+            max-width: 28px;
+            min-width: 24px;
+            height: 24px;
+            position: relative;
+            z-index: 999;
+            & > span {
+                display: block;
+                width: 100%;
+                height: 3px;
+                position: absolute;
+                transition: 0.5s;
+                background-color: $fontColorBlack;
+                &::before, &::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    transition: inherit;
+                    background-color: $fontColorBlack;
+                }
+                &::before {
+                    top: -8px;
+                }
+                &::after {
+                    top: 8px;
+                }
+            }
+            &--active {
+                background-color: $baseColor;
+                & > span {
+                    background-color: transparent;
+                    &::before, &::after {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &::before {
+                        top: 0;
+                        transform: rotate(45deg);
+                        background-color: $fontColorBlack;
+                    }
+                    &::after {
+                        top: 0;
+                        transform: rotate(-45deg);
+                        background-color: $fontColorBlack;
+                    }
+                }
+            }
         }
     }
 }
