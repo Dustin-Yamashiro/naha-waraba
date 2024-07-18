@@ -75,6 +75,12 @@
         flex-grow: 1;
         text-align: center;
         border-left: solid 1px $fontColorBlack;
+        &:hover {
+            & > a {
+                color: $mainColor;
+                transition: all 0.2s;
+            }
+        }
         &:nth-child(1) {
             border-left: initial;
         }

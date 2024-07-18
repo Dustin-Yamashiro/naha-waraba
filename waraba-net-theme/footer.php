@@ -2,10 +2,10 @@
     <div class="l-footer__contents p-footer">
         <nav class="p-footer__menu">
             <ul class="p-menuList p-menuList--footer">
-                <li class="p-menuList__item c-siteMenu"><a href="#" class="c-siteMenu__contents">プライバシーポリシー</a></li>
-                <li class="p-menuList__item c-siteMenu"><a href="#" class="c-siteMenu__contents">免責事項</a></li>
-                <li class="p-menuList__item c-siteMenu"><a href="#" class="c-siteMenu__contents">お問い合わせページ</a></li>
-                <li class="p-menuList__item c-siteMenu"><a href="#" class="c-siteMenu__contents">サイトマップ</a></li>
+                <li class="p-menuList__item"><a href="#" class="c-siteMenu">プライバシーポリシー</a></li>
+                <li class="p-menuList__item"><a href="#" class="c-siteMenu">免責事項</a></li>
+                <li class="p-menuList__item"><a href="#" class="c-siteMenu">お問い合わせページ</a></li>
+                <li class="p-menuList__item"><a href="#" class="c-siteMenu">サイトマップ</a></li>
             </ul>
         </nav>
         <span class="p-footer__copyright">© 2024 パラログ</span>
