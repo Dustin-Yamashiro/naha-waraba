@@ -78,26 +78,31 @@
             <nav id="slideMenu" class="p-slideMenu">
                 <div class="p-slideMenu__contents">
                     <ul class="p-menuList p-menuList--slide">
-                        <li class="p-menuList__item c-siteMenu">
-                            <a href="<?= home_url(); ?>" class="c-siteMenu__contents c-siteMenu__contents--left">ホーム</a>
+                        <li class="p-menuList__item">
+                            <a href="<?= home_url(); ?>" class="c-siteMenu c-siteMenu--alignLeft">ホーム</a>
                         </li>
-                        <li class="p-menuList__item c-siteMenu">
-                            <a href="#" class="c-siteMenu__contents c-siteMenu__contents--left">おでかけ</a>
-                            <input type="checkbox" class="c-icon c-icon--dropDown">
+                        <?php foreach ( $top_categories as $top_category ) : ?>
+                        <li class="p-menuList__item p-menuList__item--withDownMenu">
+                            <a href="<?= get_category_link( $top_category->term_id ); ?>" class="c-siteMenu c-siteMenu--withDownMenu">
+                                <?= $top_category->name; ?>
+                                <input type="checkbox">
+                            </a>
+                            <ul class="p-menuList p-menuList--slideSub">
+                                <?php $sub_categories = get_sub_categories_info( $top_category->term_id ); ?>
+                                <?php foreach ( $sub_categories as $sub_category ) : ?>
+                                <li class="p-menuList__item">
+                                    <a href="<?= get_category_link( $sub_category->term_id ); ?>" class="c-siteMenu c-siteMenu--alignLeft">
+                                        <?= $sub_category->name; ?>
+                                    </a>
+                                <?php endforeach; ?>
+                            </ul>
                         </li>
-                        <li class="p-menuList__item c-siteMenu">
-                            <a href="#" class="c-siteMenu__contents c-siteMenu__contents--left c-siteMenu__contents--dropDown">食事</a>
-                            <input type="checkbox" class="c-icon c-icon--dropDown">
+                        <? endforeach; ?>
+                        <li class="p-menuList__item">
+                            <a href="#" class="c-siteMenu c-siteMenu--alignLeft">人気記事ランキング</a>
                         </li>
-                        <li class="p-menuList__item c-siteMenu">
-                            <a href="#" class="c-siteMenu__contents c-siteMenu__contents--left c-siteMenu__contents--dropDown">生活</a>
-                            <input type="checkbox" class="c-icon c-icon--dropDown">
-                        </li>
-                        <li class="p-menuList__item c-siteMenu">
-                            <a href="#" class="c-siteMenu__contents c-siteMenu__contents--left c-siteMenu__contents--dropDown">人気記事ランキング</a>
-                        </li>
-                        <li class="p-menuList__item c-siteMenu">
-                            <a href="#" class="c-siteMenu__contents c-siteMenu__contents--left c-siteMenu__contents--dropDown">サイト紹介</a>
+                        <li class="p-menuList__item">
+                            <a href="#" class="c-siteMenu c-siteMenu--alignLeft">当サイトについて</a>
                         </li>
                     </ul>
                 </div>

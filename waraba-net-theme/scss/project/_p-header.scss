@@ -69,6 +69,7 @@
                 }
             }
             &--active {
+                background-color: $baseColor;
                 & > span {
                     background-color: transparent;
                     &::before, &::after {

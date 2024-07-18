@@ -5,6 +5,7 @@
     display: none;
     @include setBrakePoint(tb) {
         display: block;
+        overflow: auto;
         width: 40vw;
         height: 100vh;
         background-color: $baseColor;
