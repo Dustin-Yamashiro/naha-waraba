@@ -9,7 +9,7 @@
         justify-content: space-between;
         height: 100%;
     }
-    &--header &__item {
+    &--header > &__item {
         width: 120px;
         font-size: 0.9rem;
         letter-spacing: 1.25px;
@@ -45,7 +45,7 @@
     &--headerSub {
         background-color: $baseColor;
     }
-    &--headerSub &__item {
+    &--headerSub > &__item {
         height: 56px;
         font-size: 0.85rem;
         letter-spacing: 1px;
@@ -70,7 +70,7 @@
             row-gap: 12px;
         }
     }
-    &--footer &__item {
+    &--footer > &__item {
         flex-grow: 1;
         text-align: center;
         border-left: solid 1px $fontColorBlack;
@@ -98,7 +98,7 @@
             row-gap: 8px;
         }
     }
-    &--post &__item {
+    &--post > &__item {
         font-size: clamp(0.9rem, 0.726rem + 0.63vw, 1.2rem);
     }
 
