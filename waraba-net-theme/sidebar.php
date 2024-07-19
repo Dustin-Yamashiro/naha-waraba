@@ -21,13 +21,13 @@
             <section>
                 <ul class="p-profile__snsIconList p-snsIconList">
                     <li class="c-icon c-icon--sns">
-                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/x-black.png" alt="x-black-logo" class="c-img"></a>
+                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/x-black.png" alt="x-black-logo" class="c-img"></a>
                     </li>
                     <li class="c-icon c-icon--sns">
-                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram-color.png" alt="instagram-color-logo" class="c-img"></a>
+                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram-color.png" alt="instagram-color-logo" class="c-img"></a>
                     </li>
                     <li class="c-icon c-icon--sns">
-                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook-color.png" alt="facebook-color-logo" class="c-img"></a>
+                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook-color.png" alt="facebook-color-logo" class="c-img"></a>
                     </li>
                 </ul>
             </section>
@@ -51,7 +51,7 @@
                     <?php while ( $sidebar_posts->have_posts() ) : ?>
                         <?php $sidebar_posts->the_post(); ?>
                         <li class="p-postCard p-postCard--sidebar">
-                            <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
+                            <a href="<?php esc_url( the_permalink() ); ?>" class="p-postCard__contents">
                                 <figure class="p-postCard__thumbnail c-thumbnail">
                                     <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
                                     <?php
@@ -99,7 +99,7 @@
                 ?>
                 <?php foreach ( $allTags as $tag ) : ?>
                     <li class="c-tag">
-                        <a href="<?= get_tag_link( $tag->term_id ); ?>" class="c-tag--contents">
+                        <a href="<?= esc_url( get_tag_link( $tag->term_id ) ); ?>" class="c-tag--contents">
                             <span class="c-tag--text"><span>&#035;</span><?= $tag->name; ?></span>
                         </a>
                     </li>

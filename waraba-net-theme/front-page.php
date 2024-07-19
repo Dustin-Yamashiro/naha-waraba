@@ -15,7 +15,7 @@
                     <?php while ( $slider_posts->have_posts() ) : ?>
                         <?php $slider_posts->the_post(); ?>
                         <li class="p-postCard p-postCard--slider swiper-slide">
-                            <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
+                            <a href="<?php esc_url( the_permalink() ); ?>" class="p-postCard__contents">
                                 <figure class="p-postCard__thumbnail c-thumbnail">
                                     <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
                                 </figure>
@@ -70,7 +70,7 @@
                                 <?php while ( $latest_posts->have_posts() ) : ?>
                                     <?php $latest_posts->the_post(); ?>
                                     <li class="p-postCard p-postCard--main">
-                                        <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
+                                        <a href="<?php esc_url( the_permalink() ); ?>" class="p-postCard__contents">
                                             <figure class="p-postCard__thumbnail c-thumbnail">
                                                 <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
                                                 <span class="p-postCard__badge c-badge c-badge--category">
@@ -116,7 +116,7 @@
                                     <?php while ( $postBycategory->have_posts() ) : ?>
                                         <?php $postBycategory->the_post(); ?>
                                         <li class="p-postCard p-postCard--main">
-                                            <a href="<?php the_permalink(); ?>" class="p-postCard__contents">
+                                            <a href="<?php esc_url( the_permalink() ); ?>" class="p-postCard__contents">
                                                 <figure class="p-postCard__thumbnail c-thumbnail">
                                                     <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
                                                     <span class="p-postCard__badge c-badge c-badge--category">
@@ -132,7 +132,7 @@
                                     <?php endwhile; ?>
                                 <?php endif; ?>
                             </ul>
-                            <button class="c-moreButton c-button u-mt--pagination"><a href="<?= get_category_link( $topCategoryId ); ?>">もっと見る</a></button>
+                            <button class="c-moreButton c-button u-mt--pagination"><a href="<?= esc_url( get_category_link( $topCategoryId ) ); ?>">もっと見る</a></button>
                         </div>
                     <?php endforeach; ?>
                 </div>
