@@ -19,7 +19,7 @@
         <div class="l-header__contents p-header">
             <button id="siteSearchButton" class="p-header__search c-icon c-icon--search"></button>
             <?php get_search_form(); ?>
-            <a href="<?= home_url(); ?>" class="p-header__logo">
+            <a href="<?= esc_url( home_url() ); ?>" class="p-header__logo">
                 <img src="<?= get_template_directory_uri(); ?>/img/site-logo.png" alt="わらばーNET ロゴ" class="c-img">
             </a>
             <nav class="p-header__menu">
@@ -43,7 +43,7 @@
                         }
                     ?>
                     <li class="p-menuList__item p-menuList__item--withSubMenu">
-                        <a href="<?= get_category_link( $top_category->term_id ); ?>" class="c-siteMenu c-siteMenu--withImg">
+                        <a href="<?= esc_url( get_category_link( $top_category->term_id ) ); ?>" class="c-siteMenu c-siteMenu--withImg">
                             <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/<?= $img_file_name; ?>" alt="<?= $img_alt; ?>">
                             <?= $top_category->name ?>
                         </a>
@@ -51,7 +51,7 @@
                             <?php $sub_categories = get_sub_categories_info( $top_category->term_id ); ?>
                             <?php foreach ( $sub_categories as $sub_category ) : ?>
                                 <li class="p-menuList__item">
-                                    <a class="c-siteMenu" href="<?= get_category_link( $sub_category->term_id ); ?>">
+                                    <a class="c-siteMenu" href="<?= esc_url( get_category_link( $sub_category->term_id ) ); ?>">
                                         <?= $sub_category->name; ?>
                                     </a>
                                 </li>
@@ -60,13 +60,13 @@
                     </li>
                     <? endforeach; ?>
                     <li class="p-menuList__item">
-                        <a href="#" class="c-siteMenu c-siteMenu--withImg">
+                        <a href="<?= esc_url( home_url('/') ); ?>" class="c-siteMenu c-siteMenu--withImg">
                             <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/ranking.png" alt="ランキング画像">
                             ランキング
                         </a>
                     </li>
                     <li class="p-menuList__item">
-                        <a href="#" class="c-siteMenu c-siteMenu--withImg">
+                        <a href="<?= esc_url( home_url('/') ); ?>" class="c-siteMenu c-siteMenu--withImg">
                             <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/site-detail.png" alt="サイト詳細画像">
                             サイト紹介
                         </a>
@@ -80,11 +80,11 @@
                 <div class="p-slideMenu__contents">
                     <ul class="p-menuList p-menuList--slide">
                         <li class="p-menuList__item">
-                            <a href="<?= home_url(); ?>" class="c-siteMenu c-siteMenu--alignLeft">ホーム</a>
+                            <a href="<?= esc_url( home_url() ); ?>" class="c-siteMenu c-siteMenu--alignLeft">ホーム</a>
                         </li>
                         <?php foreach ( $top_categories as $top_category ) : ?>
                         <li class="p-menuList__item p-menuList__item--withDownMenu">
-                            <a href="<?= get_category_link( $top_category->term_id ); ?>" class="c-siteMenu c-siteMenu--withDownMenu">
+                            <a href="<?= esc_url( get_category_link( $top_category->term_id ) ); ?>" class="c-siteMenu c-siteMenu--withDownMenu">
                                 <?= $top_category->name; ?>
                                 <input type="checkbox">
                             </a>
@@ -92,7 +92,7 @@
                                 <?php $sub_categories = get_sub_categories_info( $top_category->term_id ); ?>
                                 <?php foreach ( $sub_categories as $sub_category ) : ?>
                                 <li class="p-menuList__item">
-                                    <a href="<?= get_category_link( $sub_category->term_id ); ?>" class="c-siteMenu c-siteMenu--alignLeft">
+                                    <a href="<?= esc_url( get_category_link( $sub_category->term_id ) ); ?>" class="c-siteMenu c-siteMenu--alignLeft">
                                         <?= $sub_category->name; ?>
                                     </a>
                                 <?php endforeach; ?>
@@ -100,10 +100,10 @@
                         </li>
                         <? endforeach; ?>
                         <li class="p-menuList__item">
-                            <a href="#" class="c-siteMenu c-siteMenu--alignLeft">人気記事ランキング</a>
+                            <a href="<?= esc_url( home_url() ); ?>" class="c-siteMenu c-siteMenu--alignLeft">人気記事ランキング</a>
                         </li>
                         <li class="p-menuList__item">
-                            <a href="#" class="c-siteMenu c-siteMenu--alignLeft">当サイトについて</a>
+                            <a href="<?= esc_url( home_url() ); ?>" class="c-siteMenu c-siteMenu--alignLeft">当サイトについて</a>
                         </li>
                     </ul>
                 </div>
