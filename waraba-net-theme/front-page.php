@@ -40,7 +40,7 @@
             <div class="swiper-pagination"></div>
             <div class="swiper-button-next"></div>
         </article>
-        <article class="u-mt--postList">
+        <article class="u-mt--postListAll">
             <h1 class="c-postListTitle">記事一覧</h1>
             <nav id="swiper-postMenu" class="u-mt--postMenu swiper">
                 <ul class="p-menuList p-menuList--post swiper-wrapper">

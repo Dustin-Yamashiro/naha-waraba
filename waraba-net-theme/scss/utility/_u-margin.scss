@@ -2,25 +2,51 @@
 
 .u-mt {
     &--header {
-        margin-top: min(24px, 3vw);
+        margin-top: 24px;
+        @include setBrakePoint(sp) {
+            margin-top: 16px;
+        }
     }
     &--contents {
-        margin-top: min(40px, 3.75vw);
+        margin-top: 40px;
+        @include setBrakePoint(tb) {
+            margin-top: 28px;
+        }
+        @include setBrakePoint(sp) {
+            margin-top: 16px;
+        }
     }
-    &--postList {
-        margin-top: min(28px, 3.75vw);
+    &--postListAll {
+        margin-top: 40px;
+        @include setBrakePoint(tb) {
+            margin-top: 28px;
+        }
+        @include setBrakePoint(sp) {
+            margin-top: 20px;
+        }
     }
     &--postMenu {
-        margin-top: min(28px, 4.75vw);
+        margin-top: 28px;
+        @include setBrakePoint(tb) {
+            margin-top: 24px;
+        }
+        @include setBrakePoint(sp) {
+            margin-top: 16px;
+        }
     }
     &--postList {
-        margin-top: min(28px, 4.25vw);
+        margin-top: 24px;
+        @include setBrakePoint(sp) {
+            margin-top: 16px;
+        }
     }
     &--pagination {
-        margin-top: min(40px, 8vw);
+        margin-top: 32px;
+        @include setBrakePoint(tb) {
+            margin-top: 28px;
+        }
     }
     &--sidebar {
-        margin-top: 6px;
         @include setBrakePoint(tb) {
             margin-top: 72px;
         }
@@ -37,6 +63,9 @@
         }
     }
     &--footer {
-        margin-top: min(200px, 16vw);
+        margin-top: 200px;
+        @include setBrakePoint(tb) {
+            margin-top: 100px;
+        }
     }
 }
