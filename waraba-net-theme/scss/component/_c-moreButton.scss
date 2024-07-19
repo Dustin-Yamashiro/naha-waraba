@@ -10,10 +10,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        &::after {           
-            content: '\f061';
-            font-weight: bold;
-            font-family: "Font Awesome 5 Free";
+        &::after {
             margin-left: 6px;
             margin-top: 4px;
         }

@@ -15,6 +15,36 @@
             font-family: "Font Awesome 5 Free";
         }
     }
+    &--right-arrow {
+        &-short {
+            &::after { 
+                content: '\f061';
+                font-weight: bold;
+                font-family: "Font Awesome 5 Free";
+            }
+        }
+        &-long {
+            &::after {
+                content: ' \f178';
+                font-weight: bold;
+                font-family: "Font Awesome 5 Free";
+            }
+        }
+    }
+    &--previous {
+        &::after {
+            content: '\f053';
+            font-weight: bold;
+            font-family: "Font Awesome 5 Free";
+        }
+    }
+    &--next {
+        &::after {
+            content: '\f054';
+            font-weight: bold;
+            font-family: "Font Awesome 5 Free";
+        }
+    }
     &--sns {
         width: 32px;
         height: 32px;
