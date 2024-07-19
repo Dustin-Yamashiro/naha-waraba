@@ -30,7 +30,7 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 transition: inherit;
-                background-color: $fontColorBlack;
+                background-color: $mainColor;
             }
             &::before {
                 content: "";
@@ -41,7 +41,7 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 transition: inherit;
-                background-color: $fontColorBlack;
+                background-color: $mainColor;
             }
             &:checked {
                 &::after {
