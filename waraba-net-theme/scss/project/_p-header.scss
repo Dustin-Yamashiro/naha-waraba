@@ -9,8 +9,8 @@
         width: 180px;
         height: 90px;
         @include setBrakePoint(tb) {
-            width: min(180px, 28vw);
-            height: min(90px, 14vw);
+            width: min(188px, 30vw);
+            height: min(94px, 15vw);
         }
         img {
             @include baseTransition(0.3);
