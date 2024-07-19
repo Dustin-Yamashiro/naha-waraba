@@ -98,9 +98,10 @@
                 );
                 ?>
                 <?php foreach ( $allTags as $tag ) : ?>
-                    <li class="c-tag">
-                        <a href="<?= esc_url( get_tag_link( $tag->term_id ) ); ?>" class="c-tag--contents">
-                            <span class="c-tag--text"><span>&#035;</span><?= $tag->name; ?></span>
+                    <li>
+                        <a class="c-tag" href="<?= esc_url( get_tag_link( $tag->term_id ) ); ?>">
+                            <span>&#035;</span>
+                            <?= $tag->name; ?>
                         </a>
                     </li>
                 <?php endforeach; ?>
