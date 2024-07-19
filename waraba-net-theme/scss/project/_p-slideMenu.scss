@@ -12,10 +12,10 @@
         position: fixed;
         top: 0;
         right: 0;
-        z-index: 998;
+        z-index: 1;
         transform: translateX(100%);
         transition: 0.5s;
-        &--action {
+        &--active {
             transform: translateX(0);
         }
     }
