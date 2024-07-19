@@ -127,12 +127,12 @@ add_filter( 'manage_edit-post_sortable_columns', 'add_costom_column_sort' );
 // ページネーションボタンに自前のクラスを付与
 function add_prev_button_class()
 {
-    return 'class="p-pagination__button p-pagination__button--previous c-button c-button--accentColor"';
+    return 'class="p-pagination__button p-pagination__button--previous c-button c-button--accentColor c-icon c-icon--previous"';
 }
 add_filter( 'previous_posts_link_attributes', 'add_prev_button_class' );
 
 function add_next_button_class()
 {
-    return 'class="p-pagination__button p-pagination__button--next c-button c-button--baseColor"';
+    return 'class="p-pagination__button p-pagination__button--next c-button c-button--baseColor c-icon c-icon--next"';
 }
 add_filter( 'next_posts_link_attributes', 'add_next_button_class' );

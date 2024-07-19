@@ -19,11 +19,6 @@
             top: 0;
             bottom: 0;
             margin: auto 0;
-            &::after {
-                content: '\f053';
-                font-weight: bold;
-                font-family: "Font Awesome 5 Free";
-            }
         }
         &--next {
             position: absolute;
@@ -31,11 +26,6 @@
             top: 0;
             bottom: 0;
             margin: auto 0;
-            &::after {
-                content: '\f054';
-                font-weight: bold;
-                font-family: "Font Awesome 5 Free";
-            }
         }
     }
     &__text {

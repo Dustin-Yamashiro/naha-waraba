@@ -90,11 +90,6 @@
     }
     &--slider &__more {
         font-size: clamp(0.8rem, 1.33vw, 1rem);
-        &::after {
-            content: ' \f178';
-            font-weight: bold;
-            font-family: "Font Awesome 5 Free";
-        }
         @include setBrakePoint(tb) {
             font-size: clamp(0.6rem, 0.177rem + 1.54vw, 1.1rem);
         }

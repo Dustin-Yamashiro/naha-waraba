@@ -27,7 +27,7 @@
                                         <h2 class="p-postCard__title c-desc c-desc--bold"><?php the_title(); ?></h2>
                                     </div>
                                     <div class="p-postCard__descRight">
-                                        <span class="p-postCard__more c-desc--colorLight">MORE</span>
+                                        <span class="p-postCard__more c-desc--colorLight c-icon c-icon--right-arrow-long">MORE</span>
                                     </div>
                                 </div>
                             </a>
@@ -132,7 +132,7 @@
                                     <?php endwhile; ?>
                                 <?php endif; ?>
                             </ul>
-                            <button class="c-moreButton c-button u-mt--pagination"><a href="<?= esc_url( get_category_link( $topCategoryId ) ); ?>">もっと見る</a></button>
+                            <button class="c-moreButton c-button u-mt--pagination"><a href="<?= esc_url( get_category_link( $topCategoryId ) ); ?>" class="c-icon c-icon--right-arrow-short">もっと見る</a></button>
                         </div>
                     <?php endforeach; ?>
                 </div>
