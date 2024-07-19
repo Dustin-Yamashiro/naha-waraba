@@ -8,13 +8,15 @@
     &__logo {
         width: 180px;
         height: 90px;
-        &:hover {
-            @include hoverAction();
-            @include hoverActionImg();
-        }
         @include setBrakePoint(tb) {
             width: min(180px, 28vw);
             height: min(90px, 14vw);
+        }
+        img {
+            @include baseTransition(0.3);
+            &:hover {
+                transform: scale(1.03);
+            }
         }
     }
     &__menu {

@@ -17,14 +17,6 @@ $brakePoints: (
     margin: 0 auto;
 }
 
-@mixin hoverAction() {
-    transition: all 0.3s 0s ease;
-}
-
-@mixin hoverActionImg {
-    img {
-        opacity: 0.8;
-        transform: scale(1.025);
-        transition: all 0.3s 0s ease-in-out;
-    }
+@mixin baseTransition($time: 0.3) {
+    transition: all $time + s 0s ease;
 }

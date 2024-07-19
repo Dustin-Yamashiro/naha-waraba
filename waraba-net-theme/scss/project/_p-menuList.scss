@@ -13,14 +13,15 @@
         width: 120px;
         font-size: 0.9rem;
         letter-spacing: 1.25px;
+        img, & > a {
+            @include baseTransition();
+        }
         &:hover {
-            & > a {
-                color: $mainColor;
-                transition: all 0.2s;
-            }
             img {
                 transform: translateY(-6px);
-                transition: all 0.4s;
+            }
+            & > a {
+                color: $mainColor;
             }
         }
         &--withSubMenu {
@@ -30,12 +31,12 @@
                 transform: scaleY(0);
                 transform-origin: center top;
                 padding-top: 16px;
+                @include baseTransition();
             }
             &:hover {
                 & > .p-menuList {
                     visibility: visible;
                     transform: scaleY(1);
-                    transition: all 0.3s;
                 }
             }
         }
@@ -74,10 +75,12 @@
         flex-grow: 1;
         text-align: center;
         border-left: solid 1px $fontColorBlack;
+        & > a {
+            @include baseTransition(0.1);
+        }
         &:hover {
             & > a {
                 color: $mainColor;
-                transition: all 0.2s;
             }
         }
         &:nth-child(1) {
@@ -129,7 +132,7 @@
                     visibility: visible;
                     height: auto;
                     opacity: 1;
-                    transition: opacity 0.3s;
+                    @include baseTransition();
                 }
             }
         }
