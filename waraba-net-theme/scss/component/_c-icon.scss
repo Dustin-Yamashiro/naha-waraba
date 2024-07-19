@@ -1,6 +1,20 @@
 @use "../foundation/mixin" as *;
 
 .c-icon {
+    &--search {
+        &::after {
+            content: '\f002';
+            font-weight: bold;
+            font-family: "Font Awesome 5 Free";
+        }
+    }
+    &--cancel {
+        &::after {
+            content: '\f00d';
+            font-weight: bold;
+            font-family: "Font Awesome 5 Free";
+        }
+    }
     &--sns {
         width: 32px;
         height: 32px;

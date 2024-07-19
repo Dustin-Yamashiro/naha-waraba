@@ -17,7 +17,8 @@
 <body>
     <header class="l-header u-mt--header">
         <div class="l-header__contents p-header">
-            <button class="p-header__search c-icon c-icon--search"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #333333;"></i></button>
+            <button id="siteSearchButton" class="p-header__search c-icon c-icon--search"></button>
+            <?php get_search_form(); ?>
             <a href="<?= home_url(); ?>" class="p-header__logo">
                 <img src="<?= get_template_directory_uri(); ?>/img/site-logo.png" alt="わらばーNET ロゴ" class="c-img">
             </a>

@@ -60,3 +60,25 @@ const diplaySlideMenu = () =>
     scrollStop(false);
 }
 document.getElementById('burgerButton').addEventListener('click', diplaySlideMenu);
+
+// サイト検索フォームの表示を制御する関数
+const diplaySiteSearchForm = () =>
+{
+    const siteSeachFormClassList = document.getElementById('siteSearchForm').classList;
+    const blackFullScreen = document.getElementById('blackFullScreen').classList;
+
+    if (!siteSeachFormClassList.contains('p-searchForm--active')) {
+        siteSeachFormClassList.add('p-searchForm--active');
+        blackFullScreen.add('c-blackFullScreen--active');
+        document.getElementById('burgerButton').disabled = true;
+        scrollStop(true);
+        return;
+    }
+
+    siteSeachFormClassList.remove('p-searchForm--active');
+    blackFullScreen.remove('c-blackFullScreen--active');
+    document.getElementById('burgerButton').disabled = false;
+    scrollStop(false);
+}
+document.getElementById('siteSearchButton').addEventListener('click', diplaySiteSearchForm);
+document.getElementById('siteSearchFormClose').addEventListener('click', diplaySiteSearchForm);
