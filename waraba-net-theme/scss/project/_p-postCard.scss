@@ -5,10 +5,15 @@
 .p-postCard {
     // 投稿スライダー
     &--slider {
+        img, .p-postCard__more {
+            @include baseTransition(0.4);
+        }
         &:hover {
-            @include hoverActionImg();
+            img {
+                opacity: 0.8;
+                transform: scale(1.025);
+            }
             .p-postCard__more {
-                @include hoverAction();
                 color: $mainColor;
             }
         }
@@ -121,10 +126,16 @@
             min-height: 344px;
             border-radius: 4px;
         }
+        @include baseTransition();
+        img {
+            @include baseTransition();
+        }
         &:hover {
-            @include hoverAction();
-            @include hoverActionImg();
             box-shadow: 0px 4px 12px 0px rgba($fontColorBlack, 0.2);
+            img {
+                opacity: 0.8;
+                transform: scale(1.025);
+            }
         }
     }
     &--main &__contents {
@@ -192,13 +203,14 @@
                 display: none;
             }
         }
+        img, .p-postCard__desc {
+            @include baseTransition(0.2);
+        }
         &:hover {
-            @include hoverActionImg();
             img {
-                transform: none;
+                opacity: 0.8;
             }
             .p-postCard__desc {
-                @include hoverAction();
                 color: $mainColor;
             }
         }

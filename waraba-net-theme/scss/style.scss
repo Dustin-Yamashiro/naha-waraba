@@ -94,8 +94,8 @@
 
 #swiper-postMenu .swiper-slide {
     display: flex !important;
+    @include baseTransition();
     &:hover {
-        @include hoverAction();
         transform: scale(0.95) !important;
     }
     width: 24% !important;
@@ -106,7 +106,6 @@
     }
 }
 #swiper-postMenu .swiper-slide-thumb-active {
-    @include hoverAction();
     background-color: $mainColor;
     color: $fontColorWhite;
 }
