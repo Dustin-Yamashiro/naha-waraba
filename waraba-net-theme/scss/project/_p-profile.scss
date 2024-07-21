@@ -3,9 +3,16 @@
 
 .p-profile {
     &__img {
-        width: min(144px, 36vw);
-        height: min(144px, 36vw);
+        display: block;
+        width: 120px;
+        height: 132px;
         margin: 0 auto;
+        img {
+            @include baseTransition(0.3);
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
     }
     &__desc {
         display: flex;

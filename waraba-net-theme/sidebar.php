@@ -2,9 +2,9 @@
     <article class="l-sidebar__item">
         <h2 class="c-sidebarTitle">プロフィール</h2>
         <section class="p-profile u-mt--sidebarItem-S">
-            <figure class="p-profile__img">
+            <a href="<?= esc_url( home_url() ); ?>" class="p-profile__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/profile-img.png" alt="投稿１" class="c-img">
-            </figure>
+            </a>
             <section class="p-profile__desc c-desc">
                 <h2 class="p-profile__name c-desc--bold">てぃじむなー</h2>
                 <div class="p-profile__introduction">
@@ -21,13 +21,13 @@
             <section>
                 <ul class="p-profile__snsIconList p-snsIconList">
                     <li class="c-icon c-icon--sns">
-                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/x-black.png" alt="x-black-logo" class="c-img"></a>
+                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/sns-img/x-black.png" alt="x-black-logo" class="c-img"></a>
                     </li>
                     <li class="c-icon c-icon--sns">
-                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram-color.png" alt="instagram-color-logo" class="c-img"></a>
+                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/sns-img/instagram-color.png" alt="instagram-color-logo" class="c-img"></a>
                     </li>
                     <li class="c-icon c-icon--sns">
-                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook-color.png" alt="facebook-color-logo" class="c-img"></a>
+                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/sns-img/facebook-color.png" alt="facebook-color-logo" class="c-img"></a>
                     </li>
                 </ul>
             </section>
