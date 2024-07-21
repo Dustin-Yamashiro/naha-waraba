@@ -21,13 +21,13 @@
             <section>
                 <ul class="p-profile__snsIconList p-snsIconList">
                     <li class="c-icon c-icon--sns">
-                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/x-black.png" alt="x-black-logo" class="c-img"></a>
+                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/sns-img/x-black.png" alt="x-black-logo" class="c-img"></a>
                     </li>
                     <li class="c-icon c-icon--sns">
-                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram-color.png" alt="instagram-color-logo" class="c-img"></a>
+                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/sns-img/instagram-color.png" alt="instagram-color-logo" class="c-img"></a>
                     </li>
                     <li class="c-icon c-icon--sns">
-                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook-color.png" alt="facebook-color-logo" class="c-img"></a>
+                        <a href="<?= esc_url( home_url() ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/sns-img/facebook-color.png" alt="facebook-color-logo" class="c-img"></a>
                     </li>
                 </ul>
             </section>
