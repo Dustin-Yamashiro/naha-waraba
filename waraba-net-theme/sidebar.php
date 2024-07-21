@@ -2,9 +2,9 @@
     <article class="l-sidebar__item">
         <h2 class="c-sidebarTitle">プロフィール</h2>
         <section class="p-profile u-mt--sidebarItem-S">
-            <figure class="p-profile__img">
+            <a href="<?= esc_url( home_url() ); ?>" class="p-profile__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/profile-img.png" alt="投稿１" class="c-img">
-            </figure>
+            </a>
             <section class="p-profile__desc c-desc">
                 <h2 class="p-profile__name c-desc--bold">てぃじむなー</h2>
                 <div class="p-profile__introduction">
