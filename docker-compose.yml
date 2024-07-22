@@ -4,7 +4,7 @@ services:
   wp:
     image: wordpress:latest
     volumes:
-      - ./para-log-theme:/var/www/html/wp-content/themes/para-log-theme
+      - ./naha-waraba-theme:/var/www/html/wp-content/themes/naha-waraba-theme
     environment:
       - WORDPRESS_DB_NAME=wp-db
       - WORDPRESS_DB_HOST=db

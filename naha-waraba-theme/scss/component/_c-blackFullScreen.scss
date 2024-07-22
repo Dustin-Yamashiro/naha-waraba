@@ -1,0 +1,17 @@
+@use "../foundation/base" as *;
+
+.c-blackFullScreen {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $fontColorBlack;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    &--active {
+        visibility: visible;
+        opacity: 0.6;
+    }
+}

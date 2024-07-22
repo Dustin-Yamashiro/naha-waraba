@@ -1,0 +1,52 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+.p-profile {
+    &__img {
+        display: block;
+        width: 120px;
+        height: 132px;
+        margin: 0 auto;
+        img {
+            @include baseTransition(0.3);
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+    }
+    &__desc {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 76%;
+        margin: 24px auto;
+    }
+    &__name {
+        font-size: 1.4rem;
+        @include setBrakePoint(tb) {
+            font-size: clamp(1.2rem, 1.031rem + 0.62vw, 1.4rem);
+        }
+        @include setBrakePoint(sp) {
+            font-size: clamp(1.2rem, 1rem + 1.45vw, 1.4rem);
+        }
+    }
+    &__introduction {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font-size: clamp(0.775rem, 0.375rem + 0.67vw, 0.875rem);
+        line-height: 1.6em;
+        @include setBrakePoint(tb) {
+            font-size: clamp(0.75rem, 0.665rem + 0.31vw, 0.85rem);
+        }
+        @include setBrakePoint(sp) {
+            font-size: clamp(0.75rem, 0.65rem + 0.73vw, 0.85rem);
+        }
+    }
+    &__snsIconList {
+        margin: 24px auto 0;
+        width: 44%;
+        min-width: 160px;
+    }
+}

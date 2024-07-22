@@ -1,0 +1,111 @@
+@use "./foundation/base" as *;
+@use "./foundation/mixin" as *;
+
+// リセットCSS
+@use "foundation/reset";
+
+// レイアウト
+@use "layout/l-header";
+@use "layout/l-footer";
+@use "layout/l-contents";
+@use "layout/l-main";
+@use "layout/l-sidebar";
+
+// プロジェクト
+@use "project/p-header";
+@use "project/p-footer";
+@use "project/p-postList";
+@use "project/p-postCard";
+@use "project/p-pagination";
+@use "project/p-profile";
+@use "project/p-menuList";
+@use "project/p-snsIconList";
+@use "project/p-tagList";
+@use "project/p-slideMenu";
+@use "project/p-searchForm";
+
+// コンポーネント
+@use "component/c-siteMenu";
+@use "component/c-postMenu";
+@use "component/c-sidebarTitle";
+@use "component/c-icon";
+@use "component/c-img";
+@use "component/c-desc";
+@use "component/c-tag";
+@use "component/c-button";
+@use "component/c-thumbnail";
+@use "component/c-badge";
+@use "component/c-postListTitle";
+@use "component/c-moreButton";
+@use "component/c-blackFullScreen";
+
+
+// ユーティリティ
+@use "utility/u-margin";
+
+// swiperの調整
+#swiper-slider .swiper-pagination {
+    width: initial !important;
+    left: initial !important;
+    top: 2% !important;
+    right: 2% !important;
+}
+#swiper-slider .swiper-pagination-bullets {
+    bottom: initial !important;
+}
+#swiper-slider .swiper-pagination-bullet {
+    background: $fontColorWhite !important;
+    opacity: 0.4 !important;
+    @include setBrakePoint(sp) {
+        width: 6px !important;
+        height: 6px !important;
+        margin: 0 3px !important;
+    }
+}
+#swiper-slider .swiper-pagination-bullet-active {
+    background: $mainColor !important;
+    opacity: initial !important;
+}
+#swiper-slider .swiper-button-prev {
+    left: 1% !important;
+    @include setBrakePoint(tb) {
+        left: 1.5% !important;
+    }
+}
+#swiper-slider .swiper-button-next {
+    right: 1% !important;
+    @include setBrakePoint(tb) {
+        right: 1.5% !important;
+    }
+}
+#swiper-slider .swiper-button-prev:after,
+#swiper-slider .swiper-button-next:after {
+    font-size: clamp(1.6rem, 0.8rem + 1.33vw, 1.8rem) !important;
+    color: rgba($fontColorWhite, 0.7) !important;
+    font-weight: bold;
+    @include setBrakePoint(tb) {
+        font-size: clamp(1.6rem, 1.262rem + 1.23vw, 2rem) !important;
+        color: rgba($fontColorWhite, 0.3) !important;
+    }
+    @include setBrakePoint(sp) {
+        font-size: clamp(1.4rem, 0.867rem + 2.67vw, 1.6rem) !important;
+    }
+}
+
+#swiper-postMenu .swiper-slide {
+    display: flex !important;
+    @include baseTransition();
+    &:hover {
+        transform: scale(0.95) !important;
+    }
+    width: 24% !important;
+    height: 2.5em;
+    @include setBrakePoint(sp) {
+        width: 49% !important;
+        height: 2.75em;
+    }
+}
+#swiper-postMenu .swiper-slide-thumb-active {
+    background-color: $mainColor;
+    color: $fontColorWhite;
+}

@@ -1,0 +1,22 @@
+@use "./base" as *;
+
+$brakePoints: (
+    sp-s: 320px,
+    sp: 440px,
+    tb: 960px,
+    pc: 1200px,
+);
+@mixin setBrakePoint($type) {
+    @media (max-width: #{map-get($brakePoints, $type)}) {
+        @content;
+    }
+}
+
+@mixin wrapper() {
+    width: min(1200px, 94vw);
+    margin: 0 auto;
+}
+
+@mixin baseTransition($time: 0.3) {
+    transition: all $time + s 0s ease;
+}

@@ -1,0 +1,12 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+.c-postMenu {
+    cursor: pointer;
+    color: $fontColorBlack;
+    background-color: rgba($fontColorBlack, 0.1);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

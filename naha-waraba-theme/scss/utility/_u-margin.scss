@@ -1,0 +1,71 @@
+@use "../foundation/mixin" as *;
+
+.u-mt {
+    &--header {
+        margin-top: 24px;
+        @include setBrakePoint(sp) {
+            margin-top: 16px;
+        }
+    }
+    &--contents {
+        margin-top: 40px;
+        @include setBrakePoint(tb) {
+            margin-top: 28px;
+        }
+        @include setBrakePoint(sp) {
+            margin-top: 16px;
+        }
+    }
+    &--postListAll {
+        margin-top: 40px;
+        @include setBrakePoint(tb) {
+            margin-top: 28px;
+        }
+        @include setBrakePoint(sp) {
+            margin-top: 20px;
+        }
+    }
+    &--postMenu {
+        margin-top: 28px;
+        @include setBrakePoint(tb) {
+            margin-top: 24px;
+        }
+        @include setBrakePoint(sp) {
+            margin-top: 16px;
+        }
+    }
+    &--postList {
+        margin-top: 24px;
+        @include setBrakePoint(sp) {
+            margin-top: 16px;
+        }
+    }
+    &--pagination {
+        margin-top: 32px;
+        @include setBrakePoint(tb) {
+            margin-top: 28px;
+        }
+    }
+    &--sidebar {
+        @include setBrakePoint(tb) {
+            margin-top: 72px;
+        }
+    }
+    &--sidebarItem {
+        &-S {
+            margin-top: 24px;
+        }
+        &-M {
+            margin-top: 28px;
+        }
+        &-L {
+            margin-top: 32px;
+        }
+    }
+    &--footer {
+        margin-top: 200px;
+        @include setBrakePoint(tb) {
+            margin-top: 100px;
+        }
+    }
+}

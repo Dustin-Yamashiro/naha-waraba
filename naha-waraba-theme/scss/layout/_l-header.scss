@@ -1,0 +1,11 @@
+@use "../foundation/base" as *;
+@use "../foundation/mixin" as *;
+
+.l-header {
+    position: relative;
+    z-index: 2;
+    background-color: $baseColor;
+    &__contents {
+        @include wrapper();
+    }
+}
