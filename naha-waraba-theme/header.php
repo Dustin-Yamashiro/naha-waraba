@@ -58,7 +58,7 @@
                             <?php endforeach; ?>
                         </ul>
                     </li>
-                    <? endforeach; ?>
+                    <?php endforeach; ?>
                     <li class="p-menuList__item">
                         <a href="<?= esc_url( home_url('/') ); ?>" class="c-siteMenu c-siteMenu--withImg">
                             <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/ranking.png" alt="ランキング画像">
@@ -98,7 +98,7 @@
                                 <?php endforeach; ?>
                             </ul>
                         </li>
-                        <? endforeach; ?>
+                        <?php endforeach; ?>
                         <li class="p-menuList__item">
                             <a href="<?= esc_url( home_url() ); ?>" class="c-siteMenu c-siteMenu--alignLeft">人気記事ランキング</a>
                         </li>
