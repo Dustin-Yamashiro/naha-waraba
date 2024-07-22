@@ -8,7 +8,7 @@
                 <li class="p-menuList__item"><a href="<?= esc_url( home_url() ); ?>" class="c-siteMenu">サイトマップ</a></li>
             </ul>
         </nav>
-        <span class="p-footer__copyright">© 2024 パラログ</span>
+        <span class="p-footer__copyright">© 2024 なはわらばぁ</span>
     </div>
 
     <?php wp_footer(); ?>

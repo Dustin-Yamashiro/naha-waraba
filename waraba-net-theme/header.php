@@ -20,7 +20,7 @@
             <button id="siteSearchButton" class="p-header__search c-icon c-icon--search"></button>
             <?php get_search_form(); ?>
             <a href="<?= esc_url( home_url() ); ?>" class="p-header__logo">
-                <img src="<?= get_template_directory_uri(); ?>/img/site-logo.png" alt="わらばーNET ロゴ" class="c-img">
+                <img src="<?= get_template_directory_uri(); ?>/img/site-logo.png" alt="なはわらばぁ ロゴ" class="c-img">
             </a>
             <nav class="p-header__menu">
                 <ul class="p-menuList p-menuList--header">
