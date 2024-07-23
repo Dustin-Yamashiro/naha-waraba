@@ -1,4 +1,25 @@
+@use "../foundation/base" as *;
+
 .c-postListTitle {
     font-size: clamp(1.35rem, 1.205rem + 0.73vw, 1.75rem);
     font-weight: bold;
+    &--center {
+        text-align: center;
+        position: relative;
+        &::after {
+            position: absolute;
+            top: -110%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &--withCategory {
+        &::after {
+            content: 'ー CATEGORY ー';
+            font-size: clamp(0.9rem, 0.842rem + 0.21vw, 1rem);
+            font-weight: normal;
+            color: rgba($fontColorBlack, 0.4);
+        }
+    }
+
 }

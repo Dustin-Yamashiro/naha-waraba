@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="l-contents u-mt--contents">
+<div class="l-contents u-mt--contents-top">
     <main class="l-main">
         <article id="swiper-slider" class="swiper">
             <ul class="swiper-wrapper">
@@ -52,7 +52,7 @@
                     <?php endforeach; ?>
                 </ul>
             </nav>
-            <section id="swiper-mainPost" class="u-mt--postList swiper">
+            <section id="swiper-mainPost" class="u-mt--postList-top swiper">
                 <div class="swiper-wrapper">
                     <!-- 最新投稿一覧を表示 -->
                     <?php 
