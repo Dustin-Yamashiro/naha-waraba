@@ -8,12 +8,23 @@
         }
     }
     &--contents {
-        margin-top: 40px;
-        @include setBrakePoint(tb) {
-            margin-top: 28px;
+        &-top {
+            margin-top: 40px;
+            @include setBrakePoint(tb) {
+                margin-top: 28px;
+            }
+            @include setBrakePoint(sp) {
+                margin-top: 16px;
+            }
         }
-        @include setBrakePoint(sp) {
-            margin-top: 16px;
+        &-taxonomy {
+            margin-top: 40px;
+            @include setBrakePoint(tb) {
+                margin-top: 48px;
+            }
+            @include setBrakePoint(sp) {
+                margin-top: 32px;
+            }
         }
     }
     &--postListAll {
@@ -22,7 +33,7 @@
             margin-top: 28px;
         }
         @include setBrakePoint(sp) {
-            margin-top: 20px;
+            margin-top: 24px;
         }
     }
     &--postMenu {
@@ -31,18 +42,32 @@
             margin-top: 24px;
         }
         @include setBrakePoint(sp) {
-            margin-top: 16px;
+            margin-top: 20px;
         }
     }
     &--postList {
-        margin-top: 24px;
-        @include setBrakePoint(sp) {
-            margin-top: 16px;
+        &-top {
+            margin-top: 32px;
+            @include setBrakePoint(tb) {
+                margin-top: 28px;
+            }
+            @include setBrakePoint(sp) {
+                margin-top: 20px;
+            }
+        }
+        &-taxonomy {
+            margin-top: 48px;
+            @include setBrakePoint(tb) {
+                margin-top: 40px;
+            }
+            @include setBrakePoint(sp) {
+                margin-top: 28px;
+            }
         }
     }
     &--pagination {
         margin-top: 32px;
-        @include setBrakePoint(tb) {
+        @include setBrakePoint(sp) {
             margin-top: 28px;
         }
     }
