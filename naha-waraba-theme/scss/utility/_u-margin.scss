@@ -33,7 +33,7 @@
             margin-top: 28px;
         }
         @include setBrakePoint(sp) {
-            margin-top: 20px;
+            margin-top: 24px;
         }
     }
     &--postMenu {
@@ -42,14 +42,17 @@
             margin-top: 24px;
         }
         @include setBrakePoint(sp) {
-            margin-top: 16px;
+            margin-top: 20px;
         }
     }
     &--postList {
         &-top {
-            margin-top: 24px;
+            margin-top: 32px;
+            @include setBrakePoint(tb) {
+                margin-top: 28px;
+            }
             @include setBrakePoint(sp) {
-                margin-top: 16px;
+                margin-top: 20px;
             }
         }
         &-taxonomy {
@@ -64,7 +67,7 @@
     }
     &--pagination {
         margin-top: 32px;
-        @include setBrakePoint(tb) {
+        @include setBrakePoint(sp) {
             margin-top: 28px;
         }
     }
