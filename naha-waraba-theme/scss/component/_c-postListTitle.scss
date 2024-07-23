@@ -21,5 +21,12 @@
             color: rgba($fontColorBlack, 0.4);
         }
     }
-
+    &--withTag {
+        &::after {
+            content: 'ー TAG ー';
+            font-size: clamp(0.9rem, 0.842rem + 0.21vw, 1rem);
+            font-weight: normal;
+            color: rgba($fontColorBlack, 0.4);
+        }
+    }
 }
