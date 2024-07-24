@@ -5,8 +5,8 @@
             <a href="<?= esc_url( home_url() ); ?>" class="p-profile__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/profile-img.png" alt="投稿１" class="c-img">
             </a>
-            <section class="p-profile__desc c-desc">
-                <h2 class="p-profile__name c-desc--bold">てぃじむなー</h2>
+            <section class="p-profile__desc">
+                <h2 class="p-profile__name">てぃじむなー</h2>
                 <div class="p-profile__introduction">
                     <div>
                         <p>那覇生まれ那覇育ちの新米パパ</p>
