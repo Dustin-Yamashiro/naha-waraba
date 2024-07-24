@@ -63,6 +63,7 @@
     }
     &--slider &__title {
         font-size: clamp(1rem, 0.2rem + 1.33vw, 1.2rem);
+        font-weight: bold;
         padding-top: 0.5em;
         line-height: 1.6em;
         @include setBrakePoint(tb) {
@@ -159,6 +160,8 @@
     }
     &--main &__desc {
         padding: 0 16px;
+    }
+    &--main &__title {
         font-size: clamp(0.8rem, 1.33vw, 1rem);
         line-height: 1.5em;
         @include setBrakePoint(tb) {
@@ -250,7 +253,7 @@
             font-size: 0.8rem;
         }
     }
-    &--sidebar &__desc {
+    &--sidebar &__title {
         font-size: clamp(0.75rem, 0.35rem + 0.67vw, 0.85rem);
         line-height: 1.5em;
         @include setBrakePoint(tb) {

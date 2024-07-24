@@ -17,9 +17,9 @@
                                             <?= get_post_child_category_name( $top_categories, get_the_category() ); ?>
                                         </span>
                                     </figure>
-                                    <div class="p-postCard__desc c-desc">
-                                        <h2><?php the_title(); ?></h2>
-                                        <span class="p-postCard__date c-desc--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
+                                    <div class="p-postCard__desc">
+                                        <h2 class="p-postCard__title"><?php the_title(); ?></h2>
+                                        <span class="p-postCard__date c-postSubItem c-postSubItem--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
                                     </div>
                                 </a>
                             </li>

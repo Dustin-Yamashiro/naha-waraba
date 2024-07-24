@@ -74,9 +74,7 @@
                                     ?>
                                     <span class="p-postCard__badge c-badge <?= "c-badge--$badgeClass" ?>"><?= $rankNumber ?></span>
                                 </figure>
-                                <div class="p-postCard__desc c-desc">
-                                    <h3><?php the_title(); ?></h3>
-                                </div>
+                                <h3 class="p-postCard__title"><?php the_title(); ?></h3>
                             </a>
                         </li>
                     <?php endwhile; ?>
