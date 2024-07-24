@@ -154,8 +154,10 @@
         left: 0;
         font-size: 0.8rem;
         padding: 0.6em 1.2em;
+        border-radius: 8px 0 8px 0;
         @include setBrakePoint(sp) {
             font-size: clamp(0.7rem, 0.5rem + 1vw, 0.775rem);
+            border-radius: 4px 0 4px 0; 
         }
     }
     &--main &__desc {
