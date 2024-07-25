@@ -1,0 +1,55 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/base" as *;
+
+.p-facilityInfo {
+    width: 80%;
+    margin: 0 auto;
+    padding: 28px 48px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid $accentColor;
+    @include setBrakePoint(sp) {
+        width: 100%;
+        padding: 28px 40px;
+    }
+    &__name {
+        font-size: clamp(1.2rem, 1.142rem + 0.21vw, 1.3rem);
+        font-weight: bold;
+    }
+    &__img {
+        width: 80%;
+        @include setBrakePoint(sp) {
+            width: 90%;
+        }
+        margin: 28px auto;
+    }
+    &__table {
+        width: 100%;
+        tr {
+            border-top: 1px solid $fontColorBlack;
+            &:last-child {
+                border-bottom: 1px solid $fontColorBlack;
+            }
+        }
+        th, td {
+            font-size: clamp(0.8rem, 0.743rem + 0.28vw, 0.95rem);
+            padding: 0.6em;
+            text-align: center;
+            vertical-align: middle;
+        }
+        th {
+            width: 30%;
+            background-color: rgba($accentColor, 0.2);
+        }
+        td {
+            width: 70%;
+            & > a {
+                text-decoration: underline;
+                @include baseTransition(0.1);
+                &:hover {
+                    color: $mainColor;
+                }
+            }
+        }
+    }
+}
