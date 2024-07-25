@@ -8,12 +8,12 @@
                     <a href="#" class="p-postTitle__badge c-badge c-badge--category">定番スポット</a>
                 </div>
                 <h1 class="p-postTitle__text">ミニチュアと最新映像が生み出す幻想的な空間「Little Universe OKINAWA」に行ってきた！</h1>
-            </header>
-            <section class="p-postContents u-mt--postContents-S">
-                <figure class="p-postContents__img">
+                <figure class="p-postTitle__img">
                     <img src="<?= get_template_directory_uri(); ?>/img/test-img/1.jpeg" class="c-img">
                 </figure>
-                <div class="p-postContents__text u-mt--postContents-S">
+            </header>
+            <section class="p-postContents u-mt--postContents-M">
+                <div class="p-postContents__text">
                     <p>どうも！てぃじむなーです！</p>
                     <p>今回は、沖縄イーアス豊崎内にある今話題の<strong class="p-postContents__text--red">「Little Universe OKINAWA」</strong>に行ってきました！最新映像技術とミニチュア達が織り出す、幻想的な空間が広がった館内は圧巻の一言。</p>
                     <p>家族みんなで圧巻された様子をブログにまとめていますので、是非ご覧下さい！</p>
