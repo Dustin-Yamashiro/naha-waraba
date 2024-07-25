@@ -2,19 +2,11 @@
 /* 自作関数 */
 
 // 投稿の子カテゴリー名を取得
-function get_post_child_category_name( $top_categories, $post_categories )
+function get_post_child_category_name( $post_categories )
 {
-    // トップカテゴリーのIDを取得
-    $top_category_ids = [];
-    foreach ( $top_categories as $top_category ) {
-        $top_category_ids[] = $top_category->term_id;
-    }
-
-    // 記事のカテゴリー情報から子カテゴリーを取得
     foreach ( $post_categories as $post_category ) {
-        $parent_category_id = $post_category->parent;
-        if ( in_array( $parent_category_id, $top_category_ids ) ) {
-            return $post_category->name;
+        if ( !empty( $post_category->parent ) ) {
+            return $post_category->name; 
         }
     }
 
