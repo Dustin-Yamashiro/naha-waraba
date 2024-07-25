@@ -10,9 +10,4 @@
     &--colorLight {
         color: rgba($fontColorBlack, 0.6);
     }
-    &--newLine {
-        @include setBrakePoint(tb) {
-            display: inline-block;
-        }
-    }
 }
