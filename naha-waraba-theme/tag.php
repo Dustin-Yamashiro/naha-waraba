@@ -13,7 +13,7 @@
                                     <figure class="p-postCard__thumbnail c-thumbnail">
                                         <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
                                         <span class="p-postCard__badge c-badge c-badge--category">
-                                            <?= get_post_child_category_name( get_the_category() ); ?>
+                                            <?= get_post_child_category_info( get_the_category() )->name; ?>
                                         </span>
                                     </figure>
                                     <div class="p-postCard__desc">

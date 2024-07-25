@@ -1,16 +1,16 @@
 <?php
 /* 自作関数 */
 
-// 投稿の子カテゴリー名を取得
-function get_post_child_category_name( $post_categories )
+// 投稿の子カテゴリー情報を取得
+function get_post_child_category_info( $post_categories )
 {
     foreach ( $post_categories as $post_category ) {
         if ( !empty( $post_category->parent ) ) {
-            return $post_category->name; 
+            return $post_category; 
         }
     }
 
-    return 'none';
+    return [];
 }
 
 // トップカテゴリー情報を取得
