@@ -58,6 +58,12 @@ function get_page_title()
 // サムネイル
 add_theme_support( 'post-thumbnails' );
 
+// 管理画面メニューを追加するメソッド
+function add_my_admin_menu() {
+	add_menu_page( 'ブロックパターン', 'ブロックパターン', 'manage_options', 'edit.php?post_type=wp_block', '', 'dashicons-block-default', 6 );
+}
+add_action( 'admin_menu', 'add_my_admin_menu' );
+
 
 // 記事の閲覧数をカウントするメソッド
 function set_post_view_count()
