@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="l-contents u-mt--contents-post">
+<div class="l-container__contents u-mt--contents">
     <main class="l-main">
         <article>
             <?php if( have_posts() ): ?>

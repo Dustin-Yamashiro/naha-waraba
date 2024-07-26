@@ -45,6 +45,20 @@
             font-family: "Font Awesome 5 Free";
         }
     }
+    &--home {
+        &::before {
+            content: '\f015';
+            font-weight: bold;
+            font-family: "Font Awesome 5 Free";
+        }
+    }
+    &--right-triangle {
+        &::before {
+            content: '\f04b';
+            font-weight: bold;
+            font-family: "Font Awesome 5 Free";
+        }
+    }
     &--sns {
         width: 32px;
         height: 32px;

@@ -1,6 +1,18 @@
 <?php
 /* 自作関数 */
 
+// 投稿の親カテゴリー情報を取得
+function get_post_parent_category_info( $post_categories )
+{
+    foreach ( $post_categories as $post_category ) {
+        if ( empty( $post_category->parent ) ) {
+            return $post_category;
+        }
+    }
+
+    return [];
+}
+
 // 投稿の子カテゴリー情報を取得
 function get_post_child_category_info( $post_categories )
 {
@@ -41,15 +53,75 @@ function get_child_categories_info( $parent_category_id )
 // ページヘッダータイトルを取得
 function get_page_title()
 {
-    if ( is_front_page() ){
+    if ( is_front_page() ) {
         return get_bloginfo( 'name' );
+
     } else if ( is_category() ) {
         return single_cat_title() . ' | ' . get_bloginfo( 'name' );
+
     } else if ( is_tag() ) {
         return single_tag_title() . ' | ' . get_bloginfo( 'name' );
+        
     } else {
         return get_the_title() . ' | ' . get_bloginfo( 'name' );
     }
+}
+
+// パンくずテンプレートを取得
+function get_breadcrumb_template()
+{
+    $breadcrumb_template = 
+        '<nav class="u-mt--breadcrumb">
+            <ol class="p-breadcrumb">
+                <li class="p-breadcrumb__item c-icon c-icon--home"><a href="' . esc_url( home_url() ) . '">ホーム</a></li>';
+
+    if ( is_single() ) {
+        // 親カテゴリーの追加
+        $parent_category_info = get_post_parent_category_info( get_the_category() );
+        $breadcrumb_template .= 
+            '<li class="p-breadcrumb__item c-icon c-icon--right-triangle">
+                <a href="' . esc_url( get_category_link( $parent_category_info->term_id ) ) . '">' . $parent_category_info->name  . '</a>
+            </li>';
+
+        // 子カテゴリーの追加
+        $child_category_info = get_post_child_category_info( get_the_category() );
+        $breadcrumb_template .= 
+            '<li class="p-breadcrumb__item c-icon c-icon--right-triangle">
+                <a href="' . esc_url( get_category_link( $child_category_info->term_id ) ) . '">' . $child_category_info->name  . '</a>
+            </li>';
+
+    } else if ( is_category() ) {
+        $category_info = get_queried_object();
+        if ( empty( $category_info->parent ) ) {
+            $breadcrumb_template .= 
+                '<li class="p-breadcrumb__item c-icon c-icon--right-triangle">
+                    <a href="' . esc_url( get_category_link( $category_info->term_id ) ) . '">' . $category_info->name  . '</a>
+                </li>';
+        } else {
+            // 親カテゴリーの追加
+            $parent_category_info = get_category( $category_info->parent );
+            $breadcrumb_template .= 
+                '<li class="p-breadcrumb__item c-icon c-icon--right-triangle">
+                    <a href="' . esc_url( get_category_link( $parent_category_info->term_id ) ) . '">' . $parent_category_info->name  . '</a>
+                </li>';
+
+            // 子カテゴリーの追加
+            $breadcrumb_template .= 
+                '<li class="p-breadcrumb__item c-icon c-icon--right-triangle">
+                    <a href="' . esc_url( get_category_link( $category_info->term_id ) ) . '">' . $category_info->name  . '</a>
+                </li>';
+        }
+
+    } else if ( is_tag() ) {
+        $tag_info = get_queried_object();
+        $breadcrumb_template .= 
+            '<li class="p-breadcrumb__item c-icon c-icon--right-triangle">
+                <a href="' . esc_url( get_tag_link( $tag_info->term_id ) ) . '">' . $tag_info->name  . '</a>
+            </li>';
+    }
+
+    $breadcrumb_template .= '</ol></nav>';
+    return $breadcrumb_template;
 }
 
 

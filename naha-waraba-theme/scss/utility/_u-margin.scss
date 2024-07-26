@@ -7,30 +7,22 @@
             margin-top: 16px;
         }
     }
+    &--breadcrumb {
+        margin-top: 36px;
+        @include setBrakePoint(tb) {
+            margin-top: 32px;
+        }
+        @include setBrakePoint(sp) {
+            margin-top: 28px;
+        }
+    }
     &--contents {
-        &-top {
-            margin-top: 40px;
-            @include setBrakePoint(tb) {
-                margin-top: 28px;
-            }
-            @include setBrakePoint(sp) {
-                margin-top: 16px;
-            }
+        margin-top: 28px;
+        @include setBrakePoint(tb) {
+            margin-top: 24px;
         }
-        &-taxonomy {
-            margin-top: 40px;
-            @include setBrakePoint(tb) {
-                margin-top: 48px;
-            }
-            @include setBrakePoint(sp) {
-                margin-top: 32px;
-            }
-        }
-        &-post {
-            margin-top: 40px;
-            @include setBrakePoint(sp) {
-                margin-top: 32px;
-            }
+        @include setBrakePoint(sp) {
+            margin-top: 20px;
         }
     }
     &--postListAll {
@@ -109,7 +101,7 @@
         &-M {
             margin-top: 48px;
             @include setBrakePoint(sp) {
-                margin-top: 32px;
+                margin-top: 36px;
             }
         }
         &-L {

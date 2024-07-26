@@ -7,7 +7,7 @@
 // レイアウト
 @use "layout/l-header";
 @use "layout/l-footer";
-@use "layout/l-contents";
+@use "layout/l-container";
 @use "layout/l-main";
 @use "layout/l-sidebar";
 
@@ -27,6 +27,7 @@
 @use "project/p-postContents";
 @use "project/p-outline";
 @use "project/p-facilityInfo";
+@use "project/p-breadcrumb";
 
 // コンポーネント
 @use "component/c-siteMenu";
