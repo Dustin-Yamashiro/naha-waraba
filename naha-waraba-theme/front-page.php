@@ -45,10 +45,10 @@
             <nav id="swiper-postMenu" class="u-mt--postMenu swiper">
                 <ul class="p-menuList p-menuList--post swiper-wrapper">
                     <li class="p-menuList__item c-postMenu swiper-slide">最新投稿</li>
-                    <!-- トップカテゴリーを取得 -->
-                    <?php $top_categories = get_top_categories_info(); ?>
-                    <?php foreach ( $top_categories as $top_category ) : ?>
-                        <li class="p-menuList__item c-postMenu swiper-slide"><?= $top_category->name; ?></li>
+                    <!-- 親カテゴリーを取得 -->
+                    <?php $parent_categories = get_parent_categories_info(); ?>
+                    <?php foreach ( $parent_categories as $parent_category ) : ?>
+                        <li class="p-menuList__item c-postMenu swiper-slide"><?= $parent_category->name; ?></li>
                     <?php endforeach; ?>
                 </ul>
             </nav>
@@ -100,16 +100,16 @@
                     <!-- カテゴリー別投稿一覧を表示 -->
                     <?php 
                         $postsBycategory = [];
-                        foreach ( $top_categories as $top_category ) {
-                            $postsBycategory[ $top_category->term_id ] = new WP_Query(
+                        foreach ( $parent_categories as $parent_category ) {
+                            $postsBycategory[ $parent_category->term_id ] = new WP_Query(
                                 array(
-                                    'cat' => $top_category->term_id,
+                                    'cat' => $parent_category->term_id,
                                     'posts_per_page' => 10
                                 )
                             );
                         }
                     ?>
-                    <?php foreach ( $postsBycategory as $topCategoryId => $postBycategory ) : ?>
+                    <?php foreach ( $postsBycategory as $parentCategoryId => $postBycategory ) : ?>
                         <div class="swiper-slide">
                             <ul class="p-postList p-postList--main">
                                 <?php if ( $postBycategory->have_posts() ) : ?>
@@ -132,7 +132,7 @@
                                     <?php endwhile; ?>
                                 <?php endif; ?>
                             </ul>
-                            <button class="c-moreButton c-button u-mt--pagination"><a href="<?= esc_url( get_category_link( $topCategoryId ) ); ?>" class="c-icon c-icon--right-arrow-short">もっと見る</a></button>
+                            <button class="c-moreButton c-button u-mt--pagination"><a href="<?= esc_url( get_category_link( $parentCategoryId ) ); ?>" class="c-icon c-icon--right-arrow-short">もっと見る</a></button>
                         </div>
                     <?php endforeach; ?>
                 </div>

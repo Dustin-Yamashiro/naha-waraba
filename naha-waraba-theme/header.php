@@ -24,10 +24,10 @@
             </a>
             <nav class="p-header__menu">
                 <ul class="p-menuList p-menuList--header">
-                    <?php $top_categories = get_top_categories_info(); ?>
-                    <?php foreach ( $top_categories as $top_category ) : ?>
+                    <?php $parent_categories = get_parent_categories_info(); ?>
+                    <?php foreach ( $parent_categories as $parent_category ) : ?>
                     <?php
-                        switch ( $top_category->name ) {
+                        switch ( $parent_category->name ) {
                             case 'おでかけ':
                                 $img_file_name = 'outing.png';
                                 $img_alt = 'おでかけイメージ画像';
@@ -43,16 +43,16 @@
                         }
                     ?>
                     <li class="p-menuList__item p-menuList__item--withSubMenu">
-                        <a href="<?= esc_url( get_category_link( $top_category->term_id ) ); ?>" class="c-siteMenu c-siteMenu--withImg">
+                        <a href="<?= esc_url( get_category_link( $parent_category->term_id ) ); ?>" class="c-siteMenu c-siteMenu--withImg">
                             <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/<?= $img_file_name; ?>" alt="<?= $img_alt; ?>">
-                            <?= $top_category->name ?>
+                            <?= $parent_category->name ?>
                         </a>
                         <ul class="p-menuList p-menuList--headerSub">
-                            <?php $sub_categories = get_sub_categories_info( $top_category->term_id ); ?>
-                            <?php foreach ( $sub_categories as $sub_category ) : ?>
+                            <?php $child_categories = get_child_categories_info( $parent_category->term_id ); ?>
+                            <?php foreach ( $child_categories as $child_category ) : ?>
                                 <li class="p-menuList__item">
-                                    <a class="c-siteMenu" href="<?= esc_url( get_category_link( $sub_category->term_id ) ); ?>">
-                                        <?= $sub_category->name; ?>
+                                    <a class="c-siteMenu" href="<?= esc_url( get_category_link( $child_category->term_id ) ); ?>">
+                                        <?= $child_category->name; ?>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
@@ -82,18 +82,18 @@
                         <li class="p-menuList__item">
                             <a href="<?= esc_url( home_url() ); ?>" class="c-siteMenu c-siteMenu--alignLeft">ホーム</a>
                         </li>
-                        <?php foreach ( $top_categories as $top_category ) : ?>
+                        <?php foreach ( $parent_categories as $parent_category ) : ?>
                         <li class="p-menuList__item p-menuList__item--withDownMenu">
-                            <a href="<?= esc_url( get_category_link( $top_category->term_id ) ); ?>" class="c-siteMenu c-siteMenu--withDownMenu">
-                                <?= $top_category->name; ?>
+                            <a href="<?= esc_url( get_category_link( $parent_category->term_id ) ); ?>" class="c-siteMenu c-siteMenu--withDownMenu">
+                                <?= $parent_category->name; ?>
                                 <input type="checkbox">
                             </a>
                             <ul class="p-menuList p-menuList--slideSub">
-                                <?php $sub_categories = get_sub_categories_info( $top_category->term_id ); ?>
-                                <?php foreach ( $sub_categories as $sub_category ) : ?>
+                                <?php $child_categories = get_child_categories_info( $parent_category->term_id ); ?>
+                                <?php foreach ( $child_categories as $child_category ) : ?>
                                 <li class="p-menuList__item">
-                                    <a href="<?= esc_url( get_category_link( $sub_category->term_id ) ); ?>" class="c-siteMenu c-siteMenu--alignLeft">
-                                        <?= $sub_category->name; ?>
+                                    <a href="<?= esc_url( get_category_link( $child_category->term_id ) ); ?>" class="c-siteMenu c-siteMenu--alignLeft">
+                                        <?= $child_category->name; ?>
                                     </a>
                                 <?php endforeach; ?>
                             </ul>

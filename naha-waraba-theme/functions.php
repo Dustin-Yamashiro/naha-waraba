@@ -13,8 +13,8 @@ function get_post_child_category_info( $post_categories )
     return [];
 }
 
-// トップカテゴリー情報を取得
-function get_top_categories_info()
+// 親カテゴリー一覧情報を取得
+function get_parent_categories_info()
 {
     return get_categories(
         array(
@@ -26,13 +26,13 @@ function get_top_categories_info()
     );
 }
 
-// サブカテゴリー情報を取得
-function get_sub_categories_info( $top_category_id )
+// 子カテゴリー一覧情報を取得
+function get_child_categories_info( $parent_category_id )
 {
     return get_categories(
         array(
             'hide_empty' => '0',
-            'parent' => $top_category_id,
+            'parent' => $parent_category_id,
             'orderby' => 'id'
         )
     );
