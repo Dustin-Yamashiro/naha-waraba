@@ -2,7 +2,7 @@
 <div class="l-contents u-mt--contents-taxonomy">
     <main class="l-main">
         <article class="u-mt--postListAll">
-            <h1 class="c-postListTitle c-postListTitle--center c-postListTitle--withCategory"><?php single_cat_title() ?></h1>
+            <h1 class="c-postListTitle c-postListTitle--center c-postListTitle--withCategory"><?php single_cat_title(); ?></h1>
             <section class="u-mt--postList-taxonomy">
                 <ul class="p-postList p-postList--main">
                     <?php if ( have_posts() ) : ?>
