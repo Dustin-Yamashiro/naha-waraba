@@ -99,9 +99,9 @@
                     </div>
                     <!-- カテゴリー別投稿一覧を表示 -->
                     <?php 
-                        $postsBycategory = [];
+                        $posts_by_category = [];
                         foreach ( $parent_categories as $parent_category ) {
-                            $postsBycategory[ $parent_category->term_id ] = new WP_Query(
+                            $posts_by_category[ $parent_category->term_id ] = new WP_Query(
                                 array(
                                     'cat' => $parent_category->term_id,
                                     'posts_per_page' => 10
@@ -109,12 +109,12 @@
                             );
                         }
                     ?>
-                    <?php foreach ( $postsBycategory as $parentCategoryId => $postBycategory ) : ?>
+                    <?php foreach ( $posts_by_category as $parent_category_id => $post_by_category ) : ?>
                         <div class="swiper-slide">
                             <ul class="p-postList p-postList--main">
-                                <?php if ( $postBycategory->have_posts() ) : ?>
-                                    <?php while ( $postBycategory->have_posts() ) : ?>
-                                        <?php $postBycategory->the_post(); ?>
+                                <?php if ( $post_by_category->have_posts() ) : ?>
+                                    <?php while ( $post_by_category->have_posts() ) : ?>
+                                        <?php $post_by_category->the_post(); ?>
                                         <li class="p-postCard p-postCard--main">
                                             <a href="<?php esc_url( the_permalink() ); ?>" class="p-postCard__contents">
                                                 <figure class="p-postCard__thumbnail c-thumbnail">
@@ -132,7 +132,7 @@
                                     <?php endwhile; ?>
                                 <?php endif; ?>
                             </ul>
-                            <button class="c-moreButton c-button u-mt--pagination"><a href="<?= esc_url( get_category_link( $parentCategoryId ) ); ?>" class="c-icon c-icon--right-arrow-short">もっと見る</a></button>
+                            <button class="c-moreButton c-button u-mt--pagination"><a href="<?= esc_url( get_category_link( $parent_category_id ) ); ?>" class="c-icon c-icon--right-arrow-short">もっと見る</a></button>
                         </div>
                     <?php endforeach; ?>
                 </div>
