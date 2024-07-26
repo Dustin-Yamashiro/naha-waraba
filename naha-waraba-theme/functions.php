@@ -41,12 +41,15 @@ function get_child_categories_info( $parent_category_id )
 // ページヘッダータイトルを取得
 function get_page_title()
 {
-    if ( is_front_page() ){
+    if ( is_front_page() ) {
         return get_bloginfo( 'name' );
+
     } else if ( is_category() ) {
         return single_cat_title() . ' | ' . get_bloginfo( 'name' );
+
     } else if ( is_tag() ) {
         return single_tag_title() . ' | ' . get_bloginfo( 'name' );
+        
     } else {
         return get_the_title() . ' | ' . get_bloginfo( 'name' );
     }
