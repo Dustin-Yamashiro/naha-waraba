@@ -4,7 +4,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php bloginfo('name') ?></title>
+    <title><?= get_page_title(); ?></title>
     <meta name="description" content="<?php bloginfo('description') ?>">
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
