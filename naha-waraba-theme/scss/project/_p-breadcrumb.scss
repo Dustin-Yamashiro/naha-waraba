@@ -1,0 +1,35 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/base" as *;
+
+.p-breadcrumb {
+    display: flex;
+    gap: 12px;
+    @include setBrakePoint(sp) {
+        gap: 8px;
+    }
+    &__item {
+        font-size: clamp(0.75rem, 0.692rem + 0.21vw, 0.85rem);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        @include setBrakePoint(sp) {
+            gap: 8px;
+        }
+        & > a {
+            @include baseTransition(0.1);
+            &:hover {
+                color: $mainColor;
+            }
+        }
+        &::before {
+            font-size: clamp(0.5rem, 0.471rem + 0.11vw, 0.55rem);
+            color: rgba($fontColorBlack, 0.4);
+        }
+        &:first-child {
+            gap: 4px;
+            &::before {
+                color: $mainColor;
+            }    
+        }
+    }
+}

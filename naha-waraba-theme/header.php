@@ -114,3 +114,7 @@
         <?php wp_head(); ?>
     </header>
     <div class="l-container">
+        <?php if ( !is_front_page() ) {
+                echo get_breadcrumb_template();
+            };
+        ?>
