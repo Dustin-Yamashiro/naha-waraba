@@ -55,24 +55,24 @@
                                 <figure class="p-postCard__thumbnail c-thumbnail">
                                     <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
                                     <?php
-                                        $rankNumber++;
-                                        switch ( $rankNumber ) {
+                                        $rank_number++;
+                                        switch ( $rank_number ) {
                                             case 1 :
-                                                $badgeClass = 'firstPlace';
+                                                $badge_class = 'firstPlace';
                                                 break;
                                             case 2 :
-                                                $badgeClass = 'secondPlace';
+                                                $badge_class = 'secondPlace';
                                                 break;
                                             case 3 :
-                                                $badgeClass = 'thirdPlace';
+                                                $badge_class = 'thirdPlace';
                                                 break;
                                             case 4 :
                                             case 5 :
-                                                $badgeClass = 'otherPlace';
+                                                $badge_class = 'otherPlace';
                                                 break;
                                         }
                                     ?>
-                                    <span class="p-postCard__badge c-badge <?= "c-badge--$badgeClass" ?>"><?= $rankNumber ?></span>
+                                    <span class="p-postCard__badge c-badge <?= "c-badge--$badge_class" ?>"><?= $rank_number ?></span>
                                 </figure>
                                 <h3 class="p-postCard__title"><?php the_title(); ?></h3>
                             </a>
@@ -88,14 +88,14 @@
         <section class="u-mt--sidebarItem-M">
             <ul class="p-tagList">
                 <?php
-                $allTags = get_tags(
+                $all_tags = get_tags(
                     array(
                         'hide_empty' => 0,
                         'orderby' => 'id'
                     )
                 );
                 ?>
-                <?php foreach ( $allTags as $tag ) : ?>
+                <?php foreach ( $all_tags as $tag ) : ?>
                     <li>
                         <a class="c-tag" href="<?= esc_url( get_tag_link( $tag->term_id ) ); ?>">
                             <span>&#035;</span>
