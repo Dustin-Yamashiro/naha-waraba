@@ -22,12 +22,12 @@
                                 <div class="p-postCard__desc">
                                     <div class="p-postCard__descLeft">
                                         <div class="p-postCard__subItem">
-                                            <span class="p-postCard__date c-desc c-desc--bold c-desc--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
+                                            <span class="p-postCard__date c-postSubItem c-postSubItem--bold c-postSubItem--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
                                         </div>
-                                        <h2 class="p-postCard__title c-desc c-desc--bold"><?php the_title(); ?></h2>
+                                        <h2 class="p-postCard__title"><?php the_title(); ?></h2>
                                     </div>
                                     <div class="p-postCard__descRight">
-                                        <span class="p-postCard__more c-desc--colorLight c-icon c-icon--right-arrow-long">MORE</span>
+                                        <span class="p-postCard__more c-postSubItem c-postSubItem--colorLight c-icon c-icon--right-arrow-long">MORE</span>
                                     </div>
                                 </div>
                             </a>
@@ -74,12 +74,12 @@
                                             <figure class="p-postCard__thumbnail c-thumbnail">
                                                 <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
                                                 <span class="p-postCard__badge c-badge c-badge--category">
-                                                    <?= get_post_child_category_name( $top_categories, get_the_category() ); ?>
+                                                    <?= get_post_child_category_info( get_the_category() )->name; ?>
                                                 </span>
                                             </figure>
-                                            <div class="p-postCard__desc c-desc">
-                                                <h2><?php the_title(); ?></h2>
-                                                <span class="p-postCard__date c-desc--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
+                                            <div class="p-postCard__desc">
+                                                <h2 class="p-postCard__title"><?php the_title(); ?></h2>
+                                                <span class="p-postCard__date c-postSubItem c-postSubItem--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
                                             </div>
                                         </a>
                                     </li>
@@ -120,12 +120,12 @@
                                                 <figure class="p-postCard__thumbnail c-thumbnail">
                                                     <?php the_post_thumbnail( 'full', array( 'class' => 'c-img' ) ); ?>
                                                     <span class="p-postCard__badge c-badge c-badge--category">
-                                                        <?= get_post_child_category_name( $top_categories, get_the_category() ); ?>
+                                                        <?= get_post_child_category_info( get_the_category() )->name; ?>
                                                     </span>
                                                 </figure>
-                                                <div class="p-postCard__desc c-desc">
-                                                    <h2><?php the_title(); ?></h2>
-                                                    <span class="p-postCard__date c-desc--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
+                                                <div class="p-postCard__desc">
+                                                    <h2 class="p-postCard__title"><?php the_title(); ?></h2>
+                                                    <span class="p-postCard__date c-postSubItem c-postSubItem--colorLight"><?php the_time( get_option( 'date_format' ) ); ?></span>
                                                 </div>
                                             </a>
                                         </li>

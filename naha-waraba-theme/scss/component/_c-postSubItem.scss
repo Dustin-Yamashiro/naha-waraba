@@ -1,7 +1,7 @@
 @use "../foundation/base" as *;
 @use "../foundation/mixin" as *;
 
-.c-desc {
+.c-postSubItem {
     color: $fontColorBlack;
     font-weight: normal;
     &--bold {
@@ -9,10 +9,5 @@
     }
     &--colorLight {
         color: rgba($fontColorBlack, 0.6);
-    }
-    &--newLine {
-        @include setBrakePoint(tb) {
-            display: inline-block;
-        }
     }
 }

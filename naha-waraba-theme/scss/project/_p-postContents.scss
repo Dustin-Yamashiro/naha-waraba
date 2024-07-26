@@ -1,0 +1,38 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/base" as *;
+
+.p-postContents {
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+    &__text {
+        color: $fontColorBlack;
+        font-size: clamp(0.9rem, 0.842rem + 0.21vw, 1rem);
+        line-height: 1.8em;
+        p {
+            margin-bottom: 24px;
+            &:last-child {
+                margin-bottom: inherit;
+            }
+        }
+        &--red {
+            color: red;
+        }
+    }
+    &__title {
+        font-size: clamp(1.1rem, 0.955rem + 0.73vw, 1.5rem);
+        padding: 0.8em;
+        background-color: $mainColor;
+        color: $fontColorWhite;
+        border-radius: 12px;
+        font-weight: bold;
+    }
+    &__subTitle {
+        font-size: clamp(1rem, 0.855rem + 0.73vw, 1.4rem);
+        padding: 0.6em;
+        border-left: 4px solid $mainColor;
+        border-bottom: 2px dashed $mainColor;
+        font-weight: bold;
+    }
+}

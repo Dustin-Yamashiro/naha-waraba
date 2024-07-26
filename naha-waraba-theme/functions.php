@@ -1,24 +1,16 @@
 <?php
 /* 自作関数 */
 
-// 投稿の子カテゴリー名を取得
-function get_post_child_category_name( $top_categories, $post_categories )
+// 投稿の子カテゴリー情報を取得
+function get_post_child_category_info( $post_categories )
 {
-    // トップカテゴリーのIDを取得
-    $top_category_ids = [];
-    foreach ( $top_categories as $top_category ) {
-        $top_category_ids[] = $top_category->term_id;
-    }
-
-    // 記事のカテゴリー情報から子カテゴリーを取得
     foreach ( $post_categories as $post_category ) {
-        $parent_category_id = $post_category->parent;
-        if ( in_array( $parent_category_id, $top_category_ids ) ) {
-            return $post_category->name;
+        if ( !empty( $post_category->parent ) ) {
+            return $post_category; 
         }
     }
 
-    return 'none';
+    return [];
 }
 
 // トップカテゴリー情報を取得
@@ -46,11 +38,31 @@ function get_sub_categories_info( $top_category_id )
     );
 }
 
+// ページヘッダータイトルを取得
+function get_page_title()
+{
+    if ( is_front_page() ){
+        return get_bloginfo( 'name' );
+    } else if ( is_category() ) {
+        return single_cat_title() . ' | ' . get_bloginfo( 'name' );
+    } else if ( is_tag() ) {
+        return single_tag_title() . ' | ' . get_bloginfo( 'name' );
+    } else {
+        return get_the_title() . ' | ' . get_bloginfo( 'name' );
+    }
+}
+
 
 /* フック関数 */
 
 // サムネイル
 add_theme_support( 'post-thumbnails' );
+
+// 管理画面メニューを追加するメソッド
+function add_my_admin_menu() {
+	add_menu_page( 'ブロックパターン', 'ブロックパターン', 'manage_options', 'edit.php?post_type=wp_block', '', 'dashicons-block-default', 6 );
+}
+add_action( 'admin_menu', 'add_my_admin_menu' );
 
 
 // 記事の閲覧数をカウントするメソッド

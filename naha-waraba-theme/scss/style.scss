@@ -23,6 +23,10 @@
 @use "project/p-tagList";
 @use "project/p-slideMenu";
 @use "project/p-searchForm";
+@use "project/p-postHeader";
+@use "project/p-postContents";
+@use "project/p-outline";
+@use "project/p-facilityInfo";
 
 // コンポーネント
 @use "component/c-siteMenu";
@@ -30,7 +34,7 @@
 @use "component/c-sidebarTitle";
 @use "component/c-icon";
 @use "component/c-img";
-@use "component/c-desc";
+@use "component/c-postSubItem";
 @use "component/c-tag";
 @use "component/c-button";
 @use "component/c-thumbnail";

@@ -5,12 +5,8 @@
     display: inline-block;
     color: $fontColorWhite;
     &--category {
-        border-radius: 8px 0 8px 0;
         background-color: rgba($accentColor, 0.9);
         color: $fontColorWhite;
-        @include setBrakePoint(sp) {
-            border-radius: 4px 0 4px 0; 
-        }
     }
     &--firstPlace {
         background-color: #cdaa1e;

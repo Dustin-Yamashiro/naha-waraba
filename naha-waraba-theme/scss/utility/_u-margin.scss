@@ -26,6 +26,12 @@
                 margin-top: 32px;
             }
         }
+        &-post {
+            margin-top: 40px;
+            @include setBrakePoint(sp) {
+                margin-top: 32px;
+            }
+        }
     }
     &--postListAll {
         margin-top: 40px;
@@ -91,6 +97,26 @@
         margin-top: 200px;
         @include setBrakePoint(tb) {
             margin-top: 100px;
+        }
+    }
+    &--postContents {
+        &-S {
+            margin-top: 32px;
+            @include setBrakePoint(sp) {
+                margin-top: 24px;
+            }
+        }
+        &-M {
+            margin-top: 48px;
+            @include setBrakePoint(sp) {
+                margin-top: 32px;
+            }
+        }
+        &-L {
+            margin-top: 64px;
+            @include setBrakePoint(sp) {
+                margin-top: 48px;
+            }
         }
     }
 }

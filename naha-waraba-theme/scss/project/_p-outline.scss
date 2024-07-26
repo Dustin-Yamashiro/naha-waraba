@@ -1,0 +1,61 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/base" as *;
+
+
+.p-outline {
+    width: 60%;
+    @include setBrakePoint(sp) {
+        width: 80%;
+    }
+    margin: 0 auto;
+    padding: 16px;
+    border-radius: 12px;
+    border: 2px solid $mainColor;
+    &__title {
+        display: block;
+        font-size: clamp(1.15rem, 1.063rem + 0.32vw, 1.3rem);
+        text-align: center;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "";
+            top: 40px;
+            @include setBrakePoint(sp) {
+                top: 36px;
+            }
+            left: 0;
+            background-image: url(./img/border.png);
+            height: 2px;
+            width: 100%;
+        }
+    }
+    &__list {
+        padding: 16px 0 16px 32px;
+        @include setBrakePoint(sp) {
+            padding: 8px 0 8px 28px;
+        }
+        &--parent {
+            margin-top: 24px;
+            list-style: decimal;
+        }
+        &--child {
+            list-style: disc;
+            li::marker {
+                font-size: 0.7rem;
+            }
+            :last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+    &__item {
+        font-size: clamp(0.9rem, 0.842rem + 0.21vw, 1rem);
+        padding: 0.7rem;
+        & > a {
+            @include baseTransition(0.1);
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+}
