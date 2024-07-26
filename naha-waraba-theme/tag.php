@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="l-contents u-mt--contents-taxonomy">
+<div class="l-container__contents u-mt--contents-taxonomy">
     <main class="l-main">
         <article class="u-mt--postListAll">
             <h1 class="c-postListTitle c-postListTitle--center c-postListTitle--withTag"><?php single_tag_title() ?></h1>

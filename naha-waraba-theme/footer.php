@@ -1,3 +1,4 @@
+</div>
 <footer class="l-footer u-mt--footer">
     <div class="l-footer__contents p-footer">
         <nav class="p-footer__menu">
