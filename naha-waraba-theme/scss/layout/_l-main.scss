@@ -1,8 +1,0 @@
-@use "../foundation/mixin" as *;
-
-.l-main {
-    width: 66%;
-    @include setBrakePoint(tb) {
-        width: 100%;
-    }
-}
