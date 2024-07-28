@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>買い物 &#8211; なはわらばぁ &#8211; 那覇市の子連れ向け情報発信サイト</title>
+	<atom:link href="https://dustin-yamashiro.github.io/naha-waraba/category/life/shopping/feed/" rel="self" type="application/rss+xml" />
+	<link>https://dustin-yamashiro.github.io/naha-waraba/</link>
+	<description>那覇市の子連れ向け情報を発信するサイトです。</description>
+	<lastBuildDate>Sun, 28 Jul 2024 07:38:18 +0000</lastBuildDate>
+	<language>ja</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.1</generator>
+
+<image>
+	<url>https://dustin-yamashiro.github.io/naha-waraba/wp-content/uploads/2024/07/cropped-93F15655-C96B-44BE-B92B-8DBC93B893A6-32x32.png</url>
+	<title>買い物 &#8211; なはわらばぁ &#8211; 那覇市の子連れ向け情報発信サイト</title>
+	<link>https://dustin-yamashiro.github.io/naha-waraba/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+</channel>
+</rss>
