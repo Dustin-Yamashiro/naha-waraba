@@ -60,13 +60,13 @@
                     </li>
                     <?php endforeach; ?>
                     <li class="p-menuList__item">
-                        <a href="<?= esc_url( home_url('/') ); ?>" class="c-siteMenu c-siteMenu--withImg">
+                        <a href="<?= esc_url( home_url('/article-ranking') ); ?>" class="c-siteMenu c-siteMenu--withImg">
                             <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/ranking.png" alt="ランキング画像">
                             ランキング
                         </a>
                     </li>
                     <li class="p-menuList__item">
-                        <a href="<?= esc_url( home_url('/') ); ?>" class="c-siteMenu c-siteMenu--withImg">
+                        <a href="<?= esc_url( home_url('/site-detail') ); ?>" class="c-siteMenu c-siteMenu--withImg">
                             <img src="<?= get_template_directory_uri(); ?>/img/header-menu-img/site-detail.png" alt="サイト詳細画像">
                             サイト紹介
                         </a>
@@ -100,10 +100,10 @@
                         </li>
                         <?php endforeach; ?>
                         <li class="p-menuList__item">
-                            <a href="<?= esc_url( home_url() ); ?>" class="c-siteMenu c-siteMenu--alignLeft">人気記事ランキング</a>
+                            <a href="<?= esc_url( home_url('/article-ranking') ); ?>" class="c-siteMenu c-siteMenu--alignLeft">人気記事ランキング</a>
                         </li>
                         <li class="p-menuList__item">
-                            <a href="<?= esc_url( home_url() ); ?>" class="c-siteMenu c-siteMenu--alignLeft">当サイトについて</a>
+                            <a href="<?= esc_url( home_url('/site-detail') ); ?>" class="c-siteMenu c-siteMenu--alignLeft">サイト紹介</a>
                         </li>
                     </ul>
                 </div>

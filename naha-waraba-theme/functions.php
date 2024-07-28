@@ -90,6 +90,12 @@ function get_breadcrumb_template()
                 <a href="' . esc_url( get_category_link( $child_category_info->term_id ) ) . '">' . $child_category_info->name  . '</a>
             </li>';
 
+    } else if ( is_page() ) {
+        $breadcrumb_template .= 
+        '<li class="p-breadcrumb__item c-icon c-icon--right-triangle">
+            <a href="' . esc_url( get_page_link( get_the_ID() ) ) . '">' . get_the_title()  . '</a>
+        </li>';
+
     } else if ( is_category() ) {
         $category_info = get_queried_object();
         if ( empty( $category_info->parent ) ) {
@@ -118,7 +124,10 @@ function get_breadcrumb_template()
             '<li class="p-breadcrumb__item c-icon c-icon--right-triangle">
                 <a href="' . esc_url( get_tag_link( $tag_info->term_id ) ) . '">' . $tag_info->name  . '</a>
             </li>';
-    }
+
+    } else if ( is_search() ) {
+    $breadcrumb_template .= '<li class="p-breadcrumb__item c-icon c-icon--right-triangle">サイト内検索</li>';
+}
 
     $breadcrumb_template .= '</ol></nav>';
     return $breadcrumb_template;
