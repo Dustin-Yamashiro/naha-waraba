@@ -126,7 +126,7 @@ function get_breadcrumb_template()
             </li>';
 
     } else if ( is_search() ) {
-    $breadcrumb_template .= '<li class="p-breadcrumb__item c-icon c-icon--right-triangle">サイト内検索</li>';
+        $breadcrumb_template .= '<li class="p-breadcrumb__item c-icon c-icon--right-triangle">サイト内検索</li>';
 }
 
     $breadcrumb_template .= '</ol></nav>';
