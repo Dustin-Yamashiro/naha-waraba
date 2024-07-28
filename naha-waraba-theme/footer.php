@@ -3,10 +3,10 @@
     <div class="l-footer__contents p-footer">
         <nav class="p-footer__menu">
             <ul class="p-menuList p-menuList--footer">
-                <li class="p-menuList__item"><a href="<?= esc_url( home_url() ); ?>" class="c-siteMenu">プライバシーポリシー</a></li>
-                <li class="p-menuList__item"><a href="<?= esc_url( home_url() ); ?>" class="c-siteMenu">免責事項</a></li>
-                <li class="p-menuList__item"><a href="<?= esc_url( home_url() ); ?>" class="c-siteMenu">お問い合わせページ</a></li>
-                <li class="p-menuList__item"><a href="<?= esc_url( home_url() ); ?>" class="c-siteMenu">サイトマップ</a></li>
+                <li class="p-menuList__item"><a href="<?= esc_url( home_url('/privacy-policy') ); ?>" class="c-siteMenu">プライバシーポリシー</a></li>
+                <li class="p-menuList__item"><a href="<?= esc_url( home_url('/disclaimer') ); ?>" class="c-siteMenu">免責事項</a></li>
+                <li class="p-menuList__item"><a href="<?= esc_url( home_url('/contact') ); ?>" class="c-siteMenu">お問い合わせページ</a></li>
+                <li class="p-menuList__item"><a href="<?= esc_url( home_url('/site-map') ); ?>" class="c-siteMenu">サイトマップ</a></li>
             </ul>
         </nav>
         <span class="p-footer__copyright">© 2024 なはわらばぁ</span>
