@@ -131,11 +131,7 @@ docker-compose up --build
 
 2. 起動したあと、[localhost](http://localhost:8080)にアクセスして一度適当にwordpressサイトの初期設定をしていただいて、wordpressの管理画面にアクセスしてください。
 
-3. プラグインの新規追加から`All-in-One WP Migration`プラグインをインストールしていただいて、`Docker/naha-waraba-bk.wpress.gz`というファイルを下記のコマンドで解凍してインポートしてください。
-
-```
-gunzip Docker/naha-waraba-bk.wpress.gz
-```
+3. プラグインの新規追加から`All-in-One WP Migration`プラグインをインストールしていただいて、`Docker/naha-waraba-bk.wpress`というファイルをインポートしてください。
 
 4. インポート後、下記のログイン情報を元に再ログインしていただくと管理画面へアクセスできるかと思います。
 
