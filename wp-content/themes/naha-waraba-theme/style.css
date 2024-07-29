@@ -1802,6 +1802,19 @@ th {
     margin-top: 20px;
   }
 }
+.u-mt--contents-top {
+  margin-top: 40px;
+}
+@media (max-width: 960px) {
+  .u-mt--contents-top {
+    margin-top: 28px;
+  }
+}
+@media (max-width: 440px) {
+  .u-mt--contents-top {
+    margin-top: 20px;
+  }
+}
 .u-mt--postListAll {
   margin-top: 40px;
 }
@@ -1812,7 +1825,7 @@ th {
 }
 @media (max-width: 440px) {
   .u-mt--postListAll {
-    margin-top: 24px;
+    margin-top: 20px;
   }
 }
 .u-mt--postMenu {
@@ -1825,7 +1838,7 @@ th {
 }
 @media (max-width: 440px) {
   .u-mt--postMenu {
-    margin-top: 20px;
+    margin-top: 16px;
   }
 }
 .u-mt--postList-top {
@@ -1838,7 +1851,7 @@ th {
 }
 @media (max-width: 440px) {
   .u-mt--postList-top {
-    margin-top: 20px;
+    margin-top: 16px;
   }
 }
 .u-mt--postList-taxonomy {
