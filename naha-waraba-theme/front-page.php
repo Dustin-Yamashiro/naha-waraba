@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="l-container__contents u-mt--contents">
+<div class="l-container__contents u-mt--contents-top">
     <main class="l-main">
         <article id="swiper-slider" class="swiper">
             <ul class="swiper-wrapper">
