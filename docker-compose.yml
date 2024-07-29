@@ -5,6 +5,7 @@ services:
     image: wordpress:latest
     volumes:
       - ./naha-waraba-theme:/var/www/html/wp-content/themes/naha-waraba-theme
+      - ./Docker/php.ini:/usr/local/etc/php/php.ini
     environment:
       - WORDPRESS_DB_NAME=wp-db
       - WORDPRESS_DB_HOST=db
