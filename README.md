@@ -5,6 +5,8 @@
 
 URL : https://dustin-yamashiro.github.io/naha-waraba/
 
+ローカル環境 : 下記の[環境構築](#環境構築)を手順通りに進めてください。
+
 PCイメージ画像
 
 <img width="1680" alt="スクリーンショット 0006-07-29 10 21 03" src="https://github.com/user-attachments/assets/49e65e47-fdfe-4cee-9a0d-f57f3abc408b">
@@ -93,8 +95,7 @@ SPイメージ画像
 - 那覇市内だけの情報だけではなく、このブログ運用を通して県内全体の子育て情報を共有できるサイトを運営したい。
 
 
-
-# 参考文献
+## 参考文献
 
 ### デザイン参考
 
@@ -118,6 +119,36 @@ https://fontawesome.com/
 https://aspect.arc-one.jp/#google_vignette
 
 
+## 環境構築
+
+### dockerの場合
+
+1. リポジトリをforkした後、下記のコマンドでdockerイメージとコンテナを作成し、起動してください。
+
+```
+docker-compose up --build
+```
+
+2. 起動したあと、[localhost](http://localhost:8080)にアクセスして一度適当にwordpressサイトの初期設定をしていただいて、wordpressの管理画面にアクセスしてください。
+
+3. プラグインの新規追加から`All-in-One WP Migration`プラグインをインストールしていただいて、`Docker/naha-waraba-bk.wpress.gz`というファイルを下記のコマンドで解凍してインポートしてください。
+
+```
+gunzip Docker/naha-waraba-bk.wpress.gz
+```
+
+4. インポート後、下記のログイン情報を元に再ログインしていただくと管理画面へアクセスできるかと思います。
+
+```
+ユーザー名 : test
+パスワード : test
+```
+
+5. アクセス後、スタイリング崩れが起きている場合は、`style.css`のコンパイルがされていないかと思いますので、vscodeの`Live Sass Compiler`などのプラグインで`style.scss`をコンパイルしてて再度ご確認ください。
+
+### localの場合
+
+dockerの場合の2番以降の手順をlocalの環境構築後に行ってください。
 
 
 
