@@ -1,7 +1,8 @@
 # なはわらばぁ
 那覇市の子育て情報(おでかけ、食事、生活ニュースなど)の共有を目的としたブログサイト「なはわらばぁ」のWPテーマ専用リポジトリです。
 
-※ 作成段階で那覇市内の情報がまとめれなかったため、他の地区の情報を記事にしてます。
+※ 記事に関してはテスト用で那覇市以外のエリアの情報になています。また、[こちら](https://dustin-yamashiro.github.io/naha-waraba/little-universe/)の記事だけ確認用に記事データを用意してます。
+
 
 URL : https://dustin-yamashiro.github.io/naha-waraba/
 
