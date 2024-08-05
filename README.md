@@ -3,7 +3,7 @@
 
 ※ 記事に関してはテスト用で那覇市以外のエリアの情報になています。また、[こちら](https://dustin-yamashiro.github.io/naha-waraba/little-universe/)の記事だけ確認用に記事データを用意してます。
 
-※ メニューやアイコンのイラスト画像は知人に作成してもらったものです。
+※ メニューやアイコンのイラスト画像は知人に作成してもらいました。
 
 URL : https://dustin-yamashiro.github.io/naha-waraba/
 
